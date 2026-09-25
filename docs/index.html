@@ -271,21 +271,56 @@ function teamHtml(name) {
 }
 // Logo files live in docs/logos/ named like mercedes.svg / mercedes.png. If a file exists it replaces the badge.
 // The page also checks each logo's overall brightness so dark logos get a light backing in dark mode (and vice versa).
-function logoTone(im) {
+// Trims empty margins around a logo, makes solid backgrounds transparent, measures its brightness, and picks a size so
+// every logo has a similar visual weight (small wide logos and big square ones end up looking comparable).
+function prepareLogo(im) {
+  const fallback = { src: im.src, w: 0, h: 0, tone: "color" };
   try {
-    const c = document.createElement("canvas"); c.width = c.height = 32;
-    const x = c.getContext("2d"); x.drawImage(im, 0, 0, 32, 32);
-    const d = x.getImageData(0, 0, 32, 32).data; let lum = 0, chroma = 0, n = 0;
-    for (let i = 0; i < d.length; i += 4) {
-      if (d[i + 3] < 40) continue;
-      lum += 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2];
-      chroma += (Math.max(d[i], d[i + 1], d[i + 2]) - Math.min(d[i], d[i + 1], d[i + 2])) / 255; n++;
+    const nw = im.naturalWidth, nh = im.naturalHeight, isSvg = /\.svg($|\?)/i.test(im.src);
+    const big = Math.max(nw, nh), sc = !big ? 1 : isSvg ? 256 / big : Math.min(1, 256 / big);
+    const W = nw ? Math.max(1, Math.round(nw * sc)) : 256, H = nh ? Math.max(1, Math.round(nh * sc)) : 256;
+    const c = document.createElement("canvas"); c.width = W; c.height = H;
+    const x = c.getContext("2d", { willReadFrequently: true }); x.drawImage(im, 0, 0, W, H);
+    const d = x.getImageData(0, 0, W, H).data;
+    let opaque = true; for (let i = 3; i < d.length; i += 4) if (d[i] < 250) { opaque = false; break; }
+    const bg = [d[0], d[1], d[2]];
+    const dist = (i) => Math.abs(d[i] - bg[0]) + Math.abs(d[i + 1] - bg[1]) + Math.abs(d[i + 2] - bg[2]);
+    let useBg = opaque;
+    const LIN = Array.from({ length: 256 }, (_, v) => { const c = v / 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); });
+    let x0, y0, x1, y1, n, darkPx, lightPx;
+    const scan = () => {
+      x0 = W; y0 = H; x1 = -1; y1 = -1; n = 0; darkPx = 0; lightPx = 0;
+      for (let yy = 0; yy < H; yy++) for (let xx = 0; xx < W; xx++) {
+        const i = (yy * W + xx) * 4;
+        if (useBg ? dist(i) <= 60 : d[i + 3] <= 24) continue;
+        if (xx < x0) x0 = xx; if (xx > x1) x1 = xx; if (yy < y0) y0 = yy; if (yy > y1) y1 = yy;
+        const L = 0.2126 * LIN[d[i]] + 0.7152 * LIN[d[i + 1]] + 0.0722 * LIN[d[i + 2]];
+        if (L < 0.13) darkPx++;
+        else if (L > 0.55 && (Math.max(d[i], d[i + 1], d[i + 2]) - Math.min(d[i], d[i + 1], d[i + 2])) < 64) lightPx++;   // pale AND not colorful
+        n++;
+      }
+    };
+    scan();
+    if (useBg && n < 4) { useBg = false; scan(); }   // e.g. a logo that fills its whole image in one color
+    if (n < 4) return fallback;
+    const cw = x1 - x0 + 1, ch = y1 - y0 + 1;
+    const out = document.createElement("canvas"); out.width = cw; out.height = ch;
+    const ox = out.getContext("2d", { willReadFrequently: true });
+    const crop = x.getImageData(x0, y0, cw, ch);
+    if (useBg) {
+      const cd = crop.data;
+      for (let yy = 0; yy < ch; yy++) for (let xx = 0; xx < cw; xx++) {
+        const i = ((yy + y0) * W + (xx + x0)) * 4, j = (yy * cw + xx) * 4;
+        cd[j + 3] = Math.min(255, Math.round(dist(i) * 2.5));
+      }
     }
-    if (!n) return "color";
-    lum /= n; chroma /= n;
-    if (chroma > 0.22) return "color";
-    return lum < 95 ? "dark" : lum > 165 ? "light" : "color";
-  } catch (e) { return "color"; }
+    ox.putImageData(crop, 0, 0);
+    // "dark": mostly dark pixels, poor contrast on the dark theme. "light": mostly pale pixels, poor contrast on the light theme.
+    const tone = darkPx / n > 0.6 ? "dark" : lightPx / n > 0.6 ? "light" : "color";
+    const ar = cw / ch; let h = Math.sqrt(720 / ar), w = h * ar;
+    const f = Math.min(1, 58 / w, 22 / h); w *= f; h *= f;
+    return { src: out.toDataURL("image/png"), w: Math.max(6, Math.round(w)), h: Math.max(6, Math.round(h)), tone };
+  } catch (e) { return fallback; }
 }
 function upgradeLogos() {
   const seen = {};
@@ -297,9 +332,9 @@ function upgradeLogos() {
       if (i >= tries.length) return;
       const im = new Image();
       im.onload = () => {
-        const tone = logoTone(im);
+        const r = prepareLogo(im);
         document.querySelectorAll(`.team[data-slug="${slug}"]`).forEach((el) => {
-          el.innerHTML = `<img class="tlogo" alt="${esc(el.title)}" src="${im.src}">`; el.dataset.tone = tone;
+          el.innerHTML = `<img class="tlogo" alt="${esc(el.title)}" src="${r.src}"${r.w ? ` style="width:${r.w}px;height:${r.h}px"` : ""}>`; el.dataset.tone = r.tone;
         });
       };
       im.onerror = () => next(i + 1);
