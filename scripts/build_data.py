@@ -22,6 +22,8 @@ from scoring import norm, classified_pos, weekend_points  # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 RULES = json.load(open(ROOT / "config" / "rules.json"))
 ROSTERS = json.load(open(ROOT / "config" / "rosters.json"))
+TIERS = json.load(open(ROOT / "config" / "tiers.json"))
+TIER_OF = {**TIERS["keys"], **TIERS.get("extra", {})}
 OUT = ROOT / "docs" / "data.json"
 SEASON = RULES["season"]
 
@@ -170,7 +172,7 @@ for race in calendar:
 
     for key, v in per.items():
         b = weekend_points(RULES, v.get("race_pos"), v.get("quali_pos"), v.get("sprint_pos"), v.get("sprint_quali_pos"))
-        b.update({k: v.get(k) for k in ("race_pos", "quali_pos", "sprint_pos", "race_status")})
+        b.update({k: v.get(k) for k in ("race_pos", "quali_pos", "sprint_pos", "sprint_quali_pos", "race_status")})
         points.setdefault(key, {})[rnd] = b
 
 # ---------------------------------------------------------------- champion
@@ -301,8 +303,14 @@ for k, info in driver_info.items():
     tot = sum(p["total"] for p in points.get(k, {}).values())
     all_drivers.append({"key": k, "name": info["name"], "team": info["team"],
                         "owner": owner_of.get(k, "Unowned"), "points": round(tot, 2),
+                        "tier": TIER_OF.get(k),
                         "penalty_points": pen_by_driver.get(k, 0),
-                        "by_round": {str(r): p["total"] for r, p in points.get(k, {}).items()}})
+                        "by_round": {str(r): p["total"] for r, p in points.get(k, {}).items()},
+                        "detail": {str(r): {"race_pos": p.get("race_pos"), "race_status": p.get("race_status"),
+                                            "quali_pos": p.get("quali_pos"), "sprint_pos": p.get("sprint_pos"),
+                                            "race": p["race"], "pole": p["pole"], "sprint": p["sprint"],
+                                            "sprint_pole": p["sprint_pole"], "total": p["total"]}
+                                   for r, p in points.get(k, {}).items()}})
 all_drivers.sort(key=lambda x: -x["points"])
 
 champ_info = driver_info.get(champion_key, {})
@@ -316,7 +324,9 @@ out = {
                    "owner": owner_of.get(p["driver"], "Unowned")} for p in penalties],
     "penalty_asof": penalty_asof,
     "warnings": warnings,
-    "rules": {k: RULES[k] for k in ("pole_bonus", "sprint_pole_bonus", "champion_bonus", "penalty_point_deduction")},
+    "tiers": TIERS["tiers"],
+    "rules": {k: RULES[k] for k in ("pole_bonus", "sprint_pole_bonus", "champion_bonus", "penalty_point_deduction",
+                                    "race_points", "sprint_points", "replacement_penalty_by_tier")},
 }
 OUT.parent.mkdir(exist_ok=True)
 json.dump(out, open(OUT, "w"), indent=1)
