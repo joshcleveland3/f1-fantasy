@@ -12,6 +12,7 @@
     --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
     --good: #0b7a3e; --bad: #b3261e; --accent: #e10600;
     --t1: #1f5fb0; --t2: #b8431a; --t3: #12805a; --t4: #8a6200;
+    --chip-dark: transparent; --chip-light: #2b2b29;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -21,6 +22,7 @@
       --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
       --good: #4cc38a; --bad: #ff8a80;
       --t1: #3987e5; --t2: #d95926; --t3: #199e70; --t4: #c98500;
+      --chip-dark: #ecebe6; --chip-light: transparent;
     }
   }
   :root[data-theme="dark"] {
@@ -30,6 +32,7 @@
     --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
     --good: #4cc38a; --bad: #ff8a80;
     --t1: #3987e5; --t2: #d95926; --t3: #199e70; --t4: #c98500;
+    --chip-dark: #ecebe6; --chip-light: transparent;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text);
@@ -57,7 +60,7 @@
   .scroll { overflow-x: auto; }
   .rosters { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 12px; }
   .rhead { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; font-weight: 700; }
-  .drv { display: grid; grid-template-columns: 22px 1fr 56px; gap: 8px; align-items: center; padding: 6px 0; font-size: 14px; }
+  .drv { display: grid; grid-template-columns: 28px 1fr 64px 56px; gap: 8px; align-items: center; padding: 6px 0; font-size: 14px; }
   .tier { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; text-align: center; }
   .barwrap { height: 4px; background: var(--grid); border-radius: 2px; margin-top: 4px; }
   .bar { height: 4px; border-radius: 2px; }
@@ -78,10 +81,14 @@
   .m2 { border-color: #a3a9b1; background: rgba(163,169,177,.22); }
   .m3 { border-color: #b8733a; background: rgba(184,115,58,.22); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  .team { display: inline-flex; align-items: center; vertical-align: middle; }
-  .tbadge { display: inline-block; min-width: 38px; text-align: center; font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
+  .team { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 28px; flex: none;
+    border-radius: 7px; vertical-align: middle; }
+  .team[data-tone="dark"] { background: var(--chip-dark); }
+  .team[data-tone="light"] { background: var(--chip-light); }
+  .tbadge { display: inline-block; min-width: 40px; text-align: center; font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
     padding: 2px 6px; border-radius: 5px; border: 1.5px solid var(--tc); background: color-mix(in srgb, var(--tc) 20%, transparent); color: var(--text); }
-  .tlogo { height: 20px; width: auto; max-width: 54px; object-fit: contain; }
+  .tlogo { max-width: 52px; max-height: 20px; width: auto; height: auto; object-fit: contain; display: block; }
+  th.c, td.c { text-align: center; }
   .own { font-weight: 600; }
   .tag { font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--line); background: var(--grid); color: var(--text); white-space: nowrap; }
   .xbtn { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
@@ -99,7 +106,7 @@
   .rules ul { margin: 0; padding-left: 18px; } .rules li { margin: 6px 0; color: var(--text2); }
   .rules h3 { margin: 0 0 8px; font-size: 15px; }
   .tiercol h4 { margin: 12px 0 6px; font-size: 13px; color: var(--text2); }
-  .trow { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 14px; }
+  .trow { display: flex; align-items: center; gap: 10px; padding: 2px 0; font-size: 14px; }
   .pill { font-size: 11px; padding: 1px 6px; border-radius: 10px; background: var(--grid); color: var(--text2); }
 </style>
 </head>
@@ -194,7 +201,7 @@ function render(d) {
     const max = Math.max(...f.drivers.map((x) => x.points), 1);
     return `<div class="card"><div class="rhead"><span><span class="dot" style="background:${col(f.color_slot)}"></span>${esc(f.name)}</span><span>${fmt(f.gross)}</span></div>` +
       f.drivers.slice().sort((a, b) => b.points - a.points).map((x) => `
-      <div><div class="drv"><span class="tier">T${x.tier}</span><span>${esc(x.name)} ${teamHtml(x.team)}${x.penalty_points ? ` <span class="pill">${x.penalty_points} pen</span>` : ""}</span><span style="text-align:right;font-variant-numeric:tabular-nums">${fmt(x.points)}</span></div>
+      <div><div class="drv"><span class="tier">T${x.tier}</span><span>${esc(x.name)}${x.penalty_points ? ` <span class="pill">${x.penalty_points} pen</span>` : ""}</span>${teamHtml(x.team)}<span style="text-align:right;font-variant-numeric:tabular-nums">${fmt(x.points)}</span></div>
       <div class="barwrap"><div class="bar" style="width:${(x.points / max) * 100}%;background:${col(f.color_slot)}"></div></div></div>`).join("") + `</div>`;
   }).join("") + `</div>`;
 
@@ -229,9 +236,9 @@ function render(d) {
   // all drivers
   const slotOf = Object.fromEntries(ftos.map((f) => [f.name, f.color_slot]));
   h += `<h2>All drivers</h2><div class="card scroll"><details open><summary>Every driver, including unowned</summary><table style="margin-top:8px">
-    <tr><th class="l">Driver</th><th class="l">Team</th><th class="l">Tier</th><th class="l">Owner</th><th>Points</th></tr>` +
+    <tr><th class="l">Driver</th><th class="c">Team</th><th class="l">Tier</th><th class="l">Owner</th><th>Points</th></tr>` +
     d.drivers.map((x) => `<tr class="xr"><td class="l"><button class="xbtn" aria-expanded="false"><span class="car">\u25B8</span>${esc(x.name)}</button></td>
-      <td class="l">${teamHtml(x.team)}</td><td class="l">${x.tier ? "T" + x.tier : "\u2014"}</td>
+      <td class="c">${teamHtml(x.team)}</td><td class="l">${x.tier ? "T" + x.tier : "\u2014"}</td>
       <td class="l">${slotOf[x.owner] ? `<span class="own" style="color:var(--t${slotOf[x.owner]})">${esc(x.owner)}</span>` : '<span class="sub">Unowned</span>'}</td><td>${fmt(x.points)}</td></tr>
       <tr class="xd" hidden><td colspan="5">${driverDetail(x, d.races)}</td></tr>`).join("") + `</table></details></div>
     <div class="note">Click a driver to see their result and points for every race and sprint.</div>`;
@@ -250,29 +257,55 @@ function render(d) {
 const nrm = (s) => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z]/g, "");
 // [match text, display name, short code, badge color]. Badge colors are our own simple team tints, not logos.
 const TEAMS = [
-  ["racing bulls", "Racing Bulls", "RB", "#6692ff"], ["red bull", "Red Bull", "RBR", "#3671c6"], ["mercedes", "Mercedes", "MER", "#27c3b0"],
-  ["mclaren", "McLaren", "MCL", "#ff8000"], ["ferrari", "Ferrari", "FER", "#e8002d"], ["haas", "Haas", "HAA", "#9aa0a6"],
-  ["williams", "Williams", "WIL", "#37bedd"], ["audi", "Audi", "AUD", "#b5b8bd"], ["aston", "Aston Martin", "AMR", "#229971"],
-  ["alpine", "Alpine", "ALP", "#ff87bc"], ["cadillac", "Cadillac", "CAD", "#b3a369"],
+  [/racing bulls|rb f1|visa cash|^rb\b/, "Racing Bulls", "RB", "#6692ff", ["rb", "racing-bull"]],
+  [/red bull/, "Red Bull", "RBR", "#3671c6", ["redbull"]], [/mercedes/, "Mercedes", "MER", "#27c3b0", []],
+  [/mclaren/, "McLaren", "MCL", "#ff8000", []], [/ferrari/, "Ferrari", "FER", "#e8002d", []], [/haas/, "Haas", "HAA", "#9aa0a6", []],
+  [/williams/, "Williams", "WIL", "#37bedd", []], [/audi|sauber/, "Audi", "AUD", "#b5b8bd", []], [/aston/, "Aston Martin", "AMR", "#229971", ["aston"]],
+  [/alpine/, "Alpine", "ALP", "#ff87bc", []], [/cadillac/, "Cadillac", "CAD", "#b3a369", []],
 ];
 function teamHtml(name) {
-  const n = String(name || "").toLowerCase(), t = TEAMS.find((x) => n.includes(x[0]));
-  if (!t) return `<span class="team"><span class="tbadge" style="--tc:#888">${esc(String(name || "?").slice(0, 3).toUpperCase())}</span></span>`;
+  const n = String(name || "").toLowerCase(), t = TEAMS.find((x) => x[0].test(n));
+  if (!t) return `<span class="team" title="${esc(name)}"><span class="tbadge" style="--tc:#888">${esc(String(name || "?").slice(0, 3).toUpperCase())}</span></span>`;
   const slug = t[1].toLowerCase().replace(/[^a-z]+/g, "-");
-  return `<span class="team" data-slug="${slug}" title="${esc(t[1])}"><span class="tbadge" style="--tc:${t[3]}">${t[2]}</span></span>`;
+  return `<span class="team" data-slug="${slug}" data-alt="${t[4].join(",")}" title="${esc(t[1])}"><span class="tbadge" style="--tc:${t[3]}">${t[2]}</span></span>`;
 }
-// If you add image files named like logos/mercedes.svg (or .png) to the docs folder, they replace the badges automatically.
+// Logo files live in docs/logos/ named like mercedes.svg / mercedes.png. If a file exists it replaces the badge.
+// The page also checks each logo's overall brightness so dark logos get a light backing in dark mode (and vice versa).
+function logoTone(im) {
+  try {
+    const c = document.createElement("canvas"); c.width = c.height = 32;
+    const x = c.getContext("2d"); x.drawImage(im, 0, 0, 32, 32);
+    const d = x.getImageData(0, 0, 32, 32).data; let lum = 0, chroma = 0, n = 0;
+    for (let i = 0; i < d.length; i += 4) {
+      if (d[i + 3] < 40) continue;
+      lum += 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2];
+      chroma += (Math.max(d[i], d[i + 1], d[i + 2]) - Math.min(d[i], d[i + 1], d[i + 2])) / 255; n++;
+    }
+    if (!n) return "color";
+    lum /= n; chroma /= n;
+    if (chroma > 0.22) return "color";
+    return lum < 95 ? "dark" : lum > 165 ? "light" : "color";
+  } catch (e) { return "color"; }
+}
 function upgradeLogos() {
-  const slugs = [...new Set([...document.querySelectorAll(".team[data-slug]")].map((e) => e.dataset.slug))];
-  slugs.forEach((slug) => {
-    const tryExt = (exts) => {
-      if (!exts.length) return;
+  const seen = {};
+  document.querySelectorAll(".team[data-slug]").forEach((el) => { seen[el.dataset.slug] = (el.dataset.alt || "").split(",").filter(Boolean); });
+  Object.entries(seen).forEach(([slug, alts]) => {
+    const tries = [];
+    [slug, ...alts].forEach((nm) => ["svg", "png", "webp", "jpg"].forEach((ext) => tries.push(`logos/${nm}.${ext}`)));
+    const next = (i) => {
+      if (i >= tries.length) return;
       const im = new Image();
-      im.onload = () => document.querySelectorAll(`.team[data-slug="${slug}"]`).forEach((el) => { el.innerHTML = `<img class="tlogo" alt="${esc(el.title)}" src="${im.src}">`; });
-      im.onerror = () => tryExt(exts.slice(1));
-      im.src = `logos/${slug}.${exts[0]}`;
+      im.onload = () => {
+        const tone = logoTone(im);
+        document.querySelectorAll(`.team[data-slug="${slug}"]`).forEach((el) => {
+          el.innerHTML = `<img class="tlogo" alt="${esc(el.title)}" src="${im.src}">`; el.dataset.tone = tone;
+        });
+      };
+      im.onerror = () => next(i + 1);
+      im.src = tries[i];
     };
-    tryExt(["svg", "png"]);
+    next(0);
   });
 }
 const flagImg = (c) => (FLAGS[c] ? `<img class="flag" alt="" src="https://flagcdn.com/w40/${FLAGS[c]}.png" onerror="this.style.display='none'">` : "");
