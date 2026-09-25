@@ -193,9 +193,10 @@ function render(d) {
   drawChart(d, played);
 }
 
+const FLAGS = { "Australia":"au","China":"cn","Japan":"jp","USA":"us","United States":"us","Canada":"ca","Monaco":"mc","Spain":"es","Austria":"at","UK":"gb","United Kingdom":"gb","Great Britain":"gb","Belgium":"be","Hungary":"hu","Netherlands":"nl","Italy":"it","Azerbaijan":"az","Singapore":"sg","Mexico":"mx","Brazil":"br","UAE":"ae","United Arab Emirates":"ae","Qatar":"qa","Bahrain":"bh","Saudi Arabia":"sa","Malaysia":"my","Turkey":"tr","Portugal":"pt","Germany":"de","France":"fr","Korea":"kr","South Korea":"kr","Argentina":"ar","Vietnam":"vn" };
 function drawChart(d, played) {
   const ftos = d.ftos, svg = $("#chart"), box = $("#chartbox"), tip = $("#tip");
-  const W = Math.max(320, box.clientWidth), H = 300, m = { l: 44, r: 62, t: 12, b: 28 };
+  const W = Math.max(320, box.clientWidth), H = 312, m = { l: 44, r: 62, t: 12, b: 40 };
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H);
   const n = played.length; if (!n) return;
   const maxY = Math.max(...ftos.map((f) => f.cumulative[n - 1] || 0)) * 1.05 || 1;
@@ -204,8 +205,15 @@ function drawChart(d, played) {
   let s = "";
   const step = maxY > 800 ? 200 : maxY > 400 ? 100 : 50;
   for (let v = 0; v <= maxY; v += step) s += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)"/><text x="${m.l - 8}" y="${y(v) + 4}" text-anchor="end">${v}</text>`;
-  const every = W < 500 ? 3 : n > 14 ? 2 : 1;
-  played.forEach((r, i) => { if (i % every === 0) s += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">R${r.round}</text>`; });
+  const gap = n > 1 ? (W - m.l - m.r) / (n - 1) : 999;
+  const every = Math.max(1, Math.ceil(30 / gap));
+  played.forEach((r, i) => {
+    if ((n - 1 - i) % every !== 0) return;   // always label the latest race
+    const code = FLAGS[r.country];
+    s += code
+      ? `<image href="https://flagcdn.com/w40/${code}.png" x="${x(i) - 11}" y="${H - m.b + 10}" width="22" height="15" preserveAspectRatio="xMidYMid slice"><title>${esc(r.name)}</title></image>`
+      : `<text x="${x(i)}" y="${H - 12}" text-anchor="middle">${esc((r.country || r.name).slice(0, 3).toUpperCase())}</text>`;
+  });
   ftos.forEach((f) => {
     const pts = f.cumulative.map((v, i) => `${x(i)},${y(v)}`).join(" ");
     s += `<polyline points="${pts}" fill="none" stroke="${col(f.color_slot)}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
