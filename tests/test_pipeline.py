@@ -69,4 +69,7 @@ def test_pipeline(monkeypatch, tmp_path):
     assert all(p["date"].startswith("2026") for p in d["penalties"])
     assert d["penalty_asof"] == "August 25 2026"
     assert d["races"][1]["sprint_pole"] == "russell"
+    assert by["antonelli"]["detail"]["2"]["pole"] == 3 and by["antonelli"]["tier"] == 1
+    assert by["russell"]["detail"]["2"]["sprint_pole"] == 1.5
+    assert d["tiers"]["3"][0] == "Fernando Alonso" and d["rules"]["race_points"][0] == 30
     out.unlink()
