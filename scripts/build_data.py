@@ -242,6 +242,77 @@ pen_by_driver = {}
 for p in penalties:
     pen_by_driver[p["driver"]] = pen_by_driver.get(p["driver"], 0) + p["points"]
 
+# ---------------------------------------------------------------- penalty cross-check
+# Second source: RacingNews365 lists each driver's points with EXPIRY dates (issue date + 1 year).
+# Points that expire in SEASON+1 were issued this season, so they are comparable to RaceFans' 2026 rows.
+CHECK_URL = "https://racingnews365.com/2026-f1-driver-penalty-points-total"
+NUM_WORDS = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+             "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12}
+
+
+def parse_loose_date(s):
+    """'25 August 2026' or 'August 25, 2026' -> date, else None."""
+    if not s:
+        return None
+    for fmt in ("%d %B %Y", "%B %d %Y", "%B %d, %Y"):
+        try:
+            return dt.datetime.strptime(s.strip(), fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def fetch_second_source():
+    soup2 = BeautifulSoup(S.get(CHECK_URL, timeout=30).text, "html.parser")
+    totals, seen = {}, 0
+    for h in soup2.find_all(["h2", "h3"]):
+        ht = h.get_text(" ", strip=True)
+        if not re.search(r"\bpoints?\b", ht, re.I) or " - " not in ht and " – " not in ht:
+            continue
+        name = re.split(r"\s[-–]\s", ht)[0]
+        seen += 1
+        lst = h.find_next(["ul", "ol"])
+        if lst is None:
+            continue
+        this_season = 0
+        for li in lst.find_all("li"):
+            m2 = re.match(r"\s*(\w+) points?\b.*?expires? (\w+ \d{1,2})\w*,? (\d{4})", li.get_text(" ", strip=True), re.I)
+            if m2 and m2.group(1).lower() in NUM_WORDS and int(m2.group(3)) == SEASON + 1:
+                this_season += NUM_WORDS[m2.group(1).lower()]
+        totals[name] = this_season
+    if seen == 0:
+        raise ValueError("no driver headings found (page layout changed?)")
+    return totals
+
+
+owner_of_pre = {d["key"]: f["name"] for f in ROSTERS["ftos"] if f["active"] for d in f["drivers"]}
+asof_date = parse_loose_date(penalty_asof)
+races_after = [r["name"] for r in races_out
+               if r["status"] == "done" and asof_date and dt.date.fromisoformat(r["date"]) > asof_date]
+penalty_check = {"status": "unavailable", "source": CHECK_URL, "differences": [], "stale_races": races_after}
+if penalties_ok or penalties:
+    try:
+        second = fetch_second_source()
+        for nm, tot2 in second.items():
+            key = next((k for k in known if k in norm(nm)), None)
+            if key is None:
+                continue
+            tot1 = pen_by_driver.get(key, 0)
+            if tot1 != tot2:
+                penalty_check["differences"].append({
+                    "driver": driver_info.get(key, {}).get("name", nm), "owner": owner_of_pre.get(key, "Unowned"),
+                    "used": tot1, "other_source": tot2})
+        penalty_check["status"] = "mismatch" if penalty_check["differences"] else "ok"
+    except Exception as e:  # noqa: BLE001
+        penalty_check["error"] = str(e)
+        warnings.append(f"Penalty cross-check source unavailable: {e}")
+if races_after:
+    warnings.append(f"Penalty source (RaceFans) says it is current {penalty_asof}, but {len(races_after)} race(s) finished since "
+                    f"({', '.join(races_after)}). Recent penalty points may be missing.")
+for dfr in penalty_check["differences"]:
+    warnings.append(f"Penalty points differ for {dfr['driver']} ({dfr['owner']}): dashboard uses {dfr['used']}, "
+                    f"second source shows {dfr['other_source']}. Verify against the FIA documents.")
+
 # ---------------------------------------------------------------- owners
 owner_of = {}
 for f in ROSTERS["ftos"]:
@@ -323,6 +394,7 @@ out = {
     "penalties": [{k: v for k, v in p.items() if k != "driver_raw"} | {"name": driver_info.get(p["driver"], {}).get("name", p["driver_raw"]),
                    "owner": owner_of.get(p["driver"], "Unowned")} for p in penalties],
     "penalty_asof": penalty_asof,
+    "penalty_check": penalty_check,
     "warnings": warnings,
     "tiers": TIERS["tiers"],
     "rules": {k: RULES[k] for k in ("pole_bonus", "sprint_pole_bonus", "champion_bonus", "penalty_point_deduction",
