@@ -69,6 +69,12 @@
   .note { font-size: 13px; color: var(--muted); margin-top: 8px; }
   .warn { border-left: 3px solid var(--s4); padding: 6px 10px; margin: 6px 0; font-size: 13px; color: var(--text2); background: var(--surface); border-radius: 0 6px 6px 0; }
   button.tog { background: none; border: 1px solid var(--line); color: var(--text2); border-radius: 6px; padding: 3px 9px; cursor: pointer; font-size: 12px; }
+  .flag { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; margin-left: 8px; vertical-align: -2px; }
+  .medal { display: inline-block; min-width: 3.4em; padding: 2px 10px; border-radius: 8px; border: 1.5px solid; font-weight: 600; }
+  .m1 { border-color: #d4a017; background: rgba(212,160,23,.20); }
+  .m2 { border-color: #a3a9b1; background: rgba(163,169,177,.22); }
+  .m3 { border-color: #b8733a; background: rgba(184,115,58,.22); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .pill { font-size: 11px; padding: 1px 6px; border-radius: 10px; background: var(--grid); color: var(--text2); }
 </style>
 </head>
@@ -148,7 +154,7 @@ function render(d) {
     <div class="legend">${ftos.map((f) => `<span><span class="dot" style="background:${col(f.color_slot)}"></span>${esc(f.name)}</span>`).join("")}</div>
     <div class="chartbox" id="chartbox"><svg id="chart" role="img" aria-label="Cumulative points by owner after each race weekend"></svg><div id="tip"></div></div>
     <div class="note">Cumulative race points (before license-penalty deductions). Hover or tap for each weekend.</div>
-    <details style="margin-top:8px"><summary>View as table</summary><div class="scroll"><table id="ctable"></table></div></details>
+    <details style="margin-top:8px"><summary>View as table</summary><div class="scroll"><table id="ctable"></table></div><div class="note">Gold, silver and bronze mark 1st, 2nd and 3rd in total race points after each race (before penalty deductions).</div></details>
   </div>`;
 
   // rosters
@@ -239,8 +245,18 @@ function drawChart(d, played) {
   };
   hit.addEventListener("mousemove", move); hit.addEventListener("touchmove", move, { passive: true }); hit.addEventListener("touchstart", move, { passive: true });
   hit.addEventListener("mouseleave", () => { tip.style.display = "none"; xh.style.display = "none"; });
+  const ord = ["", "1st", "2nd", "3rd"];
+  const flagImg = (c) => (FLAGS[c] ? `<img class="flag" alt="" src="https://flagcdn.com/w40/${FLAGS[c]}.png" onerror="this.style.display='none'">` : "");
   $("#ctable").innerHTML = `<tr><th class="l">Race</th>${ftos.map((f) => `<th>${esc(f.name)}</th>`).join("")}</tr>` +
-    played.map((r, i) => `<tr><td class="l">${esc(r.name)}</td>${ftos.map((f) => `<td>${fmt(f.cumulative[i])}</td>`).join("")}</tr>`).join("");
+    played.map((r, i) => {
+      const vals = ftos.map((f) => f.cumulative[i]);
+      return `<tr><td class="l">${esc(r.name)}${flagImg(r.country)}</td>` + vals.map((v) => {
+        const rank = 1 + vals.filter((o) => o > v).length;   // ties share a place
+        return rank <= 3 && v > 0
+          ? `<td><span class="medal m${rank}" title="${ord[rank]} after ${esc(r.name)}">${fmt(v)}<span class="sr"> (${ord[rank]})</span></span></td>`
+          : `<td>${fmt(v)}</td>`;
+      }).join("") + `</tr>`;
+    }).join("");
 }
 let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => location.reload(), 250); });
 </script>
