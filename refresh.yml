@@ -1,0 +1,57 @@
+name: Refresh F1 dashboard
+
+on:
+  schedule:
+    # Race weekends run Fri-Sun; also catch Monday/Tuesday penalty-point updates.
+    - cron: "17 */3 * * 5-6"     # Fri/Sat every 3 hours (qualifying, sprints)
+    - cron: "17 12-23/2 * * 0"   # Sunday afternoon/evening UTC (races)
+    - cron: "17 6,18 * * 1-2"    # Mon/Tue (final classification, penalty tables)
+    - cron: "17 6 * * 3-4"       # Wed/Thu once a day
+  workflow_dispatch: {}           # "Run workflow" button
+  push:
+    branches: [main]
+    paths: ["config/**", "scripts/**", "docs/index.html", ".github/workflows/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt pytest
+      - name: Unit tests (scoring rules)
+        run: python -m pytest -q tests
+      - name: Build data
+        run: python scripts/build_data.py
+      - name: Reconcile with the original manual sheet
+        run: python scripts/reconcile.py | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Commit updated data (keeps history of every refresh)
+        run: |
+          git config user.name "f1-dashboard-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/data.json
+          git diff --cached --quiet || git commit -m "Refresh data $(date -u +%F\ %H:%M)"
+          git push || true
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: docs }
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,11 @@
+{
+  "season": 2026,
+  "pot": 60,
+  "race_points": [30, 24, 19, 15, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+  "sprint_points": [15, 12, 9.5, 7.5, 6, 5, 4.5, 4, 3.5, 3, 2.5, 2, 1.5, 1, 0.5],
+  "pole_bonus": 3,
+  "sprint_pole_bonus": 1.5,
+  "champion_bonus": 10,
+  "penalty_point_deduction": 5,
+  "replacement_penalty_by_tier": {"1": 10, "2": 5, "3": 0}
+}

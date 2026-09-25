@@ -1,0 +1,21 @@
+{
+  "_note": "Set once from the 'Original' tab of the sheet. 'key' is the driver's lower-case family name without accents. Set active=false to hide an owner (their drivers then show as unowned).",
+  "ftos": [
+    {"name": "Cooper", "active": true, "color_slot": 1, "drivers": [
+      {"key": "norris", "tier": 1}, {"key": "antonelli", "tier": 1},
+      {"key": "sainz", "tier": 2}, {"key": "lawson", "tier": 2},
+      {"key": "bottas", "tier": 3}, {"key": "gasly", "tier": 3}]},
+    {"name": "Josh", "active": true, "color_slot": 2, "drivers": [
+      {"key": "verstappen", "tier": 1}, {"key": "hamilton", "tier": 1},
+      {"key": "bearman", "tier": 2}, {"key": "bortoleto", "tier": 2},
+      {"key": "perez", "tier": 3}, {"key": "stroll", "tier": 3}]},
+    {"name": "Brian", "active": true, "color_slot": 3, "drivers": [
+      {"key": "leclerc", "tier": 1}, {"key": "russell", "tier": 1},
+      {"key": "albon", "tier": 2}, {"key": "hulkenberg", "tier": 2},
+      {"key": "alonso", "tier": 3}, {"key": "colapinto", "tier": 3}]},
+    {"name": "Mike", "active": false, "color_slot": 4, "drivers": [
+      {"key": "hadjar", "tier": 1}, {"key": "piastri", "tier": 1},
+      {"key": "lindblad", "tier": 2}, {"key": "ocon", "tier": 2}]}
+  ],
+  "replacements": []
+}
