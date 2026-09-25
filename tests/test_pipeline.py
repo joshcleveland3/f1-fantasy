@@ -38,12 +38,20 @@ class Resp:
     def json(self): return self._j
     def raise_for_status(self): pass
 
+RN365 = """<h2>Franco Colapinto - three points</h2><ul>
+<li>One point - expires June 14th, 2027. Barcelona</li>
+<li>Two points - expires August 23rd, 2027. Dutch</li></ul>
+<h2>Carlos Sainz - two points</h2><ul><li>Two points - expires October 26th, 2026. old</li></ul>
+<h2>Zero points</h2><p>Norris</p>"""
+STATE = {"cal": CAL}
+
 def fake_get(self, url, params=None, timeout=None):
     if "racefans" in url: return Resp(text=HTML)
+    if "racingnews365" in url: return Resp(text=RN365)
     if "openf1.org/v1/sessions" in url: return Resp([{"session_key": 99, "date_start": "2026-03-13T07:30:00+00:00"}])
     if "openf1.org/v1/session_result" in url: return Resp([{"driver_number": 63, "position": 1}])
     if "openf1.org/v1/drivers" in url: return Resp([{"last_name": "Russell"}])
-    if url.endswith("/2026.json"): return Resp(CAL)
+    if url.endswith("/2026.json"): return Resp(STATE["cal"])
     if url.endswith("driverstandings.json"): return Resp({"MRData": {"StandingsTable": {"StandingsLists": [{"DriverStandings": [{"Driver": {"familyName": "Antonelli"}}]}]}}})
     tbl = {"/1/results.json": ("Results", R1_RACE), "/1/qualifying.json": ("QualifyingResults", R1_QUALI),
            "/2/results.json": ("Results", R2_RACE), "/2/qualifying.json": ("QualifyingResults", R2_QUALI),
@@ -51,6 +59,25 @@ def fake_get(self, url, params=None, timeout=None):
     for suffix, (k, v) in tbl.items():
         if url.endswith(suffix): return Resp(wrap(k, v))
     raise AssertionError(url)
+
+def test_penalty_cross_check_and_staleness(monkeypatch):
+    import copy, time
+    cal = copy.deepcopy(CAL); cal["MRData"]["RaceTable"]["Races"][1]["date"] = "2026-09-01"   # finished after RaceFans' Aug 25
+    STATE["cal"] = cal
+    monkeypatch.setattr(requests.Session, "get", fake_get)
+    monkeypatch.setattr(time, "sleep", lambda s: None)
+    out = ROOT / "docs" / "data.json"
+    if out.exists(): out.unlink()
+    runpy.run_path(str(ROOT / "scripts" / "build_data.py"), run_name="__main__")
+    d = json.load(open(out)); STATE["cal"] = CAL
+    pc = d["penalty_check"]
+    assert pc["status"] == "mismatch"
+    diff = {x["driver"]: x for x in pc["differences"]}
+    assert diff["Franco Colapinto"]["used"] == 4 and diff["Franco Colapinto"]["other_source"] == 3
+    assert "Carlos Sainz" not in diff            # 2025-issued points (expire 2026) are ignored
+    assert pc["stale_races"] == ["Chinese GP"]
+    assert any("finished since" in w for w in d["warnings"])
+    out.unlink()
 
 def test_pipeline(monkeypatch, tmp_path):
     monkeypatch.setattr(requests.Session, "get", fake_get)
@@ -68,6 +95,7 @@ def test_pipeline(monkeypatch, tmp_path):
     assert f["Brian"]["penalty_points"] == 4 and f["Brian"]["penalty_deduction"] == -20   # Colapinto: 2026 only
     assert all(p["date"].startswith("2026") for p in d["penalties"])
     assert d["penalty_asof"] == "August 25 2026"
+    assert d["penalty_check"]["stale_races"] == []
     assert d["races"][1]["sprint_pole"] == "russell"
     assert by["antonelli"]["detail"]["2"]["pole"] == 3 and by["antonelli"]["tier"] == 1
     assert by["russell"]["detail"]["2"]["sprint_pole"] == 1.5
