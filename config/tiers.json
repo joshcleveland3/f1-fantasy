@@ -1,0 +1,14 @@
+{
+  "_note": "Driver tiers from the Rules/Points tab. 'extra' holds drivers who are not on the original list but need a tier if they appear in the results feed.",
+  "tiers": {
+    "1": ["Lando Norris", "Oscar Piastri", "George Russell", "Kimi Antonelli", "Max Verstappen", "Isack Hadjar", "Charles Leclerc", "Lewis Hamilton"],
+    "2": ["Alex Albon", "Carlos Sainz Jr.", "Liam Lawson", "Arvid Lindblad", "Oliver Bearman", "Esteban Ocon", "Nico Hulkenberg", "Gabriel Bortoleto"],
+    "3": ["Fernando Alonso", "Lance Stroll", "Pierre Gasly", "Franco Colapinto", "Sergio Perez", "Valtteri Bottas"]
+  },
+  "keys": {
+    "norris": 1, "piastri": 1, "russell": 1, "antonelli": 1, "verstappen": 1, "hadjar": 1, "leclerc": 1, "hamilton": 1,
+    "albon": 2, "sainz": 2, "lawson": 2, "lindblad": 2, "bearman": 2, "ocon": 2, "hulkenberg": 2, "bortoleto": 2,
+    "alonso": 3, "stroll": 3, "gasly": 3, "colapinto": 3, "perez": 3, "bottas": 3
+  },
+  "extra": {"tsunoda": 2}
+}
