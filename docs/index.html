@@ -11,6 +11,7 @@
     --text: #0b0b0b; --text2: #52514e; --muted: #7a7972;
     --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
     --good: #0b7a3e; --bad: #b3261e; --accent: #e10600;
+    --t1: #1f5fb0; --t2: #b8431a; --t3: #12805a; --t4: #8a6200;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -19,6 +20,7 @@
       --text: #ffffff; --text2: #c3c2b7; --muted: #8f8e85;
       --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
       --good: #4cc38a; --bad: #ff8a80;
+      --t1: #3987e5; --t2: #d95926; --t3: #199e70; --t4: #c98500;
     }
   }
   :root[data-theme="dark"] {
@@ -27,6 +29,7 @@
     --text: #ffffff; --text2: #c3c2b7; --muted: #8f8e85;
     --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
     --good: #4cc38a; --bad: #ff8a80;
+    --t1: #3987e5; --t2: #d95926; --t3: #199e70; --t4: #c98500;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text);
@@ -75,6 +78,28 @@
   .m2 { border-color: #a3a9b1; background: rgba(163,169,177,.22); }
   .m3 { border-color: #b8733a; background: rgba(184,115,58,.22); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .team { display: inline-flex; align-items: center; vertical-align: middle; }
+  .tbadge { display: inline-block; min-width: 38px; text-align: center; font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
+    padding: 2px 6px; border-radius: 5px; border: 1.5px solid var(--tc); background: color-mix(in srgb, var(--tc) 20%, transparent); color: var(--text); }
+  .tlogo { height: 20px; width: auto; max-width: 54px; object-fit: contain; }
+  .own { font-weight: 600; }
+  .tag { font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--line); background: var(--grid); color: var(--text); white-space: nowrap; }
+  .xbtn { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+  .xbtn:focus-visible { outline: 2px solid var(--s1); outline-offset: 2px; border-radius: 4px; }
+  .xbtn .car { color: var(--muted); width: 1em; display: inline-block; }
+  tr.xr:hover td { background: color-mix(in srgb, var(--grid) 60%, transparent); }
+  tr.xd[hidden] { display: none; }
+  tr.xd > td { background: color-mix(in srgb, var(--grid) 45%, transparent); padding: 12px 8px; text-align: left; }
+  .xgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .xh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
+  .xrow { display: flex; justify-content: space-between; gap: 10px; padding: 4px 0; font-size: 13.5px; }
+  .xrow small { color: var(--muted); font-size: 12px; display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+  table.mini th, table.mini td { padding: 5px 8px; font-size: 13px; }
+  .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+  .rules ul { margin: 0; padding-left: 18px; } .rules li { margin: 6px 0; color: var(--text2); }
+  .rules h3 { margin: 0 0 8px; font-size: 15px; }
+  .tiercol h4 { margin: 12px 0 6px; font-size: 13px; color: var(--text2); }
+  .trow { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 14px; }
   .pill { font-size: 11px; padding: 1px 6px; border-radius: 10px; background: var(--grid); color: var(--text2); }
 </style>
 </head>
@@ -107,6 +132,13 @@ $("#themeBtn").onclick = () => {
   document.documentElement.dataset.theme = next;
   try { localStorage.setItem("theme", next); } catch (e) {}
 };
+
+$("#app").addEventListener("click", (e) => {
+  const b = e.target.closest(".xbtn"); if (!b) return;
+  const det = b.closest("tr").nextElementSibling; if (!det || !det.classList.contains("xd")) return;
+  const open = det.hidden; det.hidden = !open;
+  b.setAttribute("aria-expanded", String(open)); b.querySelector(".car").textContent = open ? "\u25BE" : "\u25B8";
+});
 
 fetch("data.json?" + Date.now()).then((r) => r.json()).then(render).catch((e) => {
   $("#meta").textContent = "Couldn't load data.json: " + e;
@@ -162,19 +194,27 @@ function render(d) {
     const max = Math.max(...f.drivers.map((x) => x.points), 1);
     return `<div class="card"><div class="rhead"><span><span class="dot" style="background:${col(f.color_slot)}"></span>${esc(f.name)}</span><span>${fmt(f.gross)}</span></div>` +
       f.drivers.slice().sort((a, b) => b.points - a.points).map((x) => `
-      <div><div class="drv"><span class="tier">T${x.tier}</span><span>${esc(x.name)} <span class="team">${esc(x.team)}</span>${x.penalty_points ? ` <span class="pill">${x.penalty_points} pen</span>` : ""}</span><span style="text-align:right;font-variant-numeric:tabular-nums">${fmt(x.points)}</span></div>
+      <div><div class="drv"><span class="tier">T${x.tier}</span><span>${esc(x.name)} ${teamHtml(x.team)}${x.penalty_points ? ` <span class="pill">${x.penalty_points} pen</span>` : ""}</span><span style="text-align:right;font-variant-numeric:tabular-nums">${fmt(x.points)}</span></div>
       <div class="barwrap"><div class="bar" style="width:${(x.points / max) * 100}%;background:${col(f.color_slot)}"></div></div></div>`).join("") + `</div>`;
   }).join("") + `</div>`;
 
   // race by race
   const played = d.races.filter((r) => r.status !== "upcoming");
+  const byKey = Object.fromEntries(d.drivers.map((x) => [x.key, x]));
   h += `<h2>Weekend by weekend</h2><div class="card scroll"><table>
     <tr><th class="l">Race</th>${ftos.map((f) => `<th><span class="dot" style="background:${col(f.color_slot)}"></span>${esc(f.name)}</th>`).join("")}</tr>` +
     played.slice().reverse().map((r) => {
       const vals = ftos.map((f) => f.by_round[String(r.round)] || 0), top = Math.max(...vals);
-      return `<tr><td class="l">${esc(r.name)}${r.sprint ? ' <span class="pill">Sprint</span>' : ""}${r.status === "live" ? ' <span class="pill">live</span>' : ""}</td>` +
-        vals.map((v) => `<td${v === top && top > 0 ? ' class="pos"' : ""}>${fmt(v)}</td>`).join("") + `</tr>`;
-    }).join("") + `</table></div><div class="note">Green = best weekend of the round.</div>`;
+      const grid = ftos.map((f, fi) => {
+        const rows = f.drivers.map((dr) => ({ dr, det: (byKey[dr.key] && byKey[dr.key].detail || {})[String(r.round)] }))
+          .sort((p, q) => (q.det ? q.det.total : 0) - (p.det ? p.det.total : 0));
+        return `<div><div class="xh"><span><span class="dot" style="background:${col(f.color_slot)}"></span><b>${esc(f.name)}</b></span><b>${fmt(vals[fi])}</b></div>` +
+          rows.map(({ dr, det }) => `<div class="xrow"><span>${esc(dr.name)}<small>${resLine(det, r)}</small></span><b>${fmt(det ? det.total : 0)}</b></div>`).join("") + `</div>`;
+      }).join("");
+      return `<tr class="xr"><td class="l"><button class="xbtn" aria-expanded="false"><span class="car">\u25B8</span>${esc(r.name)}${flagImg(r.country)}</button>${r.sprint ? ' <span class="pill">Sprint</span>' : ""}${r.status === "live" ? ' <span class="pill">live</span>' : ""}</td>` +
+        vals.map((v) => `<td${v === top && top > 0 ? ' class="pos"' : ""}>${fmt(v)}</td>`).join("") + `</tr>` +
+        `<tr class="xd" hidden><td colspan="${ftos.length + 1}"><div class="xgrid">${grid}</div></td></tr>`;
+    }).join("") + `</table></div><div class="note">Click a race to see how each driver scored that weekend. Green = best weekend of the round.</div>`;
 
   // penalties
   if (d.penalties.length) {
@@ -186,10 +226,17 @@ function render(d) {
       <div class="note">${d.rules.penalty_point_deduction} points deducted per penalty point. Source: RaceFans${d.penalty_asof ? ` (as of ${esc(d.penalty_asof)})` : ""}; can lag the latest race by a few days.</div>`;
   }
 
-  // unowned
-  h += `<h2>All drivers</h2><div class="card scroll"><details><summary>Show every driver, including unowned</summary><table style="margin-top:8px">
-    <tr><th class="l">Driver</th><th class="l">Team</th><th class="l">Owner</th><th>Points</th></tr>` +
-    d.drivers.map((x) => `<tr><td class="l">${esc(x.name)}</td><td class="l">${esc(x.team)}</td><td class="l">${esc(x.owner)}</td><td>${fmt(x.points)}</td></tr>`).join("") + `</table></details></div>`;
+  // all drivers
+  const slotOf = Object.fromEntries(ftos.map((f) => [f.name, f.color_slot]));
+  h += `<h2>All drivers</h2><div class="card scroll"><details open><summary>Every driver, including unowned</summary><table style="margin-top:8px">
+    <tr><th class="l">Driver</th><th class="l">Team</th><th class="l">Tier</th><th class="l">Owner</th><th>Points</th></tr>` +
+    d.drivers.map((x) => `<tr class="xr"><td class="l"><button class="xbtn" aria-expanded="false"><span class="car">\u25B8</span>${esc(x.name)}</button></td>
+      <td class="l">${teamHtml(x.team)}</td><td class="l">${x.tier ? "T" + x.tier : "\u2014"}</td>
+      <td class="l">${slotOf[x.owner] ? `<span class="own" style="color:var(--t${slotOf[x.owner]})">${esc(x.owner)}</span>` : '<span class="sub">Unowned</span>'}</td><td>${fmt(x.points)}</td></tr>
+      <tr class="xd" hidden><td colspan="5">${driverDetail(x, d.races)}</td></tr>`).join("") + `</table></details></div>
+    <div class="note">Click a driver to see their result and points for every race and sprint.</div>`;
+
+  h += rulesHtml(d);
 
   if (d.warnings && d.warnings.length) {
     h += `<h2>Data notes</h2>` + d.warnings.map((w) => `<div class="warn">${esc(w)}</div>`).join("");
@@ -197,6 +244,103 @@ function render(d) {
   h += `<div class="note" style="margin-top:28px">Scoring: race 30-24-19-15-12-10-9-8-7-6-5-4-3-2-1, sprint half; pole +${d.rules.pole_bonus}, sprint pole +${d.rules.sprint_pole_bonus}; penalty point &minus;${d.rules.penalty_point_deduction}; champion +${d.rules.champion_bonus}. Results from Jolpica &amp; OpenF1.</div>`;
   $("#app").innerHTML = h;
   drawChart(d, played);
+  upgradeLogos();
+}
+
+const nrm = (s) => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z]/g, "");
+// [match text, display name, short code, badge color]. Badge colors are our own simple team tints, not logos.
+const TEAMS = [
+  ["racing bulls", "Racing Bulls", "RB", "#6692ff"], ["red bull", "Red Bull", "RBR", "#3671c6"], ["mercedes", "Mercedes", "MER", "#27c3b0"],
+  ["mclaren", "McLaren", "MCL", "#ff8000"], ["ferrari", "Ferrari", "FER", "#e8002d"], ["haas", "Haas", "HAA", "#9aa0a6"],
+  ["williams", "Williams", "WIL", "#37bedd"], ["audi", "Audi", "AUD", "#b5b8bd"], ["aston", "Aston Martin", "AMR", "#229971"],
+  ["alpine", "Alpine", "ALP", "#ff87bc"], ["cadillac", "Cadillac", "CAD", "#b3a369"],
+];
+function teamHtml(name) {
+  const n = String(name || "").toLowerCase(), t = TEAMS.find((x) => n.includes(x[0]));
+  if (!t) return `<span class="team"><span class="tbadge" style="--tc:#888">${esc(String(name || "?").slice(0, 3).toUpperCase())}</span></span>`;
+  const slug = t[1].toLowerCase().replace(/[^a-z]+/g, "-");
+  return `<span class="team" data-slug="${slug}" title="${esc(t[1])}"><span class="tbadge" style="--tc:${t[3]}">${t[2]}</span></span>`;
+}
+// If you add image files named like logos/mercedes.svg (or .png) to the docs folder, they replace the badges automatically.
+function upgradeLogos() {
+  const slugs = [...new Set([...document.querySelectorAll(".team[data-slug]")].map((e) => e.dataset.slug))];
+  slugs.forEach((slug) => {
+    const tryExt = (exts) => {
+      if (!exts.length) return;
+      const im = new Image();
+      im.onload = () => document.querySelectorAll(`.team[data-slug="${slug}"]`).forEach((el) => { el.innerHTML = `<img class="tlogo" alt="${esc(el.title)}" src="${im.src}">`; });
+      im.onerror = () => tryExt(exts.slice(1));
+      im.src = `logos/${slug}.${exts[0]}`;
+    };
+    tryExt(["svg", "png"]);
+  });
+}
+const flagImg = (c) => (FLAGS[c] ? `<img class="flag" alt="" src="https://flagcdn.com/w40/${FLAGS[c]}.png" onerror="this.style.display='none'">` : "");
+const ordinal = ["", "1st", "2nd", "3rd"];
+
+function resLine(det, r) {
+  if (!det) return '<span>did not score</span>';
+  const p = [];
+  if (det.race_pos) p.push(`<span>GP P${det.race_pos}</span>`); else if (det.race_status) p.push("<span>GP NC</span>");
+  if (det.pole) p.push(`<span class="tag">Pole +${fmt(det.pole)}</span>`);
+  if (r.sprint) {
+    if (det.sprint_pos) p.push(`<span>Sprint P${det.sprint_pos}</span>`); else if (r.status === "done") p.push("<span>Sprint NC</span>");
+    if (det.sprint_pole) p.push(`<span class="tag">Sprint pole +${fmt(det.sprint_pole)}</span>`);
+  }
+  return p.join("") || "<span>qualifying only</span>";
+}
+
+function driverDetail(x, races) {
+  const rows = races.slice().reverse().filter((r) => x.detail && x.detail[String(r.round)]).map((r) => {
+    const t = x.detail[String(r.round)];
+    const quali = t.quali_pos ? `P${t.quali_pos}${t.pole ? ` <span class="tag">Pole +${fmt(t.pole)}</span>` : ""}` : "\u2014";
+    const race = t.race_pos ? `P${t.race_pos}${t.race ? ` <span class="sub">+${fmt(t.race)}</span>` : ""}` : (t.race_status ? "NC" : "\u2014");
+    let sprint = "\u2014";
+    if (r.sprint) {
+      sprint = (t.sprint_pos ? `P${t.sprint_pos} <span class="sub">+${fmt(t.sprint)}</span>` : (r.status === "done" ? "NC" : "\u2014")) +
+        (t.sprint_pole ? ` <span class="tag">Sprint pole +${fmt(t.sprint_pole)}</span>` : "");
+    }
+    return `<tr><td class="l">${esc(r.name)}${flagImg(r.country)}${r.sprint ? ' <span class="pill">Sprint</span>' : ""}</td><td>${quali}</td><td>${race}</td><td>${sprint}</td><td><b>${fmt(t.total)}</b></td></tr>`;
+  });
+  if (!rows.length) return '<div class="sub">No results yet.</div>';
+  return `<table class="mini"><tr><th class="l">Race</th><th>Qualifying</th><th>Race</th><th>Sprint</th><th>Points</th></tr>${rows.join("")}</table>`;
+}
+
+function rulesHtml(d) {
+  const R = d.rules, rp = R.race_points || [], sp = R.sprint_points || [];
+  const rep = R.replacement_penalty_by_tier || {};
+  const tierTeam = (name) => {
+    const last = name.split(" ").filter((w) => !/^jr\.?$/i.test(w)).pop();
+    const hit = d.drivers.find((x) => nrm(x.name).includes(nrm(last)));
+    return hit ? teamHtml(hit.team) : "";
+  };
+  const tierNames = { 1: "Tier 1", 2: "Tier 2", 3: "Tier 3" };
+  return `<h2>Rules</h2><div class="rules">
+    <div class="card"><h3>How the season works</h3><ul>
+      <li>Each Fantasy Team Owner (FTO) has <b>six drivers</b>: two from each of the three tiers.</li>
+      <li>An FTO can only have <b>one driver per constructor</b> on their team.</li>
+      <li>Points from an FTO's drivers are added together for every race and sprint.</li>
+      <li>The FTO who owns the <b>Drivers' Champion</b> earns a <b>+${R.champion_bonus}</b> point bonus to their end-of-season total.</li>
+      <li>Every <b>license penalty point</b> a driver earns costs <b>&minus;${R.penalty_point_deduction}</b> points.</li>
+      <li>The FTO with the <b>most points at the end of the season wins the pot ($${d.pot})</b>.</li>
+      <li>An FTO may keep <b>one driver</b> from one season to the next.</li>
+    </ul></div>
+    <div class="card"><h3>If a driver is replaced</h3><ul>
+      <li>Picking a <b>Tier 1</b> replacement: &minus;${rep["1"] ?? 10} points.</li>
+      <li>Picking a <b>Tier 2</b> replacement: &minus;${rep["2"] ?? 5} points.</li>
+      <li>Picking a <b>Tier 3</b> replacement: no penalty.</li>
+      <li>Picking the driver who <b>directly replaces</b> the dropped driver: no penalty.</li>
+    </ul></div>
+    <div class="card"><h3>How points work</h3>
+      <table class="mini"><tr><th class="l">Finish</th><th>Race</th><th>Sprint</th></tr>
+      ${rp.map((v, i) => `<tr><td class="l">${i + 1}${["st","nd","rd"][i] || "th"}</td><td>${fmt(v)}</td><td>${fmt(sp[i] ?? 0)}</td></tr>`).join("")}
+      <tr><td class="l">16th and lower / did not finish</td><td>0</td><td>0</td></tr></table>
+      <ul style="margin-top:10px"><li><b>Pole position</b> (GP qualifying): +${R.pole_bonus}</li><li><b>Sprint pole</b> (sprint qualifying): +${R.sprint_pole_bonus}</li></ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px"><h3>Driver tiers</h3><div class="rules" style="gap:20px">` +
+    [1, 2, 3].map((t) => `<div class="tiercol"><h4>${tierNames[t]}</h4>${(d.tiers[String(t)] || []).map((n) => `<div class="trow">${tierTeam(n)}<span>${esc(n)}</span></div>`).join("")}</div>`).join("") +
+    `</div></div>`;
 }
 
 const FLAGS = { "Australia":"au","China":"cn","Japan":"jp","USA":"us","United States":"us","Canada":"ca","Monaco":"mc","Spain":"es","Austria":"at","UK":"gb","United Kingdom":"gb","Great Britain":"gb","Belgium":"be","Hungary":"hu","Netherlands":"nl","Italy":"it","Azerbaijan":"az","Singapore":"sg","Mexico":"mx","Brazil":"br","UAE":"ae","United Arab Emirates":"ae","Qatar":"qa","Bahrain":"bh","Saudi Arabia":"sa","Malaysia":"my","Turkey":"tr","Portugal":"pt","Germany":"de","France":"fr","Korea":"kr","South Korea":"kr","Argentina":"ar","Vietnam":"vn" };
@@ -245,8 +389,7 @@ function drawChart(d, played) {
   };
   hit.addEventListener("mousemove", move); hit.addEventListener("touchmove", move, { passive: true }); hit.addEventListener("touchstart", move, { passive: true });
   hit.addEventListener("mouseleave", () => { tip.style.display = "none"; xh.style.display = "none"; });
-  const ord = ["", "1st", "2nd", "3rd"];
-  const flagImg = (c) => (FLAGS[c] ? `<img class="flag" alt="" src="https://flagcdn.com/w40/${FLAGS[c]}.png" onerror="this.style.display='none'">` : "");
+  const ord = ordinal;
   $("#ctable").innerHTML = `<tr><th class="l">Race</th>${ftos.map((f) => `<th>${esc(f.name)}</th>`).join("")}</tr>` +
     played.map((r, i) => {
       const vals = ftos.map((f) => f.cumulative[i]);
