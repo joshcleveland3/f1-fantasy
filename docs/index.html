@@ -151,17 +151,6 @@ fetch("data.json?" + Date.now()).then((r) => r.json()).then(render).catch((e) =>
   $("#meta").textContent = "Couldn't load data.json: " + e;
 });
 
-// Penalty-point trust banner: shown only when the automated checks find a reason to doubt the numbers.
-function penBanner(d) {
-  const pc = d.penalty_check || {}, bits = [];
-  if (pc.stale_races && pc.stale_races.length)
-    bits.push(`RaceFans (the penalty-points source in use) hasn't been updated since ${esc(d.penalty_asof || "an earlier date")}, but ${pc.stale_races.length} race${pc.stale_races.length === 1 ? "" : "s"} finished since (${pc.stale_races.map(esc).join(", ")}). Recent penalty points may be missing.`);
-  (pc.differences || []).forEach((x) => bits.push(`${esc(x.driver)}${x.owner && x.owner !== "Unowned" ? ` (${esc(x.owner)})` : ""}: the sources disagree (${x.used} vs ${x.other_source} penalty points this season).`));
-  if (d.penalties && d.penalties.some((p) => p.stale)) bits.push("Penalty data could not be refreshed and is from the last successful update.");
-  if (!bits.length) return "";
-  return `<div class="warn" role="status"><b>Penalty points may not be fully up to date.</b> ${bits.join(" ")} Standings above include only the penalty points listed in the License penalties section.</div>`;
-}
-
 function render(d) {
   const done = d.races.filter((r) => r.status === "done");
   const live = d.races.find((r) => r.status === "live");
@@ -175,7 +164,7 @@ function render(d) {
   const lead = second ? leader.total - second.total : 0;
   const remaining = d.races.filter((r) => r.status !== "done").length;
 
-  let h = penBanner(d) + `<div class="hero">
+  let h = `<div class="hero">
     <div class="card">
       <div class="sub">Current leader</div>
       <div class="big"><span class="dot" style="background:${col(leader.color_slot)}"></span>${esc(leader.name)}</div>
@@ -241,8 +230,7 @@ function render(d) {
       d.penalties.slice().sort((a, b) => b.date.localeCompare(a.date)).map((p) => `<tr><td class="l">${esc(p.name)}</td><td class="l">${(() => { const fo = ftos.find((f) => f.name === p.owner); return fo ? `<span class="own" style="color:var(--t${fo.color_slot})">${esc(p.owner)}</span>` : `<span class="sub">${esc(p.owner)}</span>`; })()}</td>
         <td class="l">${esc(p.event)} ${esc(p.session ? "· " + p.session : "")}</td><td>${p.points}</td>
         <td class="${p.owner === "Unowned" ? "" : "neg"}">${p.owner === "Unowned" ? "—" : "−" + p.points * d.rules.penalty_point_deduction}</td></tr>`).join("") + `</table></div>
-      <div class="note">${d.rules.penalty_point_deduction} points deducted per penalty point. Source: ${esc(d.penalty_source || "RacingNews365")}${d.penalty_source === "RaceFans" && d.penalty_asof ? ` (as of ${esc(d.penalty_asof)})` : ""}; updated after each race weekend, so it can lag by a day or two.
-        ${d.penalty_check && d.penalty_check.status === "ok" ? `Cross-checked against ${esc(d.penalty_check.other || "a second source")}: totals match.` : d.penalty_check && d.penalty_check.status === "mismatch" ? "Cross-check found differences (see top of page)." : "Second-source cross-check unavailable this run."}</div>`;
+      <div class="note">${d.rules.penalty_point_deduction} points deducted per penalty point. Source: RacingNews365.</div>`;
   }
 
   // all drivers
