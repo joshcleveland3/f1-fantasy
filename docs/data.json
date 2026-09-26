@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26T00:15:03+00:00",
+ "generated_at": "2026-09-26T00:33:48+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -238,7 +238,7 @@
      "team": "Mercedes",
      "tier": 1,
      "points": 388.0,
-     "penalty_points": 0
+     "penalty_points": 1
     },
     {
      "key": "sainz",
@@ -246,7 +246,7 @@
      "team": "Williams",
      "tier": 2,
      "points": 36.5,
-     "penalty_points": 0
+     "penalty_points": 2
     },
     {
      "key": "lawson",
@@ -254,7 +254,7 @@
      "team": "RB F1 Team",
      "tier": 2,
      "points": 112.5,
-     "penalty_points": 0
+     "penalty_points": 1
     },
     {
      "key": "bottas",
@@ -308,11 +308,11 @@
     902.0
    ],
    "gross": 902.0,
-   "penalty_points": 0,
-   "penalty_deduction": 0,
+   "penalty_points": 4,
+   "penalty_deduction": -20,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 902.0,
+   "total": 882.0,
    "rank": 1,
    "gap": 0.0
   },
@@ -366,7 +366,7 @@
      "team": "Alpine F1 Team",
      "tier": 3,
      "points": 79.5,
-     "penalty_points": 0
+     "penalty_points": 4
     }
    ],
    "by_round": {
@@ -404,11 +404,11 @@
     702.0
    ],
    "gross": 702.0,
-   "penalty_points": 0,
-   "penalty_deduction": 0,
+   "penalty_points": 4,
+   "penalty_deduction": -20,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 702.0,
+   "total": 682.0,
    "rank": 2,
    "gap": 200.0
   },
@@ -506,7 +506,7 @@
    "champion_bonus": 0,
    "total": 583.0,
    "rank": 3,
-   "gap": 319.0
+   "gap": 299.0
   }
  ],
  "drivers": [
@@ -517,7 +517,7 @@
    "owner": "Cooper",
    "points": 388.0,
    "tier": 1,
-   "penalty_points": 0,
+   "penalty_points": 1,
    "by_round": {
     "1": 24,
     "2": 39,
@@ -1868,7 +1868,7 @@
    "owner": "Cooper",
    "points": 112.5,
    "tier": 2,
-   "penalty_points": 0,
+   "penalty_points": 1,
    "by_round": {
     "1": 3,
     "2": 13.5,
@@ -2411,7 +2411,7 @@
    "owner": "Unowned",
    "points": 90,
    "tier": 2,
-   "penalty_points": 0,
+   "penalty_points": 2,
    "by_round": {
     "1": 8,
     "2": 4,
@@ -2604,7 +2604,7 @@
    "owner": "Brian",
    "points": 79.5,
    "tier": 3,
-   "penalty_points": 0,
+   "penalty_points": 4,
    "by_round": {
     "1": 2,
     "2": 7,
@@ -3569,7 +3569,7 @@
    "owner": "Cooper",
    "points": 36.5,
    "tier": 2,
-   "penalty_points": 0,
+   "penalty_points": 2,
    "by_round": {
     "1": 1,
     "2": 9,
@@ -4775,55 +4775,80 @@
   "name": "Andrea Kimi Antonelli",
   "owner": "Cooper"
  },
- "penalties": [],
- "penalty_asof": "August 25 2026",
- "penalty_source": "RacingNews365",
- "penalty_check": {
-  "status": "mismatch",
-  "primary": "RacingNews365",
-  "differences": [
-   {
-    "driver": "Andrea Kimi Antonelli",
-    "owner": "Cooper",
-    "used": 0,
-    "other_source": 1
-   },
-   {
-    "driver": "Franco Colapinto",
-    "owner": "Brian",
-    "used": 0,
-    "other_source": 4
-   },
-   {
-    "driver": "Liam Lawson",
-    "owner": "Cooper",
-    "used": 0,
-    "other_source": 1
-   },
-   {
-    "driver": "Arvid Lindblad",
-    "owner": "Unowned",
-    "used": 0,
-    "other_source": 2
-   },
-   {
-    "driver": "Carlos Sainz",
-    "owner": "Cooper",
-    "used": 0,
-    "other_source": 1
-   }
-  ],
-  "lagging": [],
-  "stale_races": [],
-  "other": "RaceFans"
- },
- "warnings": [
-  "Penalty points differ for Andrea Kimi Antonelli (Cooper): dashboard uses 0 (RacingNews365), RaceFans shows 1. Verify against the FIA documents.",
-  "Penalty points differ for Franco Colapinto (Brian): dashboard uses 0 (RacingNews365), RaceFans shows 4. Verify against the FIA documents.",
-  "Penalty points differ for Liam Lawson (Cooper): dashboard uses 0 (RacingNews365), RaceFans shows 1. Verify against the FIA documents.",
-  "Penalty points differ for Arvid Lindblad (Unowned): dashboard uses 0 (RacingNews365), RaceFans shows 2. Verify against the FIA documents.",
-  "Penalty points differ for Carlos Sainz (Cooper): dashboard uses 0 (RacingNews365), RaceFans shows 1. Verify against the FIA documents."
+ "penalties": [
+  {
+   "date": "2026-09-25",
+   "event": "Not slowing under yellow flags during qualifying for the 2026 Azerbaijan Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 2,
+   "driver": "sainz",
+   "name": "Carlos Sainz",
+   "owner": "Cooper"
+  },
+  {
+   "date": "2026-06-14",
+   "event": "Failing to slow for yellow flags during 2026 Barcelona-Catalunya Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 1,
+   "driver": "colapinto",
+   "name": "Franco Colapinto",
+   "owner": "Brian"
+  },
+  {
+   "date": "2026-08-23",
+   "event": "Overtaking under yellow flags during 2026 Dutch Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 2,
+   "driver": "colapinto",
+   "name": "Franco Colapinto",
+   "owner": "Brian"
+  },
+  {
+   "date": "2026-08-23",
+   "event": "Not slowing under yellow flags during 2026 Dutch Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 1,
+   "driver": "colapinto",
+   "name": "Franco Colapinto",
+   "owner": "Brian"
+  },
+  {
+   "date": "2026-08-23",
+   "event": "Not slowing under yellow flags during 2026 Dutch Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 1,
+   "driver": "lawson",
+   "name": "Liam Lawson",
+   "owner": "Cooper"
+  },
+  {
+   "date": "2026-08-23",
+   "event": "Overtaking under yellow flags during 2026 Dutch Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 2,
+   "driver": "lindblad",
+   "name": "Arvid Lindblad",
+   "owner": "Unowned"
+  },
+  {
+   "date": "2026-07-25",
+   "event": "A yellow flag infringement during qualifying for the 2026 Hungarian Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 1,
+   "driver": "antonelli",
+   "name": "Andrea Kimi Antonelli",
+   "owner": "Cooper"
+  }
  ],
+ "penalty_source": "RacingNews365",
+ "warnings": [],
  "tiers": {
   "1": [
    "Lando Norris",
