@@ -186,16 +186,34 @@ except Exception as e:  # noqa: BLE001
     warnings.append(f"Driver standings unavailable: {e}")
 
 # ---------------------------------------------------------------- penalties
-penalties = []
-penalty_asof = None
-penalties_ok = False
-try:
-    html = S.get(PENALTY_URL, timeout=30).text
-    soup = BeautifulSoup(html, "html.parser")
+# Primary source: RacingNews365 (updated after every race weekend, lists expiry dates so the issue date
+# is expiry minus one year). Cross-check / fallback: RaceFans. If both fail, the previous run's data is kept.
+RN_URL = "https://racingnews365.com/2026-f1-driver-penalty-points-total"
+RN_NAME, RF_NAME = "RacingNews365", "RaceFans"
+NUM_WORDS = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+             "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12}
+MONTHS = {m: i for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july",
+                                       "august", "september", "october", "november", "december"], 1)}
+
+
+def parse_loose_date(s):
+    """'25 August 2026' or 'August 25, 2026' -> date, else None."""
+    if not s:
+        return None
+    for fmt in ("%d %B %Y", "%B %d %Y", "%B %d, %Y"):
+        try:
+            return dt.datetime.strptime(s.strip(), fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def fetch_racefans():
+    soup = BeautifulSoup(S.get(PENALTY_URL, timeout=30).text, "html.parser")
+    if soup.find("h4") is None:
+        raise ValueError("RaceFans page layout changed (no driver headings found)")
     m = re.search(r"prior to (\d{1,2} [A-Za-z]+ \d{4}|[A-Za-z]+ \d{1,2},? \d{4})", soup.get_text(" "))
-    if m:
-        penalty_asof = m.group(1)
-    current = None
+    rows, current = [], None
     for el in soup.find_all(["h4", "table"]):
         if el.name == "h4":
             current = el.get_text(" ", strip=True)
@@ -213,105 +231,123 @@ try:
                 pts = int(re.sub(r"\D", "", tds[-1]))
             except ValueError:
                 continue
-            penalties.append({
-                "driver_raw": current, "date": f"{dm.group(3)}-{int(dm.group(2)):02d}-{int(dm.group(1)):02d}",
-                "event": tds[1], "session": tds[2] if len(tds) > 3 else "",
-                "description": tds[3] if len(tds) > 4 else "", "points": pts,
-            })
-    penalties_ok = soup.find("h4") is not None
-    if not penalties_ok:
-        warnings.append("Penalty page layout changed (no driver headings found); using previous penalty data.")
-except Exception as e:  # noqa: BLE001
-    warnings.append(f"Penalty points source unavailable: {e}")
+            rows.append({"driver_raw": current, "date": f"{dm.group(3)}-{int(dm.group(2)):02d}-{int(dm.group(1)):02d}",
+                         "event": tds[1], "session": tds[2] if len(tds) > 3 else "",
+                         "description": tds[3] if len(tds) > 4 else "", "points": pts})
+    return rows, (m.group(1) if m else None)
 
-if not penalties_ok and OUT.exists():
+
+def fetch_rn365():
+    """Driver headings ('Carlos Sainz - two points') each followed by bullets
+    ('Two points - expires September 25th, 2027. <reason>'). Only points expiring in SEASON+1 were issued this season."""
+    soup = BeautifulSoup(S.get(RN_URL, timeout=30).text, "html.parser")
+    rows, seen = [], 0
+    for h in soup.find_all(["h2", "h3"]):
+        ht = h.get_text(" ", strip=True)
+        if not re.search(r"\bpoints?\b", ht, re.I) or not re.search(r"\s[-\u2013\u2014]\s", ht):
+            continue
+        name = re.split(r"\s[-\u2013\u2014]\s", ht)[0].strip()
+        seen += 1
+        for el in h.find_all_next(["h2", "h3", "li"]):
+            if el.name in ("h2", "h3"):
+                break
+            txt = el.get_text(" ", strip=True)
+            m = re.match(r"(\w+) points?\b\W*expires?\s+([A-Za-z]+)\s+(\d{1,2})\w*,?\s+(\d{4})\W*(.*)", txt, re.I)
+            if not m or m.group(1).lower() not in NUM_WORDS or m.group(2).lower() not in MONTHS:
+                continue
+            yr = int(m.group(4))
+            if yr != SEASON + 1:
+                continue                      # issued last season, does not count for this bet
+            mo, day = MONTHS[m.group(2).lower()], int(m.group(3))
+            try:
+                issued = dt.date(yr - 1, mo, day)
+            except ValueError:                # 29 Feb
+                issued = dt.date(yr - 1, mo, day - 1)
+            rows.append({"driver_raw": name, "date": issued.isoformat(), "event": m.group(5).strip() or "Penalty points",
+                         "session": "", "description": "", "points": NUM_WORDS[m.group(1).lower()]})
+    if seen == 0:
+        raise ValueError("RacingNews365 page layout changed (no driver headings found)")
+    return rows
+
+
+rf_rows = rn_rows = None
+penalty_asof = None                # RaceFans' own "current as of" date (used to detect a lagging RaceFans)
+try:
+    rf_rows, penalty_asof = fetch_racefans()
+except Exception as e:  # noqa: BLE001
+    warnings.append(f"{RF_NAME} penalty source unavailable: {e}")
+try:
+    rn_rows = fetch_rn365()
+except Exception as e:  # noqa: BLE001
+    warnings.append(f"{RN_NAME} penalty source unavailable: {e}")
+
+penalties, penalty_source = [], None
+if rn_rows is not None:
+    penalties, penalty_source = rn_rows, RN_NAME
+elif rf_rows is not None:
+    penalties, penalty_source = rf_rows, RF_NAME
+    warnings.append(f"Using {RF_NAME} for penalty points because {RN_NAME} could not be read.")
+elif OUT.exists():
     try:
         prev = json.load(open(OUT))
         penalties = prev.get("penalties", [])
-        penalty_asof = prev.get("penalty_asof")
+        penalty_source = prev.get("penalty_source")
         for p in penalties:
             p["stale"] = True
+        warnings.append("No penalty source could be read; showing penalty points from the last successful update.")
     except Exception:  # noqa: BLE001
         pass
 
 known = list(driver_info) + [d["key"] for f in ROSTERS["ftos"] for d in f["drivers"]]
+
+
+def key_of(raw):
+    hit = [k for k in known if k in norm(raw)]
+    return hit[0] if hit else norm(raw)
+
+
+def totals(rows):
+    t = {}
+    for r in rows:
+        k = key_of(r["driver_raw"])
+        t[k] = t.get(k, 0) + r["points"]
+    return t
+
+
 for p in penalties:
-    hit = [k for k in known if k in norm(p["driver_raw"])]
-    p["driver"] = hit[0] if hit else norm(p["driver_raw"])
+    p["driver"] = p.get("driver") or key_of(p["driver_raw"])
 pen_by_driver = {}
 for p in penalties:
     pen_by_driver[p["driver"]] = pen_by_driver.get(p["driver"], 0) + p["points"]
 
 # ---------------------------------------------------------------- penalty cross-check
-# Second source: RacingNews365 lists each driver's points with EXPIRY dates (issue date + 1 year).
-# Points that expire in SEASON+1 were issued this season, so they are comparable to RaceFans' 2026 rows.
-CHECK_URL = "https://racingnews365.com/2026-f1-driver-penalty-points-total"
-NUM_WORDS = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
-             "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12}
-
-
-def parse_loose_date(s):
-    """'25 August 2026' or 'August 25, 2026' -> date, else None."""
-    if not s:
-        return None
-    for fmt in ("%d %B %Y", "%B %d %Y", "%B %d, %Y"):
-        try:
-            return dt.datetime.strptime(s.strip(), fmt).date()
-        except ValueError:
-            continue
-    return None
-
-
-def fetch_second_source():
-    soup2 = BeautifulSoup(S.get(CHECK_URL, timeout=30).text, "html.parser")
-    totals, seen = {}, 0
-    for h in soup2.find_all(["h2", "h3"]):
-        ht = h.get_text(" ", strip=True)
-        if not re.search(r"\bpoints?\b", ht, re.I) or " - " not in ht and " – " not in ht:
-            continue
-        name = re.split(r"\s[-–]\s", ht)[0]
-        seen += 1
-        lst = h.find_next(["ul", "ol"])
-        if lst is None:
-            continue
-        this_season = 0
-        for li in lst.find_all("li"):
-            m2 = re.match(r"\s*(\w+) points?\b.*?expires? (\w+ \d{1,2})\w*,? (\d{4})", li.get_text(" ", strip=True), re.I)
-            if m2 and m2.group(1).lower() in NUM_WORDS and int(m2.group(3)) == SEASON + 1:
-                this_season += NUM_WORDS[m2.group(1).lower()]
-        totals[name] = this_season
-    if seen == 0:
-        raise ValueError("no driver headings found (page layout changed?)")
-    return totals
-
-
 owner_of_pre = {d["key"]: f["name"] for f in ROSTERS["ftos"] if f["active"] for d in f["drivers"]}
 asof_date = parse_loose_date(penalty_asof)
 races_after = [r["name"] for r in races_out
                if r["status"] == "done" and asof_date and dt.date.fromisoformat(r["date"]) > asof_date]
-penalty_check = {"status": "unavailable", "source": CHECK_URL, "differences": [], "stale_races": races_after}
-if penalties_ok or penalties:
-    try:
-        second = fetch_second_source()
-        for nm, tot2 in second.items():
-            key = next((k for k in known if k in norm(nm)), None)
-            if key is None:
-                continue
-            tot1 = pen_by_driver.get(key, 0)
-            if tot1 != tot2:
-                penalty_check["differences"].append({
-                    "driver": driver_info.get(key, {}).get("name", nm), "owner": owner_of_pre.get(key, "Unowned"),
-                    "used": tot1, "other_source": tot2})
-        penalty_check["status"] = "mismatch" if penalty_check["differences"] else "ok"
-    except Exception as e:  # noqa: BLE001
-        penalty_check["error"] = str(e)
-        warnings.append(f"Penalty cross-check source unavailable: {e}")
-if races_after:
-    warnings.append(f"Penalty source (RaceFans) says it is current {penalty_asof}, but {len(races_after)} race(s) finished since "
-                    f"({', '.join(races_after)}). Recent penalty points may be missing.")
+rf_lagging = bool(races_after)
+penalty_check = {"status": "unavailable", "primary": penalty_source, "differences": [], "lagging": [],
+                 "stale_races": races_after if penalty_source == RF_NAME else []}
+if rn_rows is not None and rf_rows is not None:
+    t_rn, t_rf = totals(rn_rows), totals(rf_rows)
+    for k in sorted(set(t_rn) | set(t_rf)):
+        a, b = t_rn.get(k, 0), t_rf.get(k, 0)
+        if a == b:
+            continue
+        nm = driver_info.get(k, {}).get("name", k.title())
+        if a > b and rf_lagging:
+            penalty_check["lagging"].append(nm)       # RaceFans hasn't caught up yet; expected, not a warning
+            continue
+        penalty_check["differences"].append({"driver": nm, "owner": owner_of_pre.get(k, "Unowned"),
+                                             "used": a, "other_source": b})
+    penalty_check["status"] = "mismatch" if penalty_check["differences"] else "ok"
+    penalty_check["other"] = RF_NAME
+if penalty_check["stale_races"]:
+    warnings.append(f"{RF_NAME} says it is current {penalty_asof}, but {len(penalty_check['stale_races'])} race(s) finished since "
+                    f"({', '.join(penalty_check['stale_races'])}). Recent penalty points may be missing.")
 for dfr in penalty_check["differences"]:
-    warnings.append(f"Penalty points differ for {dfr['driver']} ({dfr['owner']}): dashboard uses {dfr['used']}, "
-                    f"second source shows {dfr['other_source']}. Verify against the FIA documents.")
+    warnings.append(f"Penalty points differ for {dfr['driver']} ({dfr['owner']}): dashboard uses {dfr['used']} ({RN_NAME}), "
+                    f"{RF_NAME} shows {dfr['other_source']}. Verify against the FIA documents.")
 
 # ---------------------------------------------------------------- owners
 owner_of = {}
@@ -394,6 +430,7 @@ out = {
     "penalties": [{k: v for k, v in p.items() if k != "driver_raw"} | {"name": driver_info.get(p["driver"], {}).get("name", p["driver_raw"]),
                    "owner": owner_of.get(p["driver"], "Unowned")} for p in penalties],
     "penalty_asof": penalty_asof,
+    "penalty_source": penalty_source,
     "penalty_check": penalty_check,
     "warnings": warnings,
     "tiers": TIERS["tiers"],
