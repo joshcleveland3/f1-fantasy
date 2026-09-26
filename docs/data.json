@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25T23:12:22+00:00",
+ "generated_at": "2026-09-26T00:15:03+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -238,7 +238,7 @@
      "team": "Mercedes",
      "tier": 1,
      "points": 388.0,
-     "penalty_points": 1
+     "penalty_points": 0
     },
     {
      "key": "sainz",
@@ -246,7 +246,7 @@
      "team": "Williams",
      "tier": 2,
      "points": 36.5,
-     "penalty_points": 1
+     "penalty_points": 0
     },
     {
      "key": "lawson",
@@ -254,7 +254,7 @@
      "team": "RB F1 Team",
      "tier": 2,
      "points": 112.5,
-     "penalty_points": 1
+     "penalty_points": 0
     },
     {
      "key": "bottas",
@@ -308,11 +308,11 @@
     902.0
    ],
    "gross": 902.0,
-   "penalty_points": 3,
-   "penalty_deduction": -15,
+   "penalty_points": 0,
+   "penalty_deduction": 0,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 887.0,
+   "total": 902.0,
    "rank": 1,
    "gap": 0.0
   },
@@ -366,7 +366,7 @@
      "team": "Alpine F1 Team",
      "tier": 3,
      "points": 79.5,
-     "penalty_points": 4
+     "penalty_points": 0
     }
    ],
    "by_round": {
@@ -404,13 +404,13 @@
     702.0
    ],
    "gross": 702.0,
-   "penalty_points": 4,
-   "penalty_deduction": -20,
+   "penalty_points": 0,
+   "penalty_deduction": 0,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 682.0,
+   "total": 702.0,
    "rank": 2,
-   "gap": 205.0
+   "gap": 200.0
   },
   {
    "name": "Josh",
@@ -506,7 +506,7 @@
    "champion_bonus": 0,
    "total": 583.0,
    "rank": 3,
-   "gap": 304.0
+   "gap": 319.0
   }
  ],
  "drivers": [
@@ -517,7 +517,7 @@
    "owner": "Cooper",
    "points": 388.0,
    "tier": 1,
-   "penalty_points": 1,
+   "penalty_points": 0,
    "by_round": {
     "1": 24,
     "2": 39,
@@ -1868,7 +1868,7 @@
    "owner": "Cooper",
    "points": 112.5,
    "tier": 2,
-   "penalty_points": 1,
+   "penalty_points": 0,
    "by_round": {
     "1": 3,
     "2": 13.5,
@@ -2411,7 +2411,7 @@
    "owner": "Unowned",
    "points": 90,
    "tier": 2,
-   "penalty_points": 2,
+   "penalty_points": 0,
    "by_round": {
     "1": 8,
     "2": 4,
@@ -2604,7 +2604,7 @@
    "owner": "Brian",
    "points": 79.5,
    "tier": 3,
-   "penalty_points": 4,
+   "penalty_points": 0,
    "by_round": {
     "1": 2,
     "2": 7,
@@ -3569,7 +3569,7 @@
    "owner": "Cooper",
    "points": 36.5,
    "tier": 2,
-   "penalty_points": 1,
+   "penalty_points": 0,
    "by_round": {
     "1": 1,
     "2": 9,
@@ -4775,80 +4775,55 @@
   "name": "Andrea Kimi Antonelli",
   "owner": "Cooper"
  },
- "penalties": [
-  {
-   "date": "2026-07-25",
-   "event": "Hungarian Grand Prix",
-   "session": "Qualifying",
-   "description": "\u2018The driver of Car 12 did not slow sufficiently under single yellow flags at Turn 14.\u2019",
-   "points": 1,
-   "driver": "antonelli",
-   "name": "Andrea Kimi Antonelli",
-   "owner": "Cooper"
-  },
-  {
-   "date": "2026-07-05",
-   "event": "British Grand Prix",
-   "session": "Grand prix",
-   "description": "\u2018Car 55 overtook the Safety Car after the LAPPED CARS MAY NOW OVERTAKE\u2019",
-   "points": 1,
-   "driver": "sainz",
-   "name": "Carlos Sainz",
-   "owner": "Cooper"
-  },
-  {
-   "date": "2026-08-23",
-   "event": "Dutch Grand Prix",
-   "session": "Grand prix",
-   "description": "\u2018Car 41 overtook Car 10 in a double yellow flag sector\u2019",
-   "points": 2,
-   "driver": "lindblad",
-   "name": "Arvid Lindblad",
-   "owner": "Unowned"
-  },
-  {
-   "date": "2026-08-23",
-   "event": "Dutch Grand Prix",
-   "session": "Grand prix",
-   "description": "\u2018Failure to slow for a single yellow flag in Turn 3.\u2019",
-   "points": 1,
-   "driver": "lawson",
-   "name": "Liam Lawson",
-   "owner": "Cooper"
-  },
-  {
-   "date": "2026-06-14",
-   "event": "Barcelona-Catalunya Grand Prix",
-   "session": "Grand prix",
-   "description": "\u2018Car 43 failed to slow for a single yellow flag\u2019",
-   "points": 1,
-   "driver": "colapinto",
-   "name": "Franco Colapinto",
-   "owner": "Brian"
-  },
-  {
-   "date": "2026-08-23",
-   "event": "Dutch Grand Prix",
-   "session": "Grand prix",
-   "description": "\u2018Car 43 overtook Car 22 in a double yellow flag sector\u2019",
-   "points": 2,
-   "driver": "colapinto",
-   "name": "Franco Colapinto",
-   "owner": "Brian"
-  },
-  {
-   "date": "2026-08-23",
-   "event": "Dutch Grand Prix",
-   "session": "Grand prix",
-   "description": "\u2018Failure to slow for a single yellow flag in Turn 3.\u2019",
-   "points": 1,
-   "driver": "colapinto",
-   "name": "Franco Colapinto",
-   "owner": "Brian"
-  }
- ],
+ "penalties": [],
  "penalty_asof": "August 25 2026",
- "warnings": [],
+ "penalty_source": "RacingNews365",
+ "penalty_check": {
+  "status": "mismatch",
+  "primary": "RacingNews365",
+  "differences": [
+   {
+    "driver": "Andrea Kimi Antonelli",
+    "owner": "Cooper",
+    "used": 0,
+    "other_source": 1
+   },
+   {
+    "driver": "Franco Colapinto",
+    "owner": "Brian",
+    "used": 0,
+    "other_source": 4
+   },
+   {
+    "driver": "Liam Lawson",
+    "owner": "Cooper",
+    "used": 0,
+    "other_source": 1
+   },
+   {
+    "driver": "Arvid Lindblad",
+    "owner": "Unowned",
+    "used": 0,
+    "other_source": 2
+   },
+   {
+    "driver": "Carlos Sainz",
+    "owner": "Cooper",
+    "used": 0,
+    "other_source": 1
+   }
+  ],
+  "lagging": [],
+  "stale_races": [],
+  "other": "RaceFans"
+ },
+ "warnings": [
+  "Penalty points differ for Andrea Kimi Antonelli (Cooper): dashboard uses 0 (RacingNews365), RaceFans shows 1. Verify against the FIA documents.",
+  "Penalty points differ for Franco Colapinto (Brian): dashboard uses 0 (RacingNews365), RaceFans shows 4. Verify against the FIA documents.",
+  "Penalty points differ for Liam Lawson (Cooper): dashboard uses 0 (RacingNews365), RaceFans shows 1. Verify against the FIA documents.",
+  "Penalty points differ for Arvid Lindblad (Unowned): dashboard uses 0 (RacingNews365), RaceFans shows 2. Verify against the FIA documents.",
+  "Penalty points differ for Carlos Sainz (Cooper): dashboard uses 0 (RacingNews365), RaceFans shows 1. Verify against the FIA documents."
+ ],
  "tiers": {
   "1": [
    "Lando Norris",
