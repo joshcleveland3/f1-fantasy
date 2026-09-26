@@ -39,15 +39,18 @@ class Resp:
     def raise_for_status(self): pass
 
 RN365 = """<h2>Franco Colapinto - three points</h2><ul>
-<li>One point - expires June 14th, 2027. Barcelona</li>
-<li>Two points - expires August 23rd, 2027. Dutch</li></ul>
-<h2>Carlos Sainz - two points</h2><ul><li>Two points - expires October 26th, 2026. old</li></ul>
+<li>One point - expires June 14th, 2027. Failing to slow for yellow flags at Barcelona</li>
+<li>Two points - expires August 23rd, 2027. Overtaking under yellow flags at the Dutch GP</li>
+<li>One point - expires August 23rd, 2027. Not slowing under yellow flags at the Dutch GP</li></ul>
+<h2>Carlos Sainz - two points</h2><ul><li>Two points - expires October 26th, 2026. old (2025-issued)</li></ul>
 <h2>Zero points</h2><p>Norris</p>"""
-STATE = {"cal": CAL}
+STATE = {"cal": CAL, "rn": RN365}
 
 def fake_get(self, url, params=None, timeout=None):
     if "racefans" in url: return Resp(text=HTML)
-    if "racingnews365" in url: return Resp(text=RN365)
+    if "racingnews365" in url:
+        if STATE["rn"] is None: raise requests.ConnectionError("blocked")
+        return Resp(text=STATE["rn"])
     if "openf1.org/v1/sessions" in url: return Resp([{"session_key": 99, "date_start": "2026-03-13T07:30:00+00:00"}])
     if "openf1.org/v1/session_result" in url: return Resp([{"driver_number": 63, "position": 1}])
     if "openf1.org/v1/drivers" in url: return Resp([{"last_name": "Russell"}])
@@ -60,24 +63,52 @@ def fake_get(self, url, params=None, timeout=None):
         if url.endswith(suffix): return Resp(wrap(k, v))
     raise AssertionError(url)
 
-def test_penalty_cross_check_and_staleness(monkeypatch):
+def _run(monkeypatch, cal=None, rn=RN365):
     import copy, time
-    cal = copy.deepcopy(CAL); cal["MRData"]["RaceTable"]["Races"][1]["date"] = "2026-09-01"   # finished after RaceFans' Aug 25
-    STATE["cal"] = cal
+    STATE["cal"] = cal or CAL; STATE["rn"] = rn
     monkeypatch.setattr(requests.Session, "get", fake_get)
     monkeypatch.setattr(time, "sleep", lambda s: None)
     out = ROOT / "docs" / "data.json"
     if out.exists(): out.unlink()
-    runpy.run_path(str(ROOT / "scripts" / "build_data.py"), run_name="__main__")
-    d = json.load(open(out)); STATE["cal"] = CAL
+    try:
+        runpy.run_path(str(ROOT / "scripts" / "build_data.py"), run_name="__main__")
+        return json.load(open(out))
+    finally:
+        STATE["cal"] = CAL; STATE["rn"] = RN365
+        if out.exists(): out.unlink()
+
+def late_cal():
+    import copy
+    cal = copy.deepcopy(CAL); cal["MRData"]["RaceTable"]["Races"][1]["date"] = "2026-09-01"   # finished after RaceFans' Aug 25
+    return cal
+
+def test_racingnews365_is_primary_and_matches(monkeypatch):
+    d = _run(monkeypatch)
+    assert d["penalty_source"] == "RacingNews365"
+    assert d["penalty_check"]["status"] == "ok" and d["penalty_check"]["other"] == "RaceFans"
+    col = [p for p in d["penalties"] if p["driver"] == "colapinto"]
+    assert sorted((p["date"], p["points"]) for p in col) == [("2026-06-14", 1), ("2026-08-23", 1), ("2026-08-23", 2)]
+    assert not any(p["driver"] == "sainz" for p in d["penalties"])      # 2025-issued points ignored
+    assert d["penalty_check"]["stale_races"] == []
+
+def test_lagging_racefans_is_not_a_false_alarm_but_missing_points_are_flagged(monkeypatch):
+    rn = RN365 + '<h2>Carlos Sainz - two points</h2><ul><li>Two points - expires September 25th, 2027. Qualifying yellow flags</li></ul>'
+    d = _run(monkeypatch, late_cal(), rn)
     pc = d["penalty_check"]
-    assert pc["status"] == "mismatch"
-    diff = {x["driver"]: x for x in pc["differences"]}
-    assert diff["Franco Colapinto"]["used"] == 4 and diff["Franco Colapinto"]["other_source"] == 3
-    assert "Carlos Sainz" not in diff            # 2025-issued points (expire 2026) are ignored
-    assert pc["stale_races"] == ["Chinese GP"]
-    assert any("finished since" in w for w in d["warnings"])
-    out.unlink()
+    assert d["penalty_source"] == "RacingNews365"
+    assert pc["lagging"] == ["Sainz"] and pc["differences"] == []          # RaceFans is behind: expected
+    assert any(p["driver"] == "sainz" and p["date"] == "2026-09-25" for p in d["penalties"])
+    # RacingNews365 has FEWER points than RaceFans -> that is flagged
+    rn2 = RN365.replace('<li>One point - expires August 23rd, 2027. Not slowing under yellow flags at the Dutch GP</li>', "")
+    d2 = _run(monkeypatch, late_cal(), rn2)
+    diff = {x["driver"]: x for x in d2["penalty_check"]["differences"]}
+    assert diff["Colapinto"]["used"] == 3 and diff["Colapinto"]["other_source"] == 4
+
+def test_falls_back_to_racefans_when_racingnews365_unavailable(monkeypatch):
+    d = _run(monkeypatch, late_cal(), None)
+    assert d["penalty_source"] == "RaceFans" and d["penalty_check"]["status"] == "unavailable"
+    assert d["penalty_check"]["stale_races"] == ["Chinese GP"]
+    assert any("Using RaceFans" in w for w in d["warnings"])
 
 def test_pipeline(monkeypatch, tmp_path):
     monkeypatch.setattr(requests.Session, "get", fake_get)
