@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T06:37:42+00:00",
+ "generated_at": "2026-10-08T06:40:09+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -5120,7 +5120,9 @@
   }
  ],
  "penalty_source": "RacingNews365",
- "warnings": [],
+ "warnings": [
+  "Round 17: sprint qualifying lookup failed: 404 Client Error: Not Found for url: https://api.openf1.org/v1/session_result?session_key=11379&position=1"
+ ],
  "tiers": {
   "1": [
    "Lando Norris",
