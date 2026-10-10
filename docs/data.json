@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T06:41:12+00:00",
+ "generated_at": "2026-10-10T09:34:42+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -21,7 +21,7 @@
    "date": "2026-03-15",
    "sprint": true,
    "status": "done",
-   "sprint_pole": "russell",
+   "sprint_pole": null,
    "pole": "antonelli"
   },
   {
@@ -41,7 +41,7 @@
    "date": "2026-05-03",
    "sprint": true,
    "status": "done",
-   "sprint_pole": "norris",
+   "sprint_pole": null,
    "pole": "antonelli"
   },
   {
@@ -51,7 +51,7 @@
    "date": "2026-05-24",
    "sprint": true,
    "status": "done",
-   "sprint_pole": "russell",
+   "sprint_pole": null,
    "pole": "russell"
   },
   {
@@ -91,7 +91,7 @@
    "date": "2026-07-05",
    "sprint": true,
    "status": "done",
-   "sprint_pole": "hamilton",
+   "sprint_pole": null,
    "pole": "antonelli"
   },
   {
@@ -121,7 +121,7 @@
    "date": "2026-08-23",
    "sprint": true,
    "status": "done",
-   "sprint_pole": "russell",
+   "sprint_pole": null,
    "pole": "norris"
   },
   {
@@ -170,9 +170,7 @@
    "country": "Singapore",
    "date": "2026-10-11",
    "sprint": true,
-   "status": "live",
-   "sprint_pole": "verstappen",
-   "pole": null
+   "status": "upcoming"
   },
   {
    "round": 18,
@@ -233,7 +231,7 @@
      "name": "Lando Norris",
      "team": "McLaren",
      "tier": 1,
-     "points": 265.0,
+     "points": 263.5,
      "penalty_points": 0
     },
     {
@@ -281,7 +279,7 @@
     "1": 46.0,
     "2": 84.5,
     "3": 62.0,
-    "4": 92.0,
+    "4": 90.5,
     "5": 81.0,
     "6": 54.0,
     "7": 40.0,
@@ -293,34 +291,32 @@
     "13": 62.0,
     "14": 66.0,
     "15": 22.0,
-    "16": 40.0,
-    "17": 0.0
+    "16": 40.0
    },
    "cumulative": [
     46.0,
     130.5,
     192.5,
-    284.5,
-    365.5,
-    419.5,
-    459.5,
-    497.5,
-    563.5,
-    614.5,
-    678.5,
-    774.0,
-    836.0,
-    902.0,
-    924.0,
-    964.0,
-    964.0
+    283.0,
+    364.0,
+    418.0,
+    458.0,
+    496.0,
+    562.0,
+    613.0,
+    677.0,
+    772.5,
+    834.5,
+    900.5,
+    922.5,
+    962.5
    ],
-   "gross": 964.0,
+   "gross": 962.5,
    "penalty_points": 4,
    "penalty_deduction": -20,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 944.0,
+   "total": 942.5,
    "rank": 1,
    "gap": 0.0
   },
@@ -341,7 +337,7 @@
      "name": "George Russell",
      "team": "Mercedes",
      "tier": 1,
-     "points": 339.5,
+     "points": 335.0,
      "penalty_points": 0
     },
     {
@@ -379,50 +375,48 @@
    ],
    "by_round": {
     "1": 58.0,
-    "2": 79.5,
+    "2": 78.0,
     "3": 39.0,
     "4": 59.5,
-    "5": 58.5,
+    "5": 57.0,
     "6": 23.0,
     "7": 34.0,
     "8": 46.0,
     "9": 77.0,
     "10": 34.0,
     "11": 34.0,
-    "12": 78.5,
+    "12": 77.0,
     "13": 35.0,
     "14": 43.0,
     "15": 53.0,
-    "16": 31.0,
-    "17": 0.0
+    "16": 31.0
    },
    "cumulative": [
     58.0,
-    137.5,
-    176.5,
-    236.0,
-    294.5,
-    317.5,
-    351.5,
-    397.5,
-    474.5,
-    508.5,
-    542.5,
-    621.0,
-    656.0,
-    699.0,
-    752.0,
-    783.0,
-    783.0
+    136.0,
+    175.0,
+    234.5,
+    291.5,
+    314.5,
+    348.5,
+    394.5,
+    471.5,
+    505.5,
+    539.5,
+    616.5,
+    651.5,
+    694.5,
+    747.5,
+    778.5
    ],
-   "gross": 783.0,
+   "gross": 778.5,
    "penalty_points": 4,
    "penalty_deduction": -20,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 763.0,
+   "total": 758.5,
    "rank": 2,
-   "gap": 181.0
+   "gap": 184.0
   },
   {
    "name": "Josh",
@@ -433,7 +427,7 @@
      "name": "Max Verstappen",
      "team": "Red Bull",
      "tier": 1,
-     "points": 256.5,
+     "points": 255.0,
      "penalty_points": 0
     },
     {
@@ -441,7 +435,7 @@
      "name": "Lewis Hamilton",
      "team": "Ferrari",
      "tier": 1,
-     "points": 281.0,
+     "points": 279.5,
      "penalty_points": 0
     },
     {
@@ -486,15 +480,14 @@
     "6": 30.0,
     "7": 52.0,
     "8": 43.0,
-    "9": 54.0,
+    "9": 52.5,
     "10": 44.0,
     "11": 44.0,
     "12": 32.5,
     "13": 35.0,
     "14": 27.0,
     "15": 44.0,
-    "16": 58.0,
-    "17": 1.5
+    "16": 58.0
    },
    "cumulative": [
     41.0,
@@ -505,24 +498,23 @@
     251.5,
     303.5,
     346.5,
-    400.5,
-    444.5,
-    488.5,
-    521.0,
-    556.0,
-    583.0,
-    627.0,
-    685.0,
-    686.5
+    399.0,
+    443.0,
+    487.0,
+    519.5,
+    554.5,
+    581.5,
+    625.5,
+    683.5
    ],
-   "gross": 686.5,
+   "gross": 683.5,
    "penalty_points": 0,
    "penalty_deduction": 0,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 686.5,
+   "total": 683.5,
    "rank": 3,
-   "gap": 257.5
+   "gap": 259.0
   }
  ],
  "drivers": [
@@ -736,22 +728,22 @@
    "name": "George Russell",
    "team": "Mercedes",
    "owner": "Brian",
-   "points": 339.5,
+   "points": 335.0,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
     "1": 33,
-    "2": 40.5,
+    "2": 39,
     "3": 15,
     "4": 22.5,
-    "5": 19.5,
+    "5": 18,
     "6": 4,
     "7": 27,
     "8": 33,
     "9": 31.5,
     "10": 0,
     "11": 9,
-    "12": 35.5,
+    "12": 34,
     "13": 24,
     "14": 12,
     "15": 33,
@@ -777,8 +769,8 @@
      "race": 24,
      "pole": 0,
      "sprint": 15,
-     "sprint_pole": 1.5,
-     "total": 40.5
+     "sprint_pole": 0,
+     "total": 39
     },
     "3": {
      "race_pos": 4,
@@ -810,8 +802,8 @@
      "race": 0,
      "pole": 3,
      "sprint": 15,
-     "sprint_pole": 1.5,
-     "total": 19.5
+     "sprint_pole": 0,
+     "total": 18
     },
     "6": {
      "race_pos": 12,
@@ -887,8 +879,8 @@
      "race": 19,
      "pole": 0,
      "sprint": 15,
-     "sprint_pole": 1.5,
-     "total": 35.5
+     "sprint_pole": 0,
+     "total": 34
     },
     "13": {
      "race_pos": 2,
@@ -941,7 +933,7 @@
    "name": "Lewis Hamilton",
    "team": "Ferrari",
    "owner": "Josh",
-   "points": 281.0,
+   "points": 279.5,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -953,7 +945,7 @@
     "6": 24,
     "7": 30,
     "8": 12,
-    "9": 32.5,
+    "9": 31,
     "10": 15,
     "11": 12,
     "12": 19.5,
@@ -1059,8 +1051,8 @@
      "race": 19,
      "pole": 0,
      "sprint": 12,
-     "sprint_pole": 1.5,
-     "total": 32.5
+     "sprint_pole": 0,
+     "total": 31
     },
     "10": {
      "race_pos": 4,
@@ -1146,14 +1138,14 @@
    "name": "Lando Norris",
    "team": "McLaren",
    "owner": "Cooper",
-   "points": 265.0,
+   "points": 263.5,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
     "1": 12,
     "2": 7.5,
     "3": 12,
-    "4": 40.5,
+    "4": 39,
     "5": 12,
     "6": 0,
     "7": 19,
@@ -1209,8 +1201,8 @@
      "race": 24,
      "pole": 0,
      "sprint": 15,
-     "sprint_pole": 1.5,
-     "total": 40.5
+     "sprint_pole": 0,
+     "total": 39
     },
     "5": {
      "race_pos": null,
@@ -1556,7 +1548,7 @@
    "name": "Max Verstappen",
    "team": "Red Bull",
    "owner": "Josh",
-   "points": 256.5,
+   "points": 255.0,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -1575,8 +1567,7 @@
     "13": 19,
     "14": 24,
     "15": 24,
-    "16": 33,
-    "17": 1.5
+    "16": 33
    },
    "detail": {
     "1": {
@@ -1754,17 +1745,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 33
-    },
-    "17": {
-     "race_pos": null,
-     "race_status": null,
-     "quali_pos": null,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 1.5,
-     "total": 1.5
     }
    }
   },
@@ -5140,7 +5120,14 @@
   }
  ],
  "penalty_source": "RacingNews365",
- "warnings": [],
+ "warnings": [
+  "OpenF1 sprint-qualifying sessions unavailable: 401 Client Error: Unauthorized for url: https://api.openf1.org/v1/sessions?year=2026&session_name=Sprint+Qualifying",
+  "Round 2 (Chinese Grand Prix): sprint pole not found; sprint pole points missing.",
+  "Round 4 (Miami Grand Prix): sprint pole not found; sprint pole points missing.",
+  "Round 5 (Canadian Grand Prix): sprint pole not found; sprint pole points missing.",
+  "Round 9 (British Grand Prix): sprint pole not found; sprint pole points missing.",
+  "Round 12 (Dutch Grand Prix): sprint pole not found; sprint pole points missing."
+ ],
  "tiers": {
   "1": [
    "Lando Norris",
