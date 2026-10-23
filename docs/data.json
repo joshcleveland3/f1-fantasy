@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23T13:02:54+00:00",
+ "generated_at": "2026-10-23T15:56:20+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -5321,16 +5321,6 @@
  },
  "penalties": [
   {
-   "date": "2026-09-25",
-   "event": "Not slowing under yellow flags during qualifying for the 2026 Azerbaijan Grand Prix",
-   "session": "",
-   "description": "",
-   "points": 2,
-   "driver": "sainz",
-   "name": "Carlos Sainz",
-   "owner": "Cooper"
-  },
-  {
    "date": "2026-06-14",
    "event": "Failing to slow for yellow flags during 2026 Barcelona-Catalunya Grand Prix",
    "session": "",
@@ -5379,6 +5369,16 @@
    "driver": "lindblad",
    "name": "Arvid Lindblad",
    "owner": "Unowned"
+  },
+  {
+   "date": "2026-09-25",
+   "event": "Not slowing under yellow flags during qualifying for the 2026 Azerbaijan Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 2,
+   "driver": "sainz",
+   "name": "Carlos Sainz",
+   "owner": "Cooper"
   },
   {
    "date": "2026-07-25",
