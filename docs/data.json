@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T16:50:12+00:00",
+ "generated_at": "2026-10-25T18:54:05+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -180,7 +180,9 @@
    "country": "USA",
    "date": "2026-10-25",
    "sprint": false,
-   "status": "upcoming"
+   "status": "live",
+   "sprint_pole": null,
+   "pole": "antonelli"
   },
   {
    "round": 19,
@@ -241,7 +243,7 @@
      "name": "Andrea Kimi Antonelli",
      "team": "Mercedes",
      "tier": 1,
-     "points": 450.5,
+     "points": 453.5,
      "penalty_points": 1
     },
     {
@@ -294,7 +296,8 @@
     "14": 66.0,
     "15": 22.0,
     "16": 40.0,
-    "17": 73.0
+    "17": 73.0,
+    "18": 3.0
    },
    "cumulative": [
     46.0,
@@ -313,14 +316,15 @@
     902.0,
     924.0,
     964.0,
-    1037.0
+    1037.0,
+    1040.0
    ],
-   "gross": 1037.0,
+   "gross": 1040.0,
    "penalty_points": 4,
    "penalty_deduction": -20,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 1017.0,
+   "total": 1020.0,
    "rank": 1,
    "gap": 0.0
   },
@@ -394,7 +398,8 @@
     "14": 43.0,
     "15": 53.0,
     "16": 31.0,
-    "17": 55.5
+    "17": 55.5,
+    "18": 0.0
    },
    "cumulative": [
     58.0,
@@ -413,6 +418,7 @@
     699.0,
     752.0,
     783.0,
+    838.5,
     838.5
    ],
    "gross": 838.5,
@@ -422,7 +428,7 @@
    "champion_bonus": 0,
    "total": 818.5,
    "rank": 2,
-   "gap": 198.5
+   "gap": 201.5
   },
   {
    "name": "Josh",
@@ -494,7 +500,8 @@
     "14": 27.0,
     "15": 44.0,
     "16": 58.0,
-    "17": 80.5
+    "17": 80.5,
+    "18": 0.0
    },
    "cumulative": [
     41.0,
@@ -513,6 +520,7 @@
     583.0,
     627.0,
     685.0,
+    765.5,
     765.5
    ],
    "gross": 765.5,
@@ -522,7 +530,7 @@
    "champion_bonus": 0,
    "total": 765.5,
    "rank": 3,
-   "gap": 251.5
+   "gap": 254.5
   }
  ],
  "drivers": [
@@ -531,7 +539,7 @@
    "name": "Andrea Kimi Antonelli",
    "team": "Mercedes",
    "owner": "Cooper",
-   "points": 450.5,
+   "points": 453.5,
    "tier": 1,
    "penalty_points": 1,
    "by_round": {
@@ -551,7 +559,8 @@
     "14": 30,
     "15": 12,
     "16": 24,
-    "17": 26.5
+    "17": 26.5,
+    "18": 3
    },
    "detail": {
     "1": {
@@ -740,6 +749,17 @@
      "sprint": 7.5,
      "sprint_pole": 0,
      "total": 26.5
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 1,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 3,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 3
     }
    }
   },
@@ -768,7 +788,8 @@
     "14": 12,
     "15": 33,
     "16": 0,
-    "17": 7
+    "17": 7,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -957,6 +978,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 7
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 6,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -985,7 +1017,8 @@
     "14": 24,
     "15": 24,
     "16": 33,
-    "17": 49.5
+    "17": 49.5,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -1174,6 +1207,17 @@
      "sprint": 15,
      "sprint_pole": 1.5,
      "total": 49.5
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 2,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -1202,7 +1246,8 @@
     "14": 0,
     "15": 10,
     "16": 19,
-    "17": 22
+    "17": 22,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -1391,6 +1436,17 @@
      "sprint": 12,
      "sprint_pole": 0,
      "total": 22
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 5,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -1419,7 +1475,8 @@
     "14": 15,
     "15": 15,
     "16": 15,
-    "17": 33.5
+    "17": 33.5,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -1608,6 +1665,17 @@
      "sprint": 9.5,
      "sprint_pole": 0,
      "total": 33.5
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 4,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -1636,7 +1704,8 @@
     "14": 22,
     "15": 0,
     "16": 7,
-    "17": 19
+    "17": 19,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -1825,6 +1894,17 @@
      "sprint": 4,
      "sprint_pole": 0,
      "total": 19
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 8,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -1853,7 +1933,8 @@
     "14": 8,
     "15": 3,
     "16": 10,
-    "17": 13
+    "17": 13,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -2042,6 +2123,17 @@
      "sprint": 1,
      "sprint_pole": 0,
      "total": 13
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 7,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2070,7 +2162,8 @@
     "14": 10,
     "15": 4,
     "16": 9,
-    "17": 15
+    "17": 15,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -2259,6 +2352,17 @@
      "sprint": 6,
      "sprint_pole": 0,
      "total": 15
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 10,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2284,7 +2388,8 @@
     "11": 10,
     "15": 19,
     "16": 12,
-    "17": 6
+    "17": 6,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -2440,6 +2545,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 6
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 3,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2468,7 +2584,8 @@
     "14": 4,
     "15": 0,
     "16": 0,
-    "17": 8.5
+    "17": 8.5,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -2657,6 +2774,17 @@
      "sprint": 3.5,
      "sprint_pole": 0,
      "total": 8.5
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 11,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2685,7 +2813,8 @@
     "14": 7,
     "15": 9,
     "16": 6,
-    "17": 2.5
+    "17": 2.5,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -2874,6 +3003,17 @@
      "sprint": 1.5,
      "sprint_pole": 0,
      "total": 2.5
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 9,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2902,7 +3042,8 @@
     "14": 9,
     "15": 0,
     "16": 3,
-    "17": 0
+    "17": 0,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -3091,6 +3232,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 14,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3119,7 +3271,8 @@
     "14": 3,
     "15": 1,
     "16": 0,
-    "17": 0
+    "17": 0,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -3308,6 +3461,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 13,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3336,7 +3500,8 @@
     "14": 6,
     "15": 5,
     "16": 5,
-    "17": 12.5
+    "17": 12.5,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -3525,6 +3690,17 @@
      "sprint": 4.5,
      "sprint_pole": 0,
      "total": 12.5
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 12,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3553,7 +3729,8 @@
     "14": 0,
     "15": 7,
     "16": 2,
-    "17": 9
+    "17": 9,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -3742,6 +3919,17 @@
      "sprint": 5,
      "sprint_pole": 0,
      "total": 9
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 16,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3770,7 +3958,8 @@
     "14": 5,
     "15": 8,
     "16": 1,
-    "17": 6
+    "17": 6,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -3959,6 +4148,17 @@
      "sprint": 3,
      "sprint_pole": 0,
      "total": 6
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 17,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3987,7 +4187,8 @@
     "14": 0,
     "15": 6,
     "16": 0,
-    "17": 4
+    "17": 4,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -4176,6 +4377,17 @@
      "sprint": 2,
      "sprint_pole": 0,
      "total": 4
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 19,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -4204,7 +4416,8 @@
     "14": 0,
     "15": 0,
     "16": 8,
-    "17": 2.5
+    "17": 2.5,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -4393,6 +4606,17 @@
      "sprint": 2.5,
      "sprint_pole": 0,
      "total": 2.5
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 15,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -4421,7 +4645,8 @@
     "14": 1,
     "15": 0,
     "16": 0,
-    "17": 0
+    "17": 0,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -4610,6 +4835,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 20,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -4687,7 +4923,8 @@
     "14": 0,
     "15": 2,
     "16": 0,
-    "17": 0
+    "17": 0,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -4876,6 +5113,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -4904,7 +5152,8 @@
     "14": 0,
     "15": 0,
     "16": 4,
-    "17": 0
+    "17": 0,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -5093,6 +5342,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 18,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -5121,7 +5381,8 @@
     "14": 0,
     "15": 0,
     "16": 0,
-    "17": 0
+    "17": 0,
+    "18": 0
    },
    "detail": {
     "1": {
@@ -5304,6 +5565,17 @@
      "race_pos": 19,
      "race_status": "Lapped",
      "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "18": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 22,
      "sprint_pos": null,
      "race": 0,
      "pole": 0,
