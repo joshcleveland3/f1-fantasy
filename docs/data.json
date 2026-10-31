@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T22:28:01+00:00",
+ "generated_at": "2026-10-31T05:54:33+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -21,7 +21,7 @@
    "date": "2026-03-15",
    "sprint": true,
    "status": "done",
-   "sprint_pole": null,
+   "sprint_pole": "russell",
    "pole": "antonelli"
   },
   {
@@ -41,7 +41,7 @@
    "date": "2026-05-03",
    "sprint": true,
    "status": "done",
-   "sprint_pole": null,
+   "sprint_pole": "norris",
    "pole": "antonelli"
   },
   {
@@ -51,7 +51,7 @@
    "date": "2026-05-24",
    "sprint": true,
    "status": "done",
-   "sprint_pole": null,
+   "sprint_pole": "russell",
    "pole": "russell"
   },
   {
@@ -91,7 +91,7 @@
    "date": "2026-07-05",
    "sprint": true,
    "status": "done",
-   "sprint_pole": null,
+   "sprint_pole": "hamilton",
    "pole": "antonelli"
   },
   {
@@ -121,7 +121,7 @@
    "date": "2026-08-23",
    "sprint": true,
    "status": "done",
-   "sprint_pole": null,
+   "sprint_pole": "russell",
    "pole": "norris"
   },
   {
@@ -171,7 +171,7 @@
    "date": "2026-10-11",
    "sprint": true,
    "status": "done",
-   "sprint_pole": null,
+   "sprint_pole": "verstappen",
    "pole": "verstappen"
   },
   {
@@ -235,7 +235,7 @@
      "name": "Lando Norris",
      "team": "McLaren",
      "tier": 1,
-     "points": 294.5,
+     "points": 296.0,
      "penalty_points": 0
     },
     {
@@ -260,7 +260,7 @@
      "team": "RB F1 Team",
      "tier": 2,
      "points": 147.5,
-     "penalty_points": 1
+     "penalty_points": 2
     },
     {
      "key": "bottas",
@@ -283,7 +283,7 @@
     "1": 46.0,
     "2": 84.5,
     "3": 62.0,
-    "4": 90.5,
+    "4": 92.0,
     "5": 81.0,
     "6": 54.0,
     "7": 40.0,
@@ -303,28 +303,28 @@
     46.0,
     130.5,
     192.5,
-    283.0,
-    364.0,
-    418.0,
-    458.0,
-    496.0,
-    562.0,
-    613.0,
-    677.0,
-    772.5,
-    834.5,
-    900.5,
-    922.5,
-    962.5,
-    1035.5,
-    1093.5
+    284.5,
+    365.5,
+    419.5,
+    459.5,
+    497.5,
+    563.5,
+    614.5,
+    678.5,
+    774.0,
+    836.0,
+    902.0,
+    924.0,
+    964.0,
+    1037.0,
+    1095.0
    ],
-   "gross": 1093.5,
-   "penalty_points": 4,
-   "penalty_deduction": -20,
+   "gross": 1095.0,
+   "penalty_points": 5,
+   "penalty_deduction": -25,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 1073.5,
+   "total": 1070.0,
    "rank": 1,
    "gap": 0.0
   },
@@ -345,7 +345,7 @@
      "name": "George Russell",
      "team": "Mercedes",
      "tier": 1,
-     "points": 350.0,
+     "points": 354.5,
      "penalty_points": 0
     },
     {
@@ -383,17 +383,17 @@
    ],
    "by_round": {
     "1": 58.0,
-    "2": 78.0,
+    "2": 79.5,
     "3": 39.0,
     "4": 59.5,
-    "5": 57.0,
+    "5": 58.5,
     "6": 23.0,
     "7": 34.0,
     "8": 46.0,
     "9": 77.0,
     "10": 34.0,
     "11": 34.0,
-    "12": 77.0,
+    "12": 78.5,
     "13": 35.0,
     "14": 43.0,
     "15": 53.0,
@@ -403,32 +403,32 @@
    },
    "cumulative": [
     58.0,
-    136.0,
-    175.0,
-    234.5,
-    291.5,
-    314.5,
-    348.5,
-    394.5,
-    471.5,
-    505.5,
-    539.5,
-    616.5,
-    651.5,
-    694.5,
-    747.5,
-    778.5,
-    834.0,
-    871.0
+    137.5,
+    176.5,
+    236.0,
+    294.5,
+    317.5,
+    351.5,
+    397.5,
+    474.5,
+    508.5,
+    542.5,
+    621.0,
+    656.0,
+    699.0,
+    752.0,
+    783.0,
+    838.5,
+    875.5
    ],
-   "gross": 871.0,
+   "gross": 875.5,
    "penalty_points": 4,
    "penalty_deduction": -20,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 851.0,
+   "total": 855.5,
    "rank": 2,
-   "gap": 222.5
+   "gap": 214.5
   },
   {
    "name": "Josh",
@@ -439,7 +439,7 @@
      "name": "Max Verstappen",
      "team": "Red Bull",
      "tier": 1,
-     "points": 322.0,
+     "points": 323.5,
      "penalty_points": 0
     },
     {
@@ -447,7 +447,7 @@
      "name": "Lewis Hamilton",
      "team": "Ferrari",
      "tier": 1,
-     "points": 316.5,
+     "points": 318.0,
      "penalty_points": 0
     },
     {
@@ -492,7 +492,7 @@
     "6": 30.0,
     "7": 52.0,
     "8": 43.0,
-    "9": 52.5,
+    "9": 54.0,
     "10": 44.0,
     "11": 44.0,
     "12": 32.5,
@@ -500,7 +500,7 @@
     "14": 27.0,
     "15": 44.0,
     "16": 58.0,
-    "17": 79.0,
+    "17": 80.5,
     "18": 38.0
    },
    "cumulative": [
@@ -512,25 +512,25 @@
     251.5,
     303.5,
     346.5,
-    399.0,
-    443.0,
-    487.0,
-    519.5,
-    554.5,
-    581.5,
-    625.5,
-    683.5,
-    762.5,
-    800.5
+    400.5,
+    444.5,
+    488.5,
+    521.0,
+    556.0,
+    583.0,
+    627.0,
+    685.0,
+    765.5,
+    803.5
    ],
-   "gross": 800.5,
+   "gross": 803.5,
    "penalty_points": 0,
    "penalty_deduction": 0,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 800.5,
+   "total": 803.5,
    "rank": 3,
-   "gap": 273.0
+   "gap": 266.5
   }
  ],
  "drivers": [
@@ -768,22 +768,22 @@
    "name": "George Russell",
    "team": "Mercedes",
    "owner": "Brian",
-   "points": 350.0,
+   "points": 354.5,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
     "1": 33,
-    "2": 39,
+    "2": 40.5,
     "3": 15,
     "4": 22.5,
-    "5": 18,
+    "5": 19.5,
     "6": 4,
     "7": 27,
     "8": 33,
     "9": 31.5,
     "10": 0,
     "11": 9,
-    "12": 34,
+    "12": 35.5,
     "13": 24,
     "14": 12,
     "15": 33,
@@ -811,8 +811,8 @@
      "race": 24,
      "pole": 0,
      "sprint": 15,
-     "sprint_pole": 0,
-     "total": 39
+     "sprint_pole": 1.5,
+     "total": 40.5
     },
     "3": {
      "race_pos": 4,
@@ -844,8 +844,8 @@
      "race": 0,
      "pole": 3,
      "sprint": 15,
-     "sprint_pole": 0,
-     "total": 18
+     "sprint_pole": 1.5,
+     "total": 19.5
     },
     "6": {
      "race_pos": 12,
@@ -921,8 +921,8 @@
      "race": 19,
      "pole": 0,
      "sprint": 15,
-     "sprint_pole": 0,
-     "total": 34
+     "sprint_pole": 1.5,
+     "total": 35.5
     },
     "13": {
      "race_pos": 2,
@@ -997,7 +997,7 @@
    "name": "Max Verstappen",
    "team": "Red Bull",
    "owner": "Josh",
-   "points": 322.0,
+   "points": 323.5,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -1017,7 +1017,7 @@
     "14": 24,
     "15": 24,
     "16": 33,
-    "17": 48,
+    "17": 49.5,
     "18": 19
    },
    "detail": {
@@ -1205,8 +1205,8 @@
      "race": 30,
      "pole": 3,
      "sprint": 15,
-     "sprint_pole": 0,
-     "total": 48
+     "sprint_pole": 1.5,
+     "total": 49.5
     },
     "18": {
      "race_pos": 3,
@@ -1226,7 +1226,7 @@
    "name": "Lewis Hamilton",
    "team": "Ferrari",
    "owner": "Josh",
-   "points": 316.5,
+   "points": 318.0,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -1238,7 +1238,7 @@
     "6": 24,
     "7": 30,
     "8": 12,
-    "9": 31,
+    "9": 32.5,
     "10": 15,
     "11": 12,
     "12": 19.5,
@@ -1346,8 +1346,8 @@
      "race": 19,
      "pole": 0,
      "sprint": 12,
-     "sprint_pole": 0,
-     "total": 31
+     "sprint_pole": 1.5,
+     "total": 32.5
     },
     "10": {
      "race_pos": 4,
@@ -1684,14 +1684,14 @@
    "name": "Lando Norris",
    "team": "McLaren",
    "owner": "Cooper",
-   "points": 294.5,
+   "points": 296.0,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
     "1": 12,
     "2": 7.5,
     "3": 12,
-    "4": 39,
+    "4": 40.5,
     "5": 12,
     "6": 0,
     "7": 19,
@@ -1749,8 +1749,8 @@
      "race": 24,
      "pole": 0,
      "sprint": 15,
-     "sprint_pole": 0,
-     "total": 39
+     "sprint_pole": 1.5,
+     "total": 40.5
     },
     "5": {
      "race_pos": null,
@@ -2337,7 +2337,7 @@
    "owner": "Cooper",
    "points": 147.5,
    "tier": 2,
-   "penalty_points": 1,
+   "penalty_points": 2,
    "by_round": {
     "1": 3,
     "2": 13.5,
@@ -5624,7 +5624,17 @@
   },
   {
    "date": "2026-08-23",
-   "event": "Not slowing under yellow flags during 2026 Dutch Grand Prix",
+   "event": "Not slowing under yellow flags during 2026 Dutch GP",
+   "session": "",
+   "description": "",
+   "points": 1,
+   "driver": "lawson",
+   "name": "Liam Lawson",
+   "owner": "Cooper"
+  },
+  {
+   "date": "2026-10-30",
+   "event": "\"unacceptable\" driving in an incident with Max Verstappen in 2026 Mexico City GP practice",
    "session": "",
    "description": "",
    "points": 1,
@@ -5664,15 +5674,7 @@
   }
  ],
  "penalty_source": "RacingNews365",
- "warnings": [
-  "OpenF1 sprint-qualifying sessions unavailable: 401 Client Error: Unauthorized for url: https://api.openf1.org/v1/sessions?year=2026&session_name=Sprint+Qualifying",
-  "Round 2 (Chinese Grand Prix): sprint pole not found; sprint pole points missing.",
-  "Round 4 (Miami Grand Prix): sprint pole not found; sprint pole points missing.",
-  "Round 5 (Canadian Grand Prix): sprint pole not found; sprint pole points missing.",
-  "Round 9 (British Grand Prix): sprint pole not found; sprint pole points missing.",
-  "Round 12 (Dutch Grand Prix): sprint pole not found; sprint pole points missing.",
-  "Round 17 (Singapore Grand Prix): sprint pole not found; sprint pole points missing."
- ],
+ "warnings": [],
  "tiers": {
   "1": [
    "Lando Norris",
