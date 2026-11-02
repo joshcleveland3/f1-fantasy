@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T01:34:36+00:00",
+ "generated_at": "2026-11-02T15:53:11+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -278,7 +278,7 @@
      "team": "Alpine F1 Team",
      "tier": 3,
      "points": 124.5,
-     "penalty_points": 0
+     "penalty_points": 2
     }
    ],
    "by_round": {
@@ -324,11 +324,11 @@
     1140.0
    ],
    "gross": 1140.0,
-   "penalty_points": 5,
-   "penalty_deduction": -25,
+   "penalty_points": 7,
+   "penalty_deduction": -35,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 1115.0,
+   "total": 1105.0,
    "rank": 1,
    "gap": 0.0
   },
@@ -382,7 +382,7 @@
      "team": "Alpine F1 Team",
      "tier": 3,
      "points": 90.5,
-     "penalty_points": 4
+     "penalty_points": 5
     }
    ],
    "by_round": {
@@ -428,13 +428,13 @@
     910.5
    ],
    "gross": 910.5,
-   "penalty_points": 4,
-   "penalty_deduction": -20,
+   "penalty_points": 5,
+   "penalty_deduction": -25,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 890.5,
+   "total": 885.5,
    "rank": 2,
-   "gap": 224.5
+   "gap": 219.5
   },
   {
    "name": "Josh",
@@ -446,7 +446,7 @@
      "team": "Red Bull",
      "tier": 1,
      "points": 353.5,
-     "penalty_points": 0
+     "penalty_points": 1
     },
     {
      "key": "hamilton",
@@ -532,13 +532,13 @@
     865.5
    ],
    "gross": 865.5,
-   "penalty_points": 0,
-   "penalty_deduction": 0,
+   "penalty_points": 1,
+   "penalty_deduction": -5,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 865.5,
+   "total": 860.5,
    "rank": 3,
-   "gap": 249.5
+   "gap": 244.5
   }
  ],
  "drivers": [
@@ -1031,7 +1031,7 @@
    "owner": "Josh",
    "points": 353.5,
    "tier": 1,
-   "penalty_points": 0,
+   "penalty_points": 1,
    "by_round": {
     "1": 10,
     "2": 3.5,
@@ -2682,7 +2682,7 @@
    "owner": "Cooper",
    "points": 124.5,
    "tier": 3,
-   "penalty_points": 0,
+   "penalty_points": 2,
    "by_round": {
     "1": 6,
     "2": 12.5,
@@ -3164,7 +3164,7 @@
    "owner": "Brian",
    "points": 90.5,
    "tier": 3,
-   "penalty_points": 4,
+   "penalty_points": 5,
    "by_round": {
     "1": 2,
     "2": 7,
@@ -5908,8 +5908,18 @@
    "owner": "Brian"
   },
   {
+   "date": "2026-11-01",
+   "event": "Failing to slow under double waved yellows in 2026 Mexico City Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 1,
+   "driver": "colapinto",
+   "name": "Franco Colapinto",
+   "owner": "Brian"
+  },
+  {
    "date": "2026-08-23",
-   "event": "Not slowing under yellow flags during 2026 Dutch GP",
+   "event": "Not slowing under yellow flags during 2026 Dutch Grand Prix",
    "session": "",
    "description": "",
    "points": 1,
@@ -5919,7 +5929,7 @@
   },
   {
    "date": "2026-10-30",
-   "event": "\"unacceptable\" driving in an incident with Max Verstappen in 2026 Mexico City GP practice",
+   "event": "\"unacceptable\" driving in an incident with Max Verstappen in 2026 Mexico City Grand Prix practice",
    "session": "",
    "description": "",
    "points": 1,
@@ -5948,6 +5958,16 @@
    "owner": "Cooper"
   },
   {
+   "date": "2026-11-01",
+   "event": "Failing to slow under double-waved yellow flags in 2026 Mexico City Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 2,
+   "driver": "gasly",
+   "name": "Pierre Gasly",
+   "owner": "Cooper"
+  },
+  {
    "date": "2026-07-25",
    "event": "A yellow flag infringement during qualifying for the 2026 Hungarian Grand Prix",
    "session": "",
@@ -5956,6 +5976,16 @@
    "driver": "antonelli",
    "name": "Andrea Kimi Antonelli",
    "owner": "Cooper"
+  },
+  {
+   "date": "2026-10-30",
+   "event": "\"unacceptable\" driving in an incident with Liam Lawson in 2026 Mexico City Grand Prix practice",
+   "session": "",
+   "description": "",
+   "points": 1,
+   "driver": "verstappen",
+   "name": "Max Verstappen",
+   "owner": "Josh"
   }
  ],
  "penalty_source": "RacingNews365",
