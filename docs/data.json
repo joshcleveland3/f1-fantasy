@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T15:18:00+00:00",
+ "generated_at": "2026-11-13T06:54:53+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -2770,7 +2770,7 @@
     "19": {
      "race_pos": 7,
      "race_status": "Finished",
-     "quali_pos": 8,
+     "quali_pos": 22,
      "sprint_pos": null,
      "race": 9,
      "pole": 0,
