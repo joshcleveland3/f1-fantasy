@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T07:21:56+00:00",
+ "generated_at": "2026-11-21T16:51:22+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -210,7 +210,9 @@
    "country": "USA",
    "date": "2026-11-22",
    "sprint": false,
-   "status": "upcoming"
+   "status": "live",
+   "sprint_pole": null,
+   "pole": "antonelli"
   },
   {
    "round": 22,
@@ -247,7 +249,7 @@
      "name": "Andrea Kimi Antonelli",
      "team": "Mercedes",
      "tier": 1,
-     "points": 514.5,
+     "points": 517.5,
      "penalty_points": 1
     },
     {
@@ -303,7 +305,8 @@
     "17": 73.0,
     "18": 58.0,
     "19": 44.0,
-    "20": 56.0
+    "20": 56.0,
+    "21": 3.0
    },
    "cumulative": [
     46.0,
@@ -325,14 +328,15 @@
     1037.0,
     1095.0,
     1139.0,
-    1195.0
+    1195.0,
+    1198.0
    ],
-   "gross": 1195.0,
+   "gross": 1198.0,
    "penalty_points": 7,
    "penalty_deduction": -35,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 1160.0,
+   "total": 1163.0,
    "rank": 1,
    "gap": 0.0
   },
@@ -409,7 +413,8 @@
     "17": 55.5,
     "18": 37.0,
     "19": 33.0,
-    "20": 37.0
+    "20": 37.0,
+    "21": 0.0
    },
    "cumulative": [
     58.0,
@@ -431,6 +436,7 @@
     838.5,
     875.5,
     908.5,
+    945.5,
     945.5
    ],
    "gross": 945.5,
@@ -440,7 +446,7 @@
    "champion_bonus": 0,
    "total": 910.5,
    "rank": 2,
-   "gap": 249.5
+   "gap": 252.5
   },
   {
    "name": "Josh",
@@ -515,7 +521,8 @@
     "17": 80.5,
     "18": 38.0,
     "19": 65.0,
-    "20": 31.0
+    "20": 31.0,
+    "21": 0.0
    },
    "cumulative": [
     41.0,
@@ -537,6 +544,7 @@
     765.5,
     803.5,
     868.5,
+    899.5,
     899.5
    ],
    "gross": 899.5,
@@ -546,7 +554,7 @@
    "champion_bonus": 0,
    "total": 894.5,
    "rank": 3,
-   "gap": 265.5
+   "gap": 268.5
   }
  ],
  "drivers": [
@@ -555,7 +563,7 @@
    "name": "Andrea Kimi Antonelli",
    "team": "Mercedes",
    "owner": "Cooper",
-   "points": 514.5,
+   "points": 517.5,
    "tier": 1,
    "penalty_points": 1,
    "by_round": {
@@ -578,7 +586,8 @@
     "17": 26.5,
     "18": 33,
     "19": 19,
-    "20": 12
+    "20": 12,
+    "21": 3
    },
    "detail": {
     "1": {
@@ -800,6 +809,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 12
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 1,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 3,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 3
     }
    }
   },
@@ -831,7 +851,8 @@
     "17": 7,
     "18": 8,
     "19": 10,
-    "20": 15
+    "20": 15,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -1053,6 +1074,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 15
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 3,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -1084,7 +1116,8 @@
     "17": 49.5,
     "18": 19,
     "19": 30,
-    "20": 24
+    "20": 24,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -1306,6 +1339,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 24
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 2,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -1337,7 +1381,8 @@
     "17": 22,
     "18": 15,
     "19": 27,
-    "20": 7
+    "20": 7,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -1559,6 +1604,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 7
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 12,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -1590,7 +1646,8 @@
     "17": 19,
     "18": 12,
     "19": 12,
-    "20": 33
+    "20": 33,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -1812,6 +1869,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 33
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 4,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -1843,7 +1911,8 @@
     "17": 33.5,
     "18": 24,
     "19": 15,
-    "20": 8
+    "20": 8,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -2065,6 +2134,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 8
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 11,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2096,7 +2176,8 @@
     "17": 13,
     "18": 9,
     "19": 3,
-    "20": 10
+    "20": 10,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -2318,6 +2399,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 10
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 7,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2346,7 +2438,8 @@
     "17": 6,
     "18": 10,
     "19": 7,
-    "20": 19
+    "20": 19,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -2535,6 +2628,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 19
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 5,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2566,7 +2670,8 @@
     "17": 15,
     "18": 7,
     "19": 9,
-    "20": 9
+    "20": 9,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -2788,6 +2893,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 9
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 8,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -2819,7 +2935,8 @@
     "17": 8.5,
     "18": 6,
     "19": 0,
-    "20": 2
+    "20": 2,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -3041,6 +3158,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 2
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 9,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3072,7 +3200,8 @@
     "17": 2.5,
     "18": 4,
     "19": 0,
-    "20": 5
+    "20": 5,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -3294,6 +3423,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 5
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 6,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3325,7 +3465,8 @@
     "17": 0,
     "18": 0,
     "19": 1,
-    "20": 3
+    "20": 3,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -3547,6 +3688,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 3
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 10,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3578,7 +3730,8 @@
     "17": 12.5,
     "18": 5,
     "19": 2,
-    "20": 6
+    "20": 6,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -3800,6 +3953,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 6
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 13,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -3831,7 +3995,8 @@
     "17": 0,
     "18": 3,
     "19": 8,
-    "20": 0
+    "20": 0,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -4053,6 +4218,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 15,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -4084,7 +4260,8 @@
     "17": 9,
     "18": 0,
     "19": 0,
-    "20": 0
+    "20": 0,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -4300,6 +4477,17 @@
      "race_pos": 17,
      "race_status": "Lapped",
      "quali_pos": 8,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 22,
      "sprint_pos": null,
      "race": 0,
      "pole": 0,
@@ -4566,7 +4754,8 @@
     "17": 4,
     "18": 0,
     "19": 4,
-    "20": 0
+    "20": 0,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -4788,6 +4977,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 14,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -4819,7 +5019,8 @@
     "17": 2.5,
     "18": 0,
     "19": 0,
-    "20": 4
+    "20": 4,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -5041,6 +5242,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 4
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 19,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -5072,7 +5284,8 @@
     "17": 0,
     "18": 0,
     "19": 5,
-    "20": 1
+    "20": 1,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -5294,6 +5507,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 1
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 16,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -5374,7 +5598,8 @@
     "17": 0,
     "18": 0,
     "19": 0,
-    "20": 0
+    "20": 0,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -5596,6 +5821,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 18,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -5627,7 +5863,8 @@
     "17": 0,
     "18": 1,
     "19": 0,
-    "20": 0
+    "20": 0,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -5849,6 +6086,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 20,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -5905,7 +6153,8 @@
     "17": 0,
     "18": 0,
     "19": 0,
-    "20": 0
+    "20": 0,
+    "21": 0
    },
    "detail": {
     "1": {
@@ -6127,6 +6376,17 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
     }
    }
   },
@@ -6139,13 +6399,25 @@
    "tier": null,
    "penalty_points": 0,
    "by_round": {
-    "20": 0
+    "20": 0,
+    "21": 0
    },
    "detail": {
     "20": {
      "race_pos": 20,
      "race_status": "Lapped",
      "quali_pos": 13,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "21": {
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": 17,
      "sprint_pos": null,
      "race": 0,
      "pole": 0,
