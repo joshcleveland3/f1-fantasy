@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T00:57:24+00:00",
+ "generated_at": "2026-11-23T18:09:16+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -6495,16 +6495,6 @@
    "owner": "Cooper"
   },
   {
-   "date": "2026-11-08",
-   "event": "Rejoining the track in an unsafe manner during 2026 Sao Paulo Grand Prix",
-   "session": "",
-   "description": "",
-   "points": 2,
-   "driver": "albon",
-   "name": "Alexander Albon",
-   "owner": "Brian"
-  },
-  {
    "date": "2026-08-23",
    "event": "Overtaking under yellow flags during 2026 Dutch Grand Prix",
    "session": "",
@@ -6533,6 +6523,16 @@
    "driver": "gasly",
    "name": "Pierre Gasly",
    "owner": "Cooper"
+  },
+  {
+   "date": "2026-11-08",
+   "event": "Rejoining the track in an unsafe manner during 2026 Sao Paulo Grand Prix",
+   "session": "",
+   "description": "",
+   "points": 2,
+   "driver": "albon",
+   "name": "Alexander Albon",
+   "owner": "Brian"
   },
   {
    "date": "2026-07-25",
