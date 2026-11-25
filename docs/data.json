@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T02:30:59+00:00",
+ "generated_at": "2026-11-25T17:16:22+00:00",
  "season": 2026,
  "pot": 60,
  "season_complete": false,
@@ -90,9 +90,9 @@
    "country": "UK",
    "date": "2026-07-05",
    "sprint": true,
-   "status": "live",
+   "status": "done",
    "sprint_pole": "hamilton",
-   "pole": null
+   "pole": "antonelli"
   },
   {
    "round": 10,
@@ -120,9 +120,9 @@
    "country": "Netherlands",
    "date": "2026-08-23",
    "sprint": true,
-   "status": "done",
+   "status": "live",
    "sprint_pole": "russell",
-   "pole": "norris"
+   "pole": null
   },
   {
    "round": 13,
@@ -190,7 +190,9 @@
    "country": "Mexico",
    "date": "2026-11-01",
    "sprint": false,
-   "status": "upcoming"
+   "status": "done",
+   "sprint_pole": null,
+   "pole": "hamilton"
   },
   {
    "round": 20,
@@ -239,7 +241,7 @@
      "name": "Lando Norris",
      "team": "McLaren",
      "tier": 1,
-     "points": 328.5,
+     "points": 322.5,
      "penalty_points": 0
     },
     {
@@ -247,7 +249,7 @@
      "name": "Andrea Kimi Antonelli",
      "team": "Mercedes",
      "tier": 1,
-     "points": 494.5,
+     "points": 501.0,
      "penalty_points": 1
     },
     {
@@ -255,7 +257,7 @@
      "name": "Carlos Sainz",
      "team": "Williams",
      "tier": 2,
-     "points": 54.5,
+     "points": 58.5,
      "penalty_points": 2
     },
     {
@@ -263,7 +265,7 @@
      "name": "Liam Lawson",
      "team": "RB F1 Team",
      "tier": 2,
-     "points": 144.5,
+     "points": 156.0,
      "penalty_points": 2
     },
     {
@@ -279,7 +281,7 @@
      "name": "Pierre Gasly",
      "team": "Alpine F1 Team",
      "tier": 3,
-     "points": 124.0,
+     "points": 122.5,
      "penalty_points": 2
     }
    ],
@@ -292,16 +294,17 @@
     "6": 54.0,
     "7": 40.0,
     "8": 38.0,
-    "9": 0.0,
+    "9": 66.0,
     "10": 51.0,
     "11": 64.0,
-    "12": 95.5,
+    "12": 0.0,
     "13": 62.0,
     "14": 66.0,
     "15": 22.0,
     "16": 40.0,
     "17": 73.0,
     "18": 58.0,
+    "19": 44.0,
     "20": 56.0,
     "21": 64.0
    },
@@ -314,133 +317,28 @@
     419.5,
     459.5,
     497.5,
-    497.5,
-    548.5,
-    612.5,
-    708.0,
-    770.0,
-    836.0,
-    858.0,
-    898.0,
-    971.0,
-    1029.0,
-    1085.0,
-    1149.0
+    563.5,
+    614.5,
+    678.5,
+    678.5,
+    740.5,
+    806.5,
+    828.5,
+    868.5,
+    941.5,
+    999.5,
+    1043.5,
+    1099.5,
+    1163.5
    ],
-   "gross": 1149.0,
+   "gross": 1163.5,
    "penalty_points": 7,
    "penalty_deduction": -35,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 1114.0,
+   "total": 1128.5,
    "rank": 1,
    "gap": 0.0
-  },
-  {
-   "name": "Brian",
-   "color_slot": 3,
-   "drivers": [
-    {
-     "key": "leclerc",
-     "name": "Charles Leclerc",
-     "team": "Ferrari",
-     "tier": 1,
-     "points": 292.0,
-     "penalty_points": 0
-    },
-    {
-     "key": "russell",
-     "name": "George Russell",
-     "team": "Mercedes",
-     "tier": 1,
-     "points": 345.0,
-     "penalty_points": 0
-    },
-    {
-     "key": "albon",
-     "name": "Alexander Albon",
-     "team": "Williams",
-     "tier": 2,
-     "points": 21.0,
-     "penalty_points": 2
-    },
-    {
-     "key": "hulkenberg",
-     "name": "Nico H\u00fclkenberg",
-     "team": "Audi",
-     "tier": 2,
-     "points": 88.0,
-     "penalty_points": 0
-    },
-    {
-     "key": "alonso",
-     "name": "Fernando Alonso",
-     "team": "Aston Martin",
-     "tier": 3,
-     "points": 31.0,
-     "penalty_points": 0
-    },
-    {
-     "key": "colapinto",
-     "name": "Franco Colapinto",
-     "team": "Alpine F1 Team",
-     "tier": 3,
-     "points": 86.5,
-     "penalty_points": 5
-    }
-   ],
-   "by_round": {
-    "1": 58.0,
-    "2": 79.5,
-    "3": 39.0,
-    "4": 59.5,
-    "5": 58.5,
-    "6": 23.0,
-    "7": 34.0,
-    "8": 46.0,
-    "9": 0.0,
-    "10": 34.0,
-    "11": 34.0,
-    "12": 78.5,
-    "13": 35.0,
-    "14": 43.0,
-    "15": 53.0,
-    "16": 31.0,
-    "17": 55.5,
-    "18": 37.0,
-    "20": 37.0,
-    "21": 28.0
-   },
-   "cumulative": [
-    58.0,
-    137.5,
-    176.5,
-    236.0,
-    294.5,
-    317.5,
-    351.5,
-    397.5,
-    397.5,
-    431.5,
-    465.5,
-    544.0,
-    579.0,
-    622.0,
-    675.0,
-    706.0,
-    761.5,
-    798.5,
-    835.5,
-    863.5
-   ],
-   "gross": 863.5,
-   "penalty_points": 7,
-   "penalty_deduction": -35,
-   "replacement_penalty": 0,
-   "champion_bonus": 0,
-   "total": 828.5,
-   "rank": 2,
-   "gap": 285.5
   },
   {
    "name": "Josh",
@@ -451,7 +349,7 @@
      "name": "Max Verstappen",
      "team": "Red Bull",
      "tier": 1,
-     "points": 372.5,
+     "points": 402.5,
      "penalty_points": 1
     },
     {
@@ -459,7 +357,7 @@
      "name": "Lewis Hamilton",
      "team": "Ferrari",
      "tier": 1,
-     "points": 303.0,
+     "points": 341.5,
      "penalty_points": 0
     },
     {
@@ -467,7 +365,7 @@
      "name": "Oliver Bearman",
      "team": "Haas F1 Team",
      "tier": 2,
-     "points": 64.5,
+     "points": 69.0,
      "penalty_points": 0
     },
     {
@@ -475,7 +373,7 @@
      "name": "Gabriel Bortoleto",
      "team": "Audi",
      "tier": 2,
-     "points": 71.0,
+     "points": 82.0,
      "penalty_points": 0
     },
     {
@@ -483,7 +381,7 @@
      "name": "Sergio P\u00e9rez",
      "team": "Cadillac F1 Team",
      "tier": 3,
-     "points": 8.0,
+     "points": 9.0,
      "penalty_points": 0
     },
     {
@@ -504,16 +402,17 @@
     "6": 30.0,
     "7": 52.0,
     "8": 43.0,
-    "9": 1.5,
+    "9": 54.0,
     "10": 44.0,
     "11": 44.0,
-    "12": 32.5,
+    "12": 0.0,
     "13": 35.0,
     "14": 27.0,
     "15": 44.0,
     "16": 58.0,
     "17": 80.5,
     "18": 38.0,
+    "19": 65.0,
     "20": 31.0,
     "21": 46.0
    },
@@ -526,27 +425,136 @@
     251.5,
     303.5,
     346.5,
-    348.0,
-    392.0,
-    436.0,
-    468.5,
-    503.5,
-    530.5,
-    574.5,
-    632.5,
-    713.0,
-    751.0,
-    782.0,
-    828.0
+    400.5,
+    444.5,
+    488.5,
+    488.5,
+    523.5,
+    550.5,
+    594.5,
+    652.5,
+    733.0,
+    771.0,
+    836.0,
+    867.0,
+    913.0
    ],
-   "gross": 828.0,
+   "gross": 913.0,
    "penalty_points": 1,
    "penalty_deduction": -5,
    "replacement_penalty": 0,
    "champion_bonus": 0,
-   "total": 823.0,
+   "total": 908.0,
+   "rank": 2,
+   "gap": 220.5
+  },
+  {
+   "name": "Brian",
+   "color_slot": 3,
+   "drivers": [
+    {
+     "key": "leclerc",
+     "name": "Charles Leclerc",
+     "team": "Ferrari",
+     "tier": 1,
+     "points": 319.0,
+     "penalty_points": 0
+    },
+    {
+     "key": "russell",
+     "name": "George Russell",
+     "team": "Mercedes",
+     "tier": 1,
+     "points": 352.5,
+     "penalty_points": 0
+    },
+    {
+     "key": "albon",
+     "name": "Alexander Albon",
+     "team": "Williams",
+     "tier": 2,
+     "points": 26.0,
+     "penalty_points": 2
+    },
+    {
+     "key": "hulkenberg",
+     "name": "Nico H\u00fclkenberg",
+     "team": "Audi",
+     "tier": 2,
+     "points": 82.5,
+     "penalty_points": 0
+    },
+    {
+     "key": "alonso",
+     "name": "Fernando Alonso",
+     "team": "Aston Martin",
+     "tier": 3,
+     "points": 24.0,
+     "penalty_points": 0
+    },
+    {
+     "key": "colapinto",
+     "name": "Franco Colapinto",
+     "team": "Alpine F1 Team",
+     "tier": 3,
+     "points": 92.5,
+     "penalty_points": 5
+    }
+   ],
+   "by_round": {
+    "1": 58.0,
+    "2": 79.5,
+    "3": 39.0,
+    "4": 59.5,
+    "5": 58.5,
+    "6": 23.0,
+    "7": 34.0,
+    "8": 46.0,
+    "9": 77.0,
+    "10": 34.0,
+    "11": 34.0,
+    "12": 1.5,
+    "13": 35.0,
+    "14": 43.0,
+    "15": 53.0,
+    "16": 31.0,
+    "17": 55.5,
+    "18": 37.0,
+    "19": 33.0,
+    "20": 37.0,
+    "21": 28.0
+   },
+   "cumulative": [
+    58.0,
+    137.5,
+    176.5,
+    236.0,
+    294.5,
+    317.5,
+    351.5,
+    397.5,
+    474.5,
+    508.5,
+    542.5,
+    544.0,
+    579.0,
+    622.0,
+    675.0,
+    706.0,
+    761.5,
+    798.5,
+    831.5,
+    868.5,
+    896.5
+   ],
+   "gross": 896.5,
+   "penalty_points": 7,
+   "penalty_deduction": -35,
+   "replacement_penalty": 0,
+   "champion_bonus": 0,
+   "total": 861.5,
    "rank": 3,
-   "gap": 291.0
+   "gap": 267.0
   }
  ],
  "drivers": [
@@ -555,7 +563,7 @@
    "name": "Andrea Kimi Antonelli",
    "team": "Mercedes",
    "owner": "Cooper",
-   "points": 494.5,
+   "points": 501.0,
    "tier": 1,
    "penalty_points": 1,
    "by_round": {
@@ -567,15 +575,16 @@
     "6": 33,
     "7": 0,
     "8": 19,
+    "9": 19,
     "10": 33,
     "11": 19,
-    "12": 31.5,
     "13": 30,
     "14": 30,
     "15": 12,
     "16": 24,
     "17": 26.5,
     "18": 33,
+    "19": 19,
     "20": 12,
     "21": 18
    },
@@ -668,6 +677,17 @@
      "sprint_pole": 0,
      "total": 19
     },
+    "9": {
+     "race_pos": 15,
+     "race_status": "Finished",
+     "quali_pos": 1,
+     "sprint_pos": 1,
+     "race": 1,
+     "pole": 3,
+     "sprint": 15,
+     "sprint_pole": 0,
+     "total": 19
+    },
     "10": {
      "race_pos": 1,
      "race_status": "Finished",
@@ -689,17 +709,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 19
-    },
-    "12": {
-     "race_pos": 2,
-     "race_status": "Finished",
-     "quali_pos": 3,
-     "sprint_pos": 4,
-     "race": 24,
-     "pole": 0,
-     "sprint": 7.5,
-     "sprint_pole": 0,
-     "total": 31.5
     },
     "13": {
      "race_pos": 1,
@@ -767,6 +776,17 @@
      "sprint_pole": 0,
      "total": 33
     },
+    "19": {
+     "race_pos": 3,
+     "race_status": "Finished",
+     "quali_pos": 5,
+     "sprint_pos": null,
+     "race": 19,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 19
+    },
     "20": {
      "race_pos": 5,
      "race_status": "Finished",
@@ -796,7 +816,7 @@
    "name": "Max Verstappen",
    "team": "Red Bull",
    "owner": "Josh",
-   "points": 372.5,
+   "points": 402.5,
    "tier": 1,
    "penalty_points": 1,
    "by_round": {
@@ -808,15 +828,16 @@
     "6": 0,
     "7": 15,
     "8": 24,
+    "9": 5,
     "10": 19,
     "11": 24,
-    "12": 5,
     "13": 19,
     "14": 24,
     "15": 24,
     "16": 33,
     "17": 49.5,
     "18": 19,
+    "19": 30,
     "20": 24,
     "21": 30
    },
@@ -909,6 +930,17 @@
      "sprint_pole": 0,
      "total": 24
     },
+    "9": {
+     "race_pos": 20,
+     "race_status": "Retired",
+     "quali_pos": 7,
+     "sprint_pos": 6,
+     "race": 0,
+     "pole": 0,
+     "sprint": 5,
+     "sprint_pole": 0,
+     "total": 5
+    },
     "10": {
      "race_pos": 3,
      "race_status": "Finished",
@@ -930,17 +962,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 24
-    },
-    "12": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 7,
-     "sprint_pos": 6,
-     "race": 0,
-     "pole": 0,
-     "sprint": 5,
-     "sprint_pole": 0,
-     "total": 5
     },
     "13": {
      "race_pos": 3,
@@ -1008,6 +1029,17 @@
      "sprint_pole": 0,
      "total": 19
     },
+    "19": {
+     "race_pos": 1,
+     "race_status": "Finished",
+     "quali_pos": 4,
+     "sprint_pos": null,
+     "race": 30,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 30
+    },
     "20": {
      "race_pos": 2,
      "race_status": "Finished",
@@ -1037,7 +1069,7 @@
    "name": "George Russell",
    "team": "Mercedes",
    "owner": "Brian",
-   "points": 345.0,
+   "points": 352.5,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -1049,15 +1081,17 @@
     "6": 4,
     "7": 27,
     "8": 33,
+    "9": 31.5,
     "10": 0,
     "11": 9,
-    "12": 35.5,
+    "12": 1.5,
     "13": 24,
     "14": 12,
     "15": 33,
     "16": 0,
     "17": 7,
     "18": 8,
+    "19": 10,
     "20": 15,
     "21": 7
    },
@@ -1150,6 +1184,17 @@
      "sprint_pole": 0,
      "total": 33
     },
+    "9": {
+     "race_pos": 2,
+     "race_status": "Finished",
+     "quali_pos": 4,
+     "sprint_pos": 4,
+     "race": 24,
+     "pole": 0,
+     "sprint": 7.5,
+     "sprint_pole": 0,
+     "total": 31.5
+    },
     "10": {
      "race_pos": null,
      "race_status": "Retired",
@@ -1173,15 +1218,15 @@
      "total": 9
     },
     "12": {
-     "race_pos": 3,
-     "race_status": "Finished",
-     "quali_pos": 2,
-     "sprint_pos": 1,
-     "race": 19,
+     "race_pos": null,
+     "race_status": null,
+     "quali_pos": null,
+     "sprint_pos": null,
+     "race": 0,
      "pole": 0,
-     "sprint": 15,
+     "sprint": 0,
      "sprint_pole": 1.5,
-     "total": 35.5
+     "total": 1.5
     },
     "13": {
      "race_pos": 2,
@@ -1249,6 +1294,17 @@
      "sprint_pole": 0,
      "total": 8
     },
+    "19": {
+     "race_pos": 6,
+     "race_status": "Finished",
+     "quali_pos": 2,
+     "sprint_pos": null,
+     "race": 10,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 10
+    },
     "20": {
      "race_pos": 4,
      "race_status": "Finished",
@@ -1274,252 +1330,11 @@
    }
   },
   {
-   "key": "norris",
-   "name": "Lando Norris",
-   "team": "McLaren",
-   "owner": "Cooper",
-   "points": 328.5,
-   "tier": 1,
-   "penalty_points": 0,
-   "by_round": {
-    "1": 12,
-    "2": 7.5,
-    "3": 12,
-    "4": 40.5,
-    "5": 12,
-    "6": 0,
-    "7": 19,
-    "8": 9,
-    "10": 9,
-    "11": 33,
-    "12": 42.5,
-    "13": 15,
-    "14": 22,
-    "15": 0,
-    "16": 7,
-    "17": 19,
-    "18": 12,
-    "20": 33,
-    "21": 24
-   },
-   "detail": {
-    "1": {
-     "race_pos": 5,
-     "race_status": "Finished",
-     "quali_pos": 6,
-     "sprint_pos": null,
-     "race": 12,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 12
-    },
-    "2": {
-     "race_pos": null,
-     "race_status": "Did not start",
-     "quali_pos": 6,
-     "sprint_pos": 4,
-     "race": 0,
-     "pole": 0,
-     "sprint": 7.5,
-     "sprint_pole": 0,
-     "total": 7.5
-    },
-    "3": {
-     "race_pos": 5,
-     "race_status": "Finished",
-     "quali_pos": 5,
-     "sprint_pos": null,
-     "race": 12,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 12
-    },
-    "4": {
-     "race_pos": 2,
-     "race_status": "Finished",
-     "quali_pos": 4,
-     "sprint_pos": 1,
-     "race": 24,
-     "pole": 0,
-     "sprint": 15,
-     "sprint_pole": 1.5,
-     "total": 40.5
-    },
-    "5": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 3,
-     "sprint_pos": 2,
-     "race": 0,
-     "pole": 0,
-     "sprint": 12,
-     "sprint_pole": 0,
-     "total": 12
-    },
-    "6": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 8,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "7": {
-     "race_pos": 3,
-     "race_status": "Finished",
-     "quali_pos": 4,
-     "sprint_pos": null,
-     "race": 19,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 19
-    },
-    "8": {
-     "race_pos": 7,
-     "race_status": "Finished",
-     "quali_pos": 6,
-     "sprint_pos": null,
-     "race": 9,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 9
-    },
-    "10": {
-     "race_pos": 7,
-     "race_status": "Finished",
-     "quali_pos": 3,
-     "sprint_pos": null,
-     "race": 9,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 9
-    },
-    "11": {
-     "race_pos": 1,
-     "race_status": "Finished",
-     "quali_pos": 1,
-     "sprint_pos": null,
-     "race": 30,
-     "pole": 3,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 33
-    },
-    "12": {
-     "race_pos": 1,
-     "race_status": "Finished",
-     "quali_pos": 1,
-     "sprint_pos": 3,
-     "race": 30,
-     "pole": 3,
-     "sprint": 9.5,
-     "sprint_pole": 0,
-     "total": 42.5
-    },
-    "13": {
-     "race_pos": 4,
-     "race_status": "Finished",
-     "quali_pos": 9,
-     "sprint_pos": null,
-     "race": 15,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 15
-    },
-    "14": {
-     "race_pos": 3,
-     "race_status": "Finished",
-     "quali_pos": 1,
-     "sprint_pos": null,
-     "race": 19,
-     "pole": 3,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 22
-    },
-    "15": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 5,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "16": {
-     "race_pos": 9,
-     "race_status": "Finished",
-     "quali_pos": 6,
-     "sprint_pos": null,
-     "race": 7,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 7
-    },
-    "17": {
-     "race_pos": 4,
-     "race_status": "Finished",
-     "quali_pos": 5,
-     "sprint_pos": 8,
-     "race": 15,
-     "pole": 0,
-     "sprint": 4,
-     "sprint_pole": 0,
-     "total": 19
-    },
-    "18": {
-     "race_pos": 5,
-     "race_status": "Finished",
-     "quali_pos": 8,
-     "sprint_pos": null,
-     "race": 12,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 12
-    },
-    "20": {
-     "race_pos": 1,
-     "race_status": "Finished",
-     "quali_pos": 1,
-     "sprint_pos": null,
-     "race": 30,
-     "pole": 3,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 33
-    },
-    "21": {
-     "race_pos": 2,
-     "race_status": "Finished",
-     "quali_pos": 4,
-     "sprint_pos": null,
-     "race": 24,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 24
-    }
-   }
-  },
-  {
    "key": "hamilton",
    "name": "Lewis Hamilton",
    "team": "Ferrari",
    "owner": "Josh",
-   "points": 303.0,
+   "points": 341.5,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -1531,16 +1346,16 @@
     "6": 24,
     "7": 30,
     "8": 12,
-    "9": 1.5,
+    "9": 32.5,
     "10": 15,
     "11": 12,
-    "12": 19.5,
     "13": 10,
     "14": 0,
     "15": 10,
     "16": 19,
     "17": 22,
     "18": 15,
+    "19": 27,
     "20": 7,
     "21": 9
    },
@@ -1634,15 +1449,15 @@
      "total": 12
     },
     "9": {
-     "race_pos": null,
-     "race_status": null,
-     "quali_pos": null,
-     "sprint_pos": null,
-     "race": 0,
+     "race_pos": 3,
+     "race_status": "Finished",
+     "quali_pos": 3,
+     "sprint_pos": 2,
+     "race": 19,
      "pole": 0,
-     "sprint": 0,
+     "sprint": 12,
      "sprint_pole": 1.5,
-     "total": 1.5
+     "total": 32.5
     },
     "10": {
      "race_pos": 4,
@@ -1665,17 +1480,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 12
-    },
-    "12": {
-     "race_pos": 4,
-     "race_status": "Finished",
-     "quali_pos": 5,
-     "sprint_pos": 7,
-     "race": 15,
-     "pole": 0,
-     "sprint": 4.5,
-     "sprint_pole": 0,
-     "total": 19.5
     },
     "13": {
      "race_pos": 6,
@@ -1743,6 +1547,17 @@
      "sprint_pole": 0,
      "total": 15
     },
+    "19": {
+     "race_pos": 2,
+     "race_status": "Finished",
+     "quali_pos": 1,
+     "sprint_pos": null,
+     "race": 24,
+     "pole": 3,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 27
+    },
     "20": {
      "race_pos": 9,
      "race_status": "Lapped",
@@ -1768,11 +1583,264 @@
    }
   },
   {
+   "key": "norris",
+   "name": "Lando Norris",
+   "team": "McLaren",
+   "owner": "Cooper",
+   "points": 322.5,
+   "tier": 1,
+   "penalty_points": 0,
+   "by_round": {
+    "1": 12,
+    "2": 7.5,
+    "3": 12,
+    "4": 40.5,
+    "5": 12,
+    "6": 0,
+    "7": 19,
+    "8": 9,
+    "9": 24.5,
+    "10": 9,
+    "11": 33,
+    "13": 15,
+    "14": 22,
+    "15": 0,
+    "16": 7,
+    "17": 19,
+    "18": 12,
+    "19": 12,
+    "20": 33,
+    "21": 24
+   },
+   "detail": {
+    "1": {
+     "race_pos": 5,
+     "race_status": "Finished",
+     "quali_pos": 6,
+     "sprint_pos": null,
+     "race": 12,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 12
+    },
+    "2": {
+     "race_pos": null,
+     "race_status": "Did not start",
+     "quali_pos": 6,
+     "sprint_pos": 4,
+     "race": 0,
+     "pole": 0,
+     "sprint": 7.5,
+     "sprint_pole": 0,
+     "total": 7.5
+    },
+    "3": {
+     "race_pos": 5,
+     "race_status": "Finished",
+     "quali_pos": 5,
+     "sprint_pos": null,
+     "race": 12,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 12
+    },
+    "4": {
+     "race_pos": 2,
+     "race_status": "Finished",
+     "quali_pos": 4,
+     "sprint_pos": 1,
+     "race": 24,
+     "pole": 0,
+     "sprint": 15,
+     "sprint_pole": 1.5,
+     "total": 40.5
+    },
+    "5": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 3,
+     "sprint_pos": 2,
+     "race": 0,
+     "pole": 0,
+     "sprint": 12,
+     "sprint_pole": 0,
+     "total": 12
+    },
+    "6": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 8,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "7": {
+     "race_pos": 3,
+     "race_status": "Finished",
+     "quali_pos": 4,
+     "sprint_pos": null,
+     "race": 19,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 19
+    },
+    "8": {
+     "race_pos": 7,
+     "race_status": "Finished",
+     "quali_pos": 6,
+     "sprint_pos": null,
+     "race": 9,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 9
+    },
+    "9": {
+     "race_pos": 4,
+     "race_status": "Finished",
+     "quali_pos": 6,
+     "sprint_pos": 3,
+     "race": 15,
+     "pole": 0,
+     "sprint": 9.5,
+     "sprint_pole": 0,
+     "total": 24.5
+    },
+    "10": {
+     "race_pos": 7,
+     "race_status": "Finished",
+     "quali_pos": 3,
+     "sprint_pos": null,
+     "race": 9,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 9
+    },
+    "11": {
+     "race_pos": 1,
+     "race_status": "Finished",
+     "quali_pos": 1,
+     "sprint_pos": null,
+     "race": 30,
+     "pole": 3,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 33
+    },
+    "13": {
+     "race_pos": 4,
+     "race_status": "Finished",
+     "quali_pos": 9,
+     "sprint_pos": null,
+     "race": 15,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 15
+    },
+    "14": {
+     "race_pos": 3,
+     "race_status": "Finished",
+     "quali_pos": 1,
+     "sprint_pos": null,
+     "race": 19,
+     "pole": 3,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 22
+    },
+    "15": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 5,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "16": {
+     "race_pos": 9,
+     "race_status": "Finished",
+     "quali_pos": 6,
+     "sprint_pos": null,
+     "race": 7,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 7
+    },
+    "17": {
+     "race_pos": 4,
+     "race_status": "Finished",
+     "quali_pos": 5,
+     "sprint_pos": 8,
+     "race": 15,
+     "pole": 0,
+     "sprint": 4,
+     "sprint_pole": 0,
+     "total": 19
+    },
+    "18": {
+     "race_pos": 5,
+     "race_status": "Finished",
+     "quali_pos": 8,
+     "sprint_pos": null,
+     "race": 12,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 12
+    },
+    "19": {
+     "race_pos": 5,
+     "race_status": "Finished",
+     "quali_pos": 6,
+     "sprint_pos": null,
+     "race": 12,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 12
+    },
+    "20": {
+     "race_pos": 1,
+     "race_status": "Finished",
+     "quali_pos": 1,
+     "sprint_pos": null,
+     "race": 30,
+     "pole": 3,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 33
+    },
+    "21": {
+     "race_pos": 2,
+     "race_status": "Finished",
+     "quali_pos": 4,
+     "sprint_pos": null,
+     "race": 24,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 24
+    }
+   }
+  },
+  {
    "key": "leclerc",
    "name": "Charles Leclerc",
    "team": "Ferrari",
    "owner": "Brian",
-   "points": 292.0,
+   "points": 319.0,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -1784,15 +1852,16 @@
     "6": 0,
     "7": 1,
     "8": 8,
+    "9": 36,
     "10": 24,
     "11": 15,
-    "12": 24,
     "13": 0,
     "14": 15,
     "15": 15,
     "16": 15,
     "17": 33.5,
     "18": 24,
+    "19": 15,
     "20": 8,
     "21": 6
    },
@@ -1885,6 +1954,17 @@
      "sprint_pole": 0,
      "total": 8
     },
+    "9": {
+     "race_pos": 1,
+     "race_status": "Finished",
+     "quali_pos": 2,
+     "sprint_pos": 5,
+     "race": 30,
+     "pole": 0,
+     "sprint": 6,
+     "sprint_pole": 0,
+     "total": 36
+    },
     "10": {
      "race_pos": 2,
      "race_status": "Finished",
@@ -1906,17 +1986,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 15
-    },
-    "12": {
-     "race_pos": 5,
-     "race_status": "Finished",
-     "quali_pos": 6,
-     "sprint_pos": 2,
-     "race": 12,
-     "pole": 0,
-     "sprint": 12,
-     "sprint_pole": 0,
-     "total": 24
     },
     "13": {
      "race_pos": null,
@@ -1984,6 +2053,17 @@
      "sprint_pole": 0,
      "total": 24
     },
+    "19": {
+     "race_pos": 4,
+     "race_status": "Finished",
+     "quali_pos": 3,
+     "sprint_pos": null,
+     "race": 15,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 15
+    },
     "20": {
      "race_pos": 8,
      "race_status": "Finished",
@@ -2013,7 +2093,7 @@
    "name": "Oscar Piastri",
    "team": "McLaren",
    "owner": "Unowned",
-   "points": 226.5,
+   "points": 223.0,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -2025,15 +2105,16 @@
     "6": 15,
     "7": 12,
     "8": 15,
+    "9": 9.5,
     "10": 12,
     "11": 0,
-    "12": 16,
     "13": 12,
     "14": 8,
     "15": 3,
     "16": 10,
     "17": 13,
     "18": 9,
+    "19": 3,
     "20": 10,
     "21": 19
    },
@@ -2126,6 +2207,17 @@
      "sprint_pole": 0,
      "total": 15
     },
+    "9": {
+     "race_pos": 11,
+     "race_status": "Finished",
+     "quali_pos": 8,
+     "sprint_pos": 7,
+     "race": 5,
+     "pole": 0,
+     "sprint": 4.5,
+     "sprint_pole": 0,
+     "total": 9.5
+    },
     "10": {
      "race_pos": 5,
      "race_status": "Finished",
@@ -2147,17 +2239,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
-    },
-    "12": {
-     "race_pos": 6,
-     "race_status": "Finished",
-     "quali_pos": 4,
-     "sprint_pos": 5,
-     "race": 10,
-     "pole": 0,
-     "sprint": 6,
-     "sprint_pole": 0,
-     "total": 16
     },
     "13": {
      "race_pos": 5,
@@ -2225,6 +2306,17 @@
      "sprint_pole": 0,
      "total": 9
     },
+    "19": {
+     "race_pos": 13,
+     "race_status": "Finished",
+     "quali_pos": 12,
+     "sprint_pos": null,
+     "race": 3,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 3
+    },
     "20": {
      "race_pos": 6,
      "race_status": "Finished",
@@ -2254,7 +2346,7 @@
    "name": "Isack Hadjar",
    "team": "Red Bull",
    "owner": "Unowned",
-   "points": 154.0,
+   "points": 176.5,
    "tier": 1,
    "penalty_points": 0,
    "by_round": {
@@ -2266,12 +2358,14 @@
     "6": 19,
     "7": 10,
     "8": 10,
+    "9": 15.5,
     "10": 10,
     "11": 10,
     "15": 19,
     "16": 12,
     "17": 6,
     "18": 10,
+    "19": 7,
     "20": 19,
     "21": 1
    },
@@ -2364,6 +2458,17 @@
      "sprint_pole": 0,
      "total": 10
     },
+    "9": {
+     "race_pos": 5,
+     "race_status": "Finished",
+     "quali_pos": 5,
+     "sprint_pos": 9,
+     "race": 12,
+     "pole": 0,
+     "sprint": 3.5,
+     "sprint_pole": 0,
+     "total": 15.5
+    },
     "10": {
      "race_pos": 6,
      "race_status": "Finished",
@@ -2430,6 +2535,17 @@
      "sprint_pole": 0,
      "total": 10
     },
+    "19": {
+     "race_pos": 9,
+     "race_status": "Finished",
+     "quali_pos": 7,
+     "sprint_pos": null,
+     "race": 7,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 7
+    },
     "20": {
      "race_pos": 3,
      "race_status": "Finished",
@@ -2459,7 +2575,7 @@
    "name": "Liam Lawson",
    "team": "RB F1 Team",
    "owner": "Cooper",
-   "points": 144.5,
+   "points": 156.0,
    "tier": 2,
    "penalty_points": 2,
    "by_round": {
@@ -2471,15 +2587,16 @@
     "6": 12,
     "7": 8,
     "8": 7,
+    "9": 14,
     "10": 4,
     "11": 8,
-    "12": 11.5,
     "13": 2,
     "14": 10,
     "15": 4,
     "16": 9,
     "17": 15,
     "18": 7,
+    "19": 9,
     "20": 9,
     "21": 2
    },
@@ -2572,6 +2689,17 @@
      "sprint_pole": 0,
      "total": 7
     },
+    "9": {
+     "race_pos": 6,
+     "race_status": "Finished",
+     "quali_pos": 10,
+     "sprint_pos": 8,
+     "race": 10,
+     "pole": 0,
+     "sprint": 4,
+     "sprint_pole": 0,
+     "total": 14
+    },
     "10": {
      "race_pos": 12,
      "race_status": "Finished",
@@ -2593,17 +2721,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 8
-    },
-    "12": {
-     "race_pos": 7,
-     "race_status": "Finished",
-     "quali_pos": 8,
-     "sprint_pos": 11,
-     "race": 9,
-     "pole": 0,
-     "sprint": 2.5,
-     "sprint_pole": 0,
-     "total": 11.5
     },
     "13": {
      "race_pos": 14,
@@ -2671,6 +2788,17 @@
      "sprint_pole": 0,
      "total": 7
     },
+    "19": {
+     "race_pos": 7,
+     "race_status": "Finished",
+     "quali_pos": 22,
+     "sprint_pos": null,
+     "race": 9,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 9
+    },
     "20": {
      "race_pos": 7,
      "race_status": "Finished",
@@ -2700,7 +2828,7 @@
    "name": "Pierre Gasly",
    "team": "Alpine F1 Team",
    "owner": "Cooper",
-   "points": 124.0,
+   "points": 122.5,
    "tier": 3,
    "penalty_points": 2,
    "by_round": {
@@ -2712,15 +2840,16 @@
     "6": 9,
     "7": 9,
     "8": 3,
+    "9": 8.5,
     "10": 5,
     "11": 4,
-    "12": 10,
     "13": 12,
     "14": 4,
     "15": 0,
     "16": 0,
     "17": 8.5,
     "18": 6,
+    "19": 0,
     "20": 2,
     "21": 12
    },
@@ -2813,6 +2942,17 @@
      "sprint_pole": 0,
      "total": 3
     },
+    "9": {
+     "race_pos": 10,
+     "race_status": "Finished",
+     "quali_pos": 12,
+     "sprint_pos": 11,
+     "race": 6,
+     "pole": 0,
+     "sprint": 2.5,
+     "sprint_pole": 0,
+     "total": 8.5
+    },
     "10": {
      "race_pos": 11,
      "race_status": "Finished",
@@ -2834,17 +2974,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 4
-    },
-    "12": {
-     "race_pos": 10,
-     "race_status": "Lapped",
-     "quali_pos": 11,
-     "sprint_pos": 8,
-     "race": 6,
-     "pole": 0,
-     "sprint": 4,
-     "sprint_pole": 0,
-     "total": 10
     },
     "13": {
      "race_pos": 7,
@@ -2912,6 +3041,17 @@
      "sprint_pole": 0,
      "total": 6
     },
+    "19": {
+     "race_pos": 17,
+     "race_status": "Finished",
+     "quali_pos": 9,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
     "20": {
      "race_pos": 14,
      "race_status": "Lapped",
@@ -2941,7 +3081,7 @@
    "name": "Arvid Lindblad",
    "team": "RB F1 Team",
    "owner": "Unowned",
-   "points": 104.5,
+   "points": 109.5,
    "tier": 2,
    "penalty_points": 2,
    "by_round": {
@@ -2953,15 +3093,16 @@
     "6": 10,
     "7": 7,
     "8": 6,
+    "9": 12,
     "10": 7,
     "11": 6,
-    "12": 7,
     "13": 8,
     "14": 7,
     "15": 9,
     "16": 6,
     "17": 2.5,
     "18": 4,
+    "19": 0,
     "20": 5,
     "21": 0
    },
@@ -3054,6 +3195,17 @@
      "sprint_pole": 0,
      "total": 6
     },
+    "9": {
+     "race_pos": 7,
+     "race_status": "Finished",
+     "quali_pos": 9,
+     "sprint_pos": 10,
+     "race": 9,
+     "pole": 0,
+     "sprint": 3,
+     "sprint_pole": 0,
+     "total": 12
+    },
     "10": {
      "race_pos": 9,
      "race_status": "Finished",
@@ -3075,17 +3227,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 6
-    },
-    "12": {
-     "race_pos": 12,
-     "race_status": "Lapped",
-     "quali_pos": 10,
-     "sprint_pos": 10,
-     "race": 4,
-     "pole": 0,
-     "sprint": 3,
-     "sprint_pole": 0,
-     "total": 7
     },
     "13": {
      "race_pos": 8,
@@ -3153,6 +3294,17 @@
      "sprint_pole": 0,
      "total": 4
     },
+    "19": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 8,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
     "20": {
      "race_pos": 11,
      "race_status": "Lapped",
@@ -3174,247 +3326,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
-    }
-   }
-  },
-  {
-   "key": "hulkenberg",
-   "name": "Nico H\u00fclkenberg",
-   "team": "Audi",
-   "owner": "Brian",
-   "points": 88.0,
-   "tier": 2,
-   "penalty_points": 0,
-   "by_round": {
-    "1": 0,
-    "2": 5,
-    "3": 5,
-    "4": 0,
-    "5": 4.5,
-    "6": 3,
-    "7": 0,
-    "8": 4,
-    "10": 3,
-    "11": 7,
-    "12": 8,
-    "13": 4,
-    "14": 6,
-    "15": 5,
-    "16": 5,
-    "17": 12.5,
-    "18": 5,
-    "20": 6,
-    "21": 5
-   },
-   "detail": {
-    "1": {
-     "race_pos": null,
-     "race_status": "Did not start",
-     "quali_pos": 11,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "2": {
-     "race_pos": 11,
-     "race_status": "Lapped",
-     "quali_pos": 11,
-     "sprint_pos": null,
-     "race": 5,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 5
-    },
-    "3": {
-     "race_pos": 11,
-     "race_status": "Finished",
-     "quali_pos": 13,
-     "sprint_pos": null,
-     "race": 5,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 5
-    },
-    "4": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 10,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "5": {
-     "race_pos": 12,
-     "race_status": "Lapped",
-     "quali_pos": 11,
-     "sprint_pos": 15,
-     "race": 4,
-     "pole": 0,
-     "sprint": 0.5,
-     "sprint_pole": 0,
-     "total": 4.5
-    },
-    "6": {
-     "race_pos": 13,
-     "race_status": "Finished",
-     "quali_pos": 13,
-     "sprint_pos": null,
-     "race": 3,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 3
-    },
-    "7": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 9,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "8": {
-     "race_pos": 12,
-     "race_status": "Lapped",
-     "quali_pos": 14,
-     "sprint_pos": null,
-     "race": 4,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 4
-    },
-    "10": {
-     "race_pos": 13,
-     "race_status": "Finished",
-     "quali_pos": 14,
-     "sprint_pos": null,
-     "race": 3,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 3
-    },
-    "11": {
-     "race_pos": 9,
-     "race_status": "Lapped",
-     "quali_pos": 10,
-     "sprint_pos": null,
-     "race": 7,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 7
-    },
-    "12": {
-     "race_pos": 8,
-     "race_status": "Lapped",
-     "quali_pos": 13,
-     "sprint_pos": null,
-     "race": 8,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 8
-    },
-    "13": {
-     "race_pos": 12,
-     "race_status": "Finished",
-     "quali_pos": 13,
-     "sprint_pos": null,
-     "race": 4,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 4
-    },
-    "14": {
-     "race_pos": 10,
-     "race_status": "Lapped",
-     "quali_pos": 11,
-     "sprint_pos": null,
-     "race": 6,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 6
-    },
-    "15": {
-     "race_pos": 11,
-     "race_status": "Finished",
-     "quali_pos": 18,
-     "sprint_pos": null,
-     "race": 5,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 5
-    },
-    "16": {
-     "race_pos": 11,
-     "race_status": "Finished",
-     "quali_pos": 17,
-     "sprint_pos": null,
-     "race": 5,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 5
-    },
-    "17": {
-     "race_pos": 8,
-     "race_status": "Finished",
-     "quali_pos": 11,
-     "sprint_pos": 7,
-     "race": 8,
-     "pole": 0,
-     "sprint": 4.5,
-     "sprint_pole": 0,
-     "total": 12.5
-    },
-    "18": {
-     "race_pos": 11,
-     "race_status": "Finished",
-     "quali_pos": 12,
-     "sprint_pos": null,
-     "race": 5,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 5
-    },
-    "20": {
-     "race_pos": 10,
-     "race_status": "Lapped",
-     "quali_pos": 6,
-     "sprint_pos": null,
-     "race": 6,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 6
-    },
-    "21": {
-     "race_pos": 11,
-     "race_status": "Finished",
-     "quali_pos": 13,
-     "sprint_pos": null,
-     "race": 5,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 5
     }
    }
   },
@@ -3423,7 +3334,7 @@
    "name": "Franco Colapinto",
    "team": "Alpine F1 Team",
    "owner": "Brian",
-   "points": 86.5,
+   "points": 92.5,
    "tier": 3,
    "penalty_points": 5,
    "by_round": {
@@ -3435,15 +3346,16 @@
     "6": 2,
     "7": 6,
     "8": 1,
+    "9": 9,
     "10": 6,
     "11": 1,
-    "12": 4,
     "13": 7,
     "14": 9,
     "15": 0,
     "16": 3,
     "17": 0,
     "18": 0,
+    "19": 1,
     "20": 3,
     "21": 10
    },
@@ -3536,6 +3448,17 @@
      "sprint_pole": 0,
      "total": 1
     },
+    "9": {
+     "race_pos": 9,
+     "race_status": "Finished",
+     "quali_pos": 19,
+     "sprint_pos": 12,
+     "race": 7,
+     "pole": 0,
+     "sprint": 2,
+     "sprint_pole": 0,
+     "total": 9
+    },
     "10": {
      "race_pos": 10,
      "race_status": "Finished",
@@ -3557,17 +3480,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 1
-    },
-    "12": {
-     "race_pos": 14,
-     "race_status": "Lapped",
-     "quali_pos": 14,
-     "sprint_pos": 12,
-     "race": 2,
-     "pole": 0,
-     "sprint": 2,
-     "sprint_pole": 0,
-     "total": 4
     },
     "13": {
      "race_pos": 9,
@@ -3635,6 +3547,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "19": {
+     "race_pos": 15,
+     "race_status": "Finished",
+     "quali_pos": 11,
+     "sprint_pos": null,
+     "race": 1,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 1
+    },
     "20": {
      "race_pos": 13,
      "race_status": "Lapped",
@@ -3660,11 +3583,264 @@
    }
   },
   {
+   "key": "hulkenberg",
+   "name": "Nico H\u00fclkenberg",
+   "team": "Audi",
+   "owner": "Brian",
+   "points": 82.5,
+   "tier": 2,
+   "penalty_points": 0,
+   "by_round": {
+    "1": 0,
+    "2": 5,
+    "3": 5,
+    "4": 0,
+    "5": 4.5,
+    "6": 3,
+    "7": 0,
+    "8": 4,
+    "9": 0.5,
+    "10": 3,
+    "11": 7,
+    "13": 4,
+    "14": 6,
+    "15": 5,
+    "16": 5,
+    "17": 12.5,
+    "18": 5,
+    "19": 2,
+    "20": 6,
+    "21": 5
+   },
+   "detail": {
+    "1": {
+     "race_pos": null,
+     "race_status": "Did not start",
+     "quali_pos": 11,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "2": {
+     "race_pos": 11,
+     "race_status": "Lapped",
+     "quali_pos": 11,
+     "sprint_pos": null,
+     "race": 5,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 5
+    },
+    "3": {
+     "race_pos": 11,
+     "race_status": "Finished",
+     "quali_pos": 13,
+     "sprint_pos": null,
+     "race": 5,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 5
+    },
+    "4": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 10,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "5": {
+     "race_pos": 12,
+     "race_status": "Lapped",
+     "quali_pos": 11,
+     "sprint_pos": 15,
+     "race": 4,
+     "pole": 0,
+     "sprint": 0.5,
+     "sprint_pole": 0,
+     "total": 4.5
+    },
+    "6": {
+     "race_pos": 13,
+     "race_status": "Finished",
+     "quali_pos": 13,
+     "sprint_pos": null,
+     "race": 3,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 3
+    },
+    "7": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 9,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "8": {
+     "race_pos": 12,
+     "race_status": "Lapped",
+     "quali_pos": 14,
+     "sprint_pos": null,
+     "race": 4,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 4
+    },
+    "9": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 13,
+     "sprint_pos": 15,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0.5,
+     "sprint_pole": 0,
+     "total": 0.5
+    },
+    "10": {
+     "race_pos": 13,
+     "race_status": "Finished",
+     "quali_pos": 14,
+     "sprint_pos": null,
+     "race": 3,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 3
+    },
+    "11": {
+     "race_pos": 9,
+     "race_status": "Lapped",
+     "quali_pos": 10,
+     "sprint_pos": null,
+     "race": 7,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 7
+    },
+    "13": {
+     "race_pos": 12,
+     "race_status": "Finished",
+     "quali_pos": 13,
+     "sprint_pos": null,
+     "race": 4,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 4
+    },
+    "14": {
+     "race_pos": 10,
+     "race_status": "Lapped",
+     "quali_pos": 11,
+     "sprint_pos": null,
+     "race": 6,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 6
+    },
+    "15": {
+     "race_pos": 11,
+     "race_status": "Finished",
+     "quali_pos": 18,
+     "sprint_pos": null,
+     "race": 5,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 5
+    },
+    "16": {
+     "race_pos": 11,
+     "race_status": "Finished",
+     "quali_pos": 17,
+     "sprint_pos": null,
+     "race": 5,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 5
+    },
+    "17": {
+     "race_pos": 8,
+     "race_status": "Finished",
+     "quali_pos": 11,
+     "sprint_pos": 7,
+     "race": 8,
+     "pole": 0,
+     "sprint": 4.5,
+     "sprint_pole": 0,
+     "total": 12.5
+    },
+    "18": {
+     "race_pos": 11,
+     "race_status": "Finished",
+     "quali_pos": 12,
+     "sprint_pos": null,
+     "race": 5,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 5
+    },
+    "19": {
+     "race_pos": 14,
+     "race_status": "Finished",
+     "quali_pos": 10,
+     "sprint_pos": null,
+     "race": 2,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 2
+    },
+    "20": {
+     "race_pos": 10,
+     "race_status": "Lapped",
+     "quali_pos": 6,
+     "sprint_pos": null,
+     "race": 6,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 6
+    },
+    "21": {
+     "race_pos": 11,
+     "race_status": "Finished",
+     "quali_pos": 13,
+     "sprint_pos": null,
+     "race": 5,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 5
+    }
+   }
+  },
+  {
    "key": "bortoleto",
    "name": "Gabriel Bortoleto",
    "team": "Audi",
    "owner": "Josh",
-   "points": 71.0,
+   "points": 82.0,
    "tier": 2,
    "penalty_points": 0,
    "by_round": {
@@ -3676,15 +3852,16 @@
     "6": 5,
     "7": 5,
     "8": 5,
+    "9": 9.5,
     "10": 8,
     "11": 5,
-    "12": 6.5,
     "13": 5,
     "14": 3,
     "15": 1,
     "16": 0,
     "17": 0,
     "18": 3,
+    "19": 8,
     "20": 0,
     "21": 4
    },
@@ -3777,6 +3954,17 @@
      "sprint_pole": 0,
      "total": 5
     },
+    "9": {
+     "race_pos": 8,
+     "race_status": "Finished",
+     "quali_pos": 11,
+     "sprint_pos": 13,
+     "race": 8,
+     "pole": 0,
+     "sprint": 1.5,
+     "sprint_pole": 0,
+     "total": 9.5
+    },
     "10": {
      "race_pos": 8,
      "race_status": "Finished",
@@ -3798,17 +3986,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 5
-    },
-    "12": {
-     "race_pos": 13,
-     "race_status": "Lapped",
-     "quali_pos": 9,
-     "sprint_pos": 9,
-     "race": 3,
-     "pole": 0,
-     "sprint": 3.5,
-     "sprint_pole": 0,
-     "total": 6.5
     },
     "13": {
      "race_pos": 11,
@@ -3876,6 +4053,17 @@
      "sprint_pole": 0,
      "total": 3
     },
+    "19": {
+     "race_pos": 8,
+     "race_status": "Finished",
+     "quali_pos": 13,
+     "sprint_pos": null,
+     "race": 8,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 8
+    },
     "20": {
      "race_pos": 16,
      "race_status": "Lapped",
@@ -3905,7 +4093,7 @@
    "name": "Oliver Bearman",
    "team": "Haas F1 Team",
    "owner": "Josh",
-   "points": 64.5,
+   "points": 69,
    "tier": 2,
    "penalty_points": 0,
    "by_round": {
@@ -3917,15 +4105,16 @@
     "6": 0,
     "7": 0,
     "8": 2,
+    "9": 5,
     "10": 2,
     "11": 0,
-    "12": 0.5,
     "13": 1,
     "14": 0,
     "15": 7,
     "16": 2,
     "17": 9,
     "18": 0,
+    "19": 0,
     "20": 0,
     "21": 3
    },
@@ -4018,6 +4207,17 @@
      "sprint_pole": 0,
      "total": 2
     },
+    "9": {
+     "race_pos": 12,
+     "race_status": "Finished",
+     "quali_pos": 14,
+     "sprint_pos": 14,
+     "race": 4,
+     "pole": 0,
+     "sprint": 1,
+     "sprint_pole": 0,
+     "total": 5
+    },
     "10": {
      "race_pos": 14,
      "race_status": "Finished",
@@ -4039,17 +4239,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
-    },
-    "12": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 20,
-     "sprint_pos": 15,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0.5,
-     "sprint_pole": 0,
-     "total": 0.5
     },
     "13": {
      "race_pos": 15,
@@ -4117,6 +4306,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "19": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 14,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
     "20": {
      "race_pos": 17,
      "race_status": "Lapped",
@@ -4146,7 +4346,7 @@
    "name": "Esteban Ocon",
    "team": "Haas F1 Team",
    "owner": "Unowned",
-   "points": 58.0,
+   "points": 60.0,
    "tier": 2,
    "penalty_points": 0,
    "by_round": {
@@ -4158,9 +4358,9 @@
     "6": 7,
     "7": 3,
     "8": 0,
+    "9": 3,
     "10": 0,
     "11": 0,
-    "12": 1,
     "13": 0,
     "14": 5,
     "15": 8,
@@ -4257,6 +4457,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "9": {
+     "race_pos": 13,
+     "race_status": "Finished",
+     "quali_pos": 17,
+     "sprint_pos": 16,
+     "race": 3,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 3
+    },
     "10": {
      "race_pos": 17,
      "race_status": "Finished",
@@ -4278,17 +4489,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
-    },
-    "12": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 15,
-     "sprint_pos": 14,
-     "race": 0,
-     "pole": 0,
-     "sprint": 1,
-     "sprint_pole": 0,
-     "total": 1
     },
     "13": {
      "race_pos": 16,
@@ -4363,7 +4563,7 @@
    "name": "Carlos Sainz",
    "team": "Williams",
    "owner": "Cooper",
-   "points": 54.5,
+   "points": 58.5,
    "tier": 2,
    "penalty_points": 2,
    "by_round": {
@@ -4375,15 +4575,16 @@
     "6": 0,
     "7": 4,
     "8": 0,
+    "9": 0,
     "10": 0,
     "11": 0,
-    "12": 0,
     "13": 3,
     "14": 0,
     "15": 6,
     "16": 0,
     "17": 4,
     "18": 0,
+    "19": 4,
     "20": 0,
     "21": 8
    },
@@ -4476,6 +4677,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "9": {
+     "race_pos": 17,
+     "race_status": "Lapped",
+     "quali_pos": 15,
+     "sprint_pos": 17,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
     "10": {
      "race_pos": 16,
      "race_status": "Finished",
@@ -4492,17 +4704,6 @@
      "race_status": "Lapped",
      "quali_pos": 18,
      "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "12": {
-     "race_pos": 16,
-     "race_status": "Lapped",
-     "quali_pos": 17,
-     "sprint_pos": 20,
      "race": 0,
      "pole": 0,
      "sprint": 0,
@@ -4575,6 +4776,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "19": {
+     "race_pos": 12,
+     "race_status": "Finished",
+     "quali_pos": 15,
+     "sprint_pos": null,
+     "race": 4,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 4
+    },
     "20": {
      "race_pos": 19,
      "race_status": "Lapped",
@@ -4600,252 +4812,11 @@
    }
   },
   {
-   "key": "alonso",
-   "name": "Fernando Alonso",
-   "team": "Aston Martin",
-   "owner": "Brian",
-   "points": 31.0,
-   "tier": 3,
-   "penalty_points": 0,
-   "by_round": {
-    "1": 0,
-    "2": 0,
-    "3": 0,
-    "4": 1.5,
-    "5": 0,
-    "6": 6,
-    "7": 0,
-    "8": 0,
-    "10": 0,
-    "11": 2,
-    "12": 7,
-    "13": 0,
-    "14": 0,
-    "15": 0,
-    "16": 8,
-    "17": 2.5,
-    "18": 0,
-    "20": 4,
-    "21": 0
-   },
-   "detail": {
-    "1": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 17,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "2": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 19,
-     "sprint_pos": 17,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "3": {
-     "race_pos": 18,
-     "race_status": "Lapped",
-     "quali_pos": 21,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "4": {
-     "race_pos": 15,
-     "race_status": "Lapped",
-     "quali_pos": 17,
-     "sprint_pos": 15,
-     "race": 1,
-     "pole": 0,
-     "sprint": 0.5,
-     "sprint_pole": 0,
-     "total": 1.5
-    },
-    "5": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 19,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "6": {
-     "race_pos": 10,
-     "race_status": "Finished",
-     "quali_pos": 21,
-     "sprint_pos": null,
-     "race": 6,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 6
-    },
-    "7": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 22,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "8": {
-     "race_pos": 18,
-     "race_status": "Lapped",
-     "quali_pos": 21,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "10": {
-     "race_pos": 19,
-     "race_status": "Lapped",
-     "quali_pos": 21,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "11": {
-     "race_pos": 14,
-     "race_status": "Lapped",
-     "quali_pos": 16,
-     "sprint_pos": null,
-     "race": 2,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 2
-    },
-    "12": {
-     "race_pos": 9,
-     "race_status": "Lapped",
-     "quali_pos": 18,
-     "sprint_pos": 18,
-     "race": 7,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 7
-    },
-    "13": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 21,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "14": {
-     "race_pos": 17,
-     "race_status": "Lapped",
-     "quali_pos": 18,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "15": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 19,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "16": {
-     "race_pos": 8,
-     "race_status": "Finished",
-     "quali_pos": 12,
-     "sprint_pos": null,
-     "race": 8,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 8
-    },
-    "17": {
-     "race_pos": 16,
-     "race_status": "Lapped",
-     "quali_pos": 17,
-     "sprint_pos": 11,
-     "race": 0,
-     "pole": 0,
-     "sprint": 2.5,
-     "sprint_pole": 0,
-     "total": 2.5
-    },
-    "18": {
-     "race_pos": 16,
-     "race_status": "Lapped",
-     "quali_pos": 15,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "20": {
-     "race_pos": 12,
-     "race_status": "Lapped",
-     "quali_pos": 9,
-     "sprint_pos": null,
-     "race": 4,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 4
-    },
-    "21": {
-     "race_pos": 19,
-     "race_status": "Retired",
-     "quali_pos": 19,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    }
-   }
-  },
-  {
    "key": "albon",
    "name": "Alexander Albon",
    "team": "Williams",
    "owner": "Brian",
-   "points": 21,
+   "points": 26,
    "tier": 2,
    "penalty_points": 2,
    "by_round": {
@@ -4857,15 +4828,16 @@
     "6": 8,
     "7": 0,
     "8": 0,
+    "9": 0,
     "10": 1,
     "11": 0,
-    "12": 0,
     "13": 0,
     "14": 1,
     "15": 0,
     "16": 0,
     "17": 0,
     "18": 0,
+    "19": 5,
     "20": 1,
     "21": 0
    },
@@ -4958,6 +4930,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "9": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 16,
+     "sprint_pos": 18,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
     "10": {
      "race_pos": 15,
      "race_status": "Finished",
@@ -4974,17 +4957,6 @@
      "race_status": "Lapped",
      "quali_pos": 19,
      "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "12": {
-     "race_pos": 17,
-     "race_status": "Retired",
-     "quali_pos": 16,
-     "sprint_pos": 16,
      "race": 0,
      "pole": 0,
      "sprint": 0,
@@ -5057,6 +5029,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "19": {
+     "race_pos": 11,
+     "race_status": "Finished",
+     "quali_pos": 16,
+     "sprint_pos": null,
+     "race": 5,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 5
+    },
     "20": {
      "race_pos": 15,
      "race_status": "Lapped",
@@ -5082,88 +5065,40 @@
    }
   },
   {
-   "key": "tsunoda",
-   "name": "Yuki Tsunoda",
-   "team": "RB F1 Team",
-   "owner": "Unowned",
-   "points": 14.5,
-   "tier": 2,
-   "penalty_points": 0,
-   "by_round": {
-    "12": 6.5,
-    "13": 6,
-    "14": 2
-   },
-   "detail": {
-    "12": {
-     "race_pos": 11,
-     "race_status": "Lapped",
-     "quali_pos": 12,
-     "sprint_pos": 13,
-     "race": 5,
-     "pole": 0,
-     "sprint": 1.5,
-     "sprint_pole": 0,
-     "total": 6.5
-    },
-    "13": {
-     "race_pos": 10,
-     "race_status": "Finished",
-     "quali_pos": 17,
-     "sprint_pos": null,
-     "race": 6,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 6
-    },
-    "14": {
-     "race_pos": 14,
-     "race_status": "Lapped",
-     "quali_pos": 15,
-     "sprint_pos": null,
-     "race": 2,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 2
-    }
-   }
-  },
-  {
-   "key": "stroll",
-   "name": "Lance Stroll",
+   "key": "alonso",
+   "name": "Fernando Alonso",
    "team": "Aston Martin",
-   "owner": "Josh",
-   "points": 9,
+   "owner": "Brian",
+   "points": 24.0,
    "tier": 3,
    "penalty_points": 0,
    "by_round": {
     "1": 0,
     "2": 0,
     "3": 0,
-    "4": 0,
-    "5": 1,
-    "6": 0,
+    "4": 1.5,
+    "5": 0,
+    "6": 6,
     "7": 0,
     "8": 0,
+    "9": 0,
     "10": 0,
-    "11": 3,
-    "12": 0,
+    "11": 2,
     "13": 0,
     "14": 0,
     "15": 0,
-    "16": 4,
-    "17": 0,
-    "18": 1,
-    "20": 0,
+    "16": 8,
+    "17": 2.5,
+    "18": 0,
+    "19": 0,
+    "20": 4,
     "21": 0
    },
    "detail": {
     "1": {
      "race_pos": null,
-     "race_status": "Lapped",
-     "quali_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 17,
      "sprint_pos": null,
      "race": 0,
      "pole": 0,
@@ -5174,105 +5109,6 @@
     "2": {
      "race_pos": null,
      "race_status": "Retired",
-     "quali_pos": 21,
-     "sprint_pos": 18,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "3": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 22,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "4": {
-     "race_pos": 17,
-     "race_status": "Lapped",
-     "quali_pos": 18,
-     "sprint_pos": 17,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "5": {
-     "race_pos": 15,
-     "race_status": "Lapped",
-     "quali_pos": 21,
-     "sprint_pos": 16,
-     "race": 1,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 1
-    },
-    "6": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 22,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "7": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 21,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "8": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 22,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "10": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 22,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "11": {
-     "race_pos": 13,
-     "race_status": "Lapped",
-     "quali_pos": 20,
-     "sprint_pos": null,
-     "race": 3,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 3
-    },
-    "12": {
-     "race_pos": null,
-     "race_status": "Retired",
      "quali_pos": 19,
      "sprint_pos": 17,
      "race": 0,
@@ -5281,7 +5117,51 @@
      "sprint_pole": 0,
      "total": 0
     },
-    "13": {
+    "3": {
+     "race_pos": 18,
+     "race_status": "Lapped",
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "4": {
+     "race_pos": 15,
+     "race_status": "Lapped",
+     "quali_pos": 17,
+     "sprint_pos": 15,
+     "race": 1,
+     "pole": 0,
+     "sprint": 0.5,
+     "sprint_pole": 0,
+     "total": 1.5
+    },
+    "5": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 19,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "6": {
+     "race_pos": 10,
+     "race_status": "Finished",
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 6,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 6
+    },
+    "7": {
      "race_pos": null,
      "race_status": "Retired",
      "quali_pos": 22,
@@ -5292,10 +5172,65 @@
      "sprint_pole": 0,
      "total": 0
     },
-    "14": {
+    "8": {
+     "race_pos": 18,
+     "race_status": "Lapped",
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "9": {
+     "race_pos": 18,
+     "race_status": "Lapped",
+     "quali_pos": 22,
+     "sprint_pos": 20,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "10": {
+     "race_pos": 19,
+     "race_status": "Lapped",
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "11": {
+     "race_pos": 14,
+     "race_status": "Lapped",
+     "quali_pos": 16,
+     "sprint_pos": null,
+     "race": 2,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 2
+    },
+    "13": {
      "race_pos": null,
      "race_status": "Retired",
-     "quali_pos": null,
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "14": {
+     "race_pos": 17,
+     "race_status": "Lapped",
+     "quali_pos": 18,
      "sprint_pos": null,
      "race": 0,
      "pole": 0,
@@ -5306,7 +5241,7 @@
     "15": {
      "race_pos": null,
      "race_status": "Retired",
-     "quali_pos": 21,
+     "quali_pos": 19,
      "sprint_pos": null,
      "race": 0,
      "pole": 0,
@@ -5315,9 +5250,53 @@
      "total": 0
     },
     "16": {
-     "race_pos": 12,
+     "race_pos": 8,
      "race_status": "Finished",
-     "quali_pos": 14,
+     "quali_pos": 12,
+     "sprint_pos": null,
+     "race": 8,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 8
+    },
+    "17": {
+     "race_pos": 16,
+     "race_status": "Lapped",
+     "quali_pos": 17,
+     "sprint_pos": 11,
+     "race": 0,
+     "pole": 0,
+     "sprint": 2.5,
+     "sprint_pole": 0,
+     "total": 2.5
+    },
+    "18": {
+     "race_pos": 16,
+     "race_status": "Lapped",
+     "quali_pos": 15,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "19": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 17,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "20": {
+     "race_pos": 12,
+     "race_status": "Lapped",
+     "quali_pos": 9,
      "sprint_pos": null,
      "race": 4,
      "pole": 0,
@@ -5325,43 +5304,10 @@
      "sprint_pole": 0,
      "total": 4
     },
-    "17": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 19,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "18": {
-     "race_pos": 15,
-     "race_status": "Lapped",
-     "quali_pos": 18,
-     "sprint_pos": null,
-     "race": 1,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 1
-    },
-    "20": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 19,
-     "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
     "21": {
-     "race_pos": 17,
-     "race_status": "Finished",
-     "quali_pos": 20,
+     "race_pos": 19,
+     "race_status": "Retired",
+     "quali_pos": 19,
      "sprint_pos": null,
      "race": 0,
      "pole": 0,
@@ -5376,7 +5322,7 @@
    "name": "Sergio P\u00e9rez",
    "team": "Cadillac F1 Team",
    "owner": "Josh",
-   "points": 8,
+   "points": 9,
    "tier": 3,
    "penalty_points": 0,
    "by_round": {
@@ -5388,15 +5334,16 @@
     "6": 1,
     "7": 2,
     "8": 0,
+    "9": 2,
     "10": 0,
     "11": 0,
-    "12": 1,
     "13": 0,
     "14": 0,
     "15": 2,
     "16": 0,
     "17": 0,
     "18": 0,
+    "19": 0,
     "20": 0,
     "21": 0
    },
@@ -5489,6 +5436,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "9": {
+     "race_pos": 14,
+     "race_status": "Finished",
+     "quali_pos": 20,
+     "sprint_pos": 22,
+     "race": 2,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 2
+    },
     "10": {
      "race_pos": null,
      "race_status": "Retired",
@@ -5510,17 +5468,6 @@
      "sprint": 0,
      "sprint_pole": 0,
      "total": 0
-    },
-    "12": {
-     "race_pos": 15,
-     "race_status": "Lapped",
-     "quali_pos": 22,
-     "sprint_pos": 21,
-     "race": 1,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 1
     },
     "13": {
      "race_pos": 18,
@@ -5588,6 +5535,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "19": {
+     "race_pos": 16,
+     "race_status": "Finished",
+     "quali_pos": 20,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
     "20": {
      "race_pos": 18,
      "race_status": "Lapped",
@@ -5613,6 +5571,321 @@
    }
   },
   {
+   "key": "stroll",
+   "name": "Lance Stroll",
+   "team": "Aston Martin",
+   "owner": "Josh",
+   "points": 9,
+   "tier": 3,
+   "penalty_points": 0,
+   "by_round": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 3,
+    "13": 0,
+    "14": 0,
+    "15": 0,
+    "16": 4,
+    "17": 0,
+    "18": 1,
+    "19": 0,
+    "20": 0,
+    "21": 0
+   },
+   "detail": {
+    "1": {
+     "race_pos": null,
+     "race_status": "Lapped",
+     "quali_pos": null,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "2": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 21,
+     "sprint_pos": 18,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "3": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 22,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "4": {
+     "race_pos": 17,
+     "race_status": "Lapped",
+     "quali_pos": 18,
+     "sprint_pos": 17,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "5": {
+     "race_pos": 15,
+     "race_status": "Lapped",
+     "quali_pos": 21,
+     "sprint_pos": 16,
+     "race": 1,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 1
+    },
+    "6": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 22,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "7": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "8": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 22,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "9": {
+     "race_pos": 19,
+     "race_status": "Lapped",
+     "quali_pos": 21,
+     "sprint_pos": 21,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "10": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 22,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "11": {
+     "race_pos": 13,
+     "race_status": "Lapped",
+     "quali_pos": 20,
+     "sprint_pos": null,
+     "race": 3,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 3
+    },
+    "13": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 22,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "14": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": null,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "15": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 21,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "16": {
+     "race_pos": 12,
+     "race_status": "Finished",
+     "quali_pos": 14,
+     "sprint_pos": null,
+     "race": 4,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 4
+    },
+    "17": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 19,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "18": {
+     "race_pos": 15,
+     "race_status": "Lapped",
+     "quali_pos": 18,
+     "sprint_pos": null,
+     "race": 1,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 1
+    },
+    "19": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 19,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "20": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 19,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "21": {
+     "race_pos": 17,
+     "race_status": "Finished",
+     "quali_pos": 20,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    }
+   }
+  },
+  {
+   "key": "tsunoda",
+   "name": "Yuki Tsunoda",
+   "team": "RB F1 Team",
+   "owner": "Unowned",
+   "points": 8,
+   "tier": 2,
+   "penalty_points": 0,
+   "by_round": {
+    "13": 6,
+    "14": 2
+   },
+   "detail": {
+    "13": {
+     "race_pos": 10,
+     "race_status": "Finished",
+     "quali_pos": 17,
+     "sprint_pos": null,
+     "race": 6,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 6
+    },
+    "14": {
+     "race_pos": 14,
+     "race_status": "Lapped",
+     "quali_pos": 15,
+     "sprint_pos": null,
+     "race": 2,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 2
+    }
+   }
+  },
+  {
+   "key": "hirakawa",
+   "name": "Ryo Hirakawa",
+   "team": "Haas F1 Team",
+   "owner": "Unowned",
+   "points": 6,
+   "tier": null,
+   "penalty_points": 0,
+   "by_round": {
+    "19": 6
+   },
+   "detail": {
+    "19": {
+     "race_pos": 10,
+     "race_status": "Finished",
+     "quali_pos": 18,
+     "sprint_pos": null,
+     "race": 6,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 6
+    }
+   }
+  },
+  {
    "key": "bottas",
    "name": "Valtteri Bottas",
    "team": "Cadillac F1 Team",
@@ -5629,15 +5902,16 @@
     "6": 0,
     "7": 0,
     "8": 0,
+    "9": 0,
     "10": 0,
     "11": 0,
-    "12": 0,
     "13": 0,
     "14": 0,
     "15": 0,
     "16": 0,
     "17": 0,
     "18": 0,
+    "19": 0,
     "20": 0,
     "21": 0
    },
@@ -5730,6 +6004,17 @@
      "sprint_pole": 0,
      "total": 0
     },
+    "9": {
+     "race_pos": 16,
+     "race_status": "Finished",
+     "quali_pos": 18,
+     "sprint_pos": 19,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
     "10": {
      "race_pos": 18,
      "race_status": "Lapped",
@@ -5746,17 +6031,6 @@
      "race_status": "Retired",
      "quali_pos": 21,
      "sprint_pos": null,
-     "race": 0,
-     "pole": 0,
-     "sprint": 0,
-     "sprint_pole": 0,
-     "total": 0
-    },
-    "12": {
-     "race_pos": null,
-     "race_status": "Retired",
-     "quali_pos": 21,
-     "sprint_pos": 19,
      "race": 0,
      "pole": 0,
      "sprint": 0,
@@ -5822,6 +6096,17 @@
      "race_pos": null,
      "race_status": "Retired",
      "quali_pos": 22,
+     "sprint_pos": null,
+     "race": 0,
+     "pole": 0,
+     "sprint": 0,
+     "sprint_pole": 0,
+     "total": 0
+    },
+    "19": {
+     "race_pos": null,
+     "race_status": "Retired",
+     "quali_pos": 21,
      "sprint_pos": null,
      "race": 0,
      "pole": 0,
@@ -6020,8 +6305,7 @@
  ],
  "penalty_source": "RacingNews365",
  "warnings": [
-  "Round 9 (British Grand Prix): Jolpica fetch failed: 'NoneType' object is not subscriptable",
-  "Round 19 (Mexico City Grand Prix): Jolpica fetch failed: 'NoneType' object is not subscriptable"
+  "Round 12 (Dutch Grand Prix): Jolpica fetch failed: 'NoneType' object is not subscriptable"
  ],
  "tiers": {
   "1": [
